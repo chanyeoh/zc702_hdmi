@@ -1,0 +1,2442 @@
+14:01:03 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+14:01:06 INFO  : XSDB server has started successfully.
+14:01:09 INFO  : Processing command line option -hwspec C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss.hdf.
+14:04:06 INFO  : Saving repository preferences.
+14:04:06 INFO  : Reading in cores from local repositories: 
+		 C:\xapp1285\SW\sw_lib
+14:04:06 INFO  : Cleaning BSP projects in the workspace.
+14:04:52 INFO  : Refreshed build settings on project vpss_scaler
+14:06:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:06:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:06:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:06:55 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+14:07:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:07:06 INFO  : 'fpga -state' command is executed.
+14:07:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:07:07 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:07:07 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:07:07 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:07:08 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:07:08 INFO  : 'stop' command is executed.
+14:07:26 INFO  : 'ps7_init' command is executed.
+14:07:27 INFO  : 'ps7_post_config' command is executed.
+14:07:28 INFO  : 'con' command is executed.
+14:07:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:07:28 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:07:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:07:32 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:07:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+14:07:33 INFO  : Memory regions updated for context APU
+14:07:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:07:33 INFO  : 'con' command is executed.
+14:07:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:09:17 INFO  : Disconnected from the channel tcfchan#1.
+14:09:28 INFO  : ps7_init is completed.
+14:09:28 INFO  : ps7_post_config is completed.
+14:09:28 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:10:41 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+14:10:44 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doSystemReset(TM.java:988)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:469)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+14:11:02 INFO  : System reset is completed.
+14:11:05 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+14:11:08 INFO  : ps7_init is completed.
+14:11:08 INFO  : ps7_post_config is completed.
+14:15:44 INFO  : System reset is completed.
+14:15:47 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+14:15:50 INFO  : ps7_init is completed.
+14:15:51 INFO  : ps7_post_config is completed.
+14:28:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:28:56 INFO  : 'fpga -state' command is executed.
+14:28:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:28:57 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:28:57 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:28:57 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:28:58 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:28:58 INFO  : 'stop' command is executed.
+14:29:16 INFO  : 'ps7_init' command is executed.
+14:29:17 INFO  : 'ps7_post_config' command is executed.
+14:29:17 INFO  : 'con' command is executed.
+14:29:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:18 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:29:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:22 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:29:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+14:29:22 INFO  : Memory regions updated for context APU
+14:29:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:29:23 INFO  : 'con' command is executed.
+14:29:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:30:04 INFO  : Disconnected from the channel tcfchan#2.
+14:30:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:30:05 INFO  : 'fpga -state' command is executed.
+14:30:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:30:05 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:30:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:30:06 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:30:06 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:30:06 INFO  : 'stop' command is executed.
+14:30:19 INFO  : 'ps7_init' command is executed.
+14:30:19 INFO  : 'ps7_post_config' command is executed.
+14:30:20 INFO  : 'con' command is executed.
+14:30:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:30:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:30:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:30:22 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:30:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+14:30:23 INFO  : Memory regions updated for context APU
+14:30:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:30:23 INFO  : 'con' command is executed.
+14:30:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:32:46 INFO  : Disconnected from the channel tcfchan#3.
+14:32:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:32:47 INFO  : 'fpga -state' command is executed.
+14:32:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:32:47 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:32:48 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:32:48 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:32:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:32:49 INFO  : 'stop' command is executed.
+14:33:02 INFO  : 'ps7_init' command is executed.
+14:33:02 INFO  : 'ps7_post_config' command is executed.
+14:33:02 INFO  : 'con' command is executed.
+14:33:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:33:03 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:33:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:33:05 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:33:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+14:33:06 INFO  : Memory regions updated for context APU
+14:33:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:33:06 INFO  : 'con' command is executed.
+14:33:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:33:35 INFO  : Disconnected from the channel tcfchan#4.
+14:33:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:33:36 INFO  : 'fpga -state' command is executed.
+14:33:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:33:36 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:33:36 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:33:36 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:33:37 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:33:37 INFO  : 'stop' command is executed.
+14:33:51 INFO  : 'ps7_init' command is executed.
+14:33:51 INFO  : 'ps7_post_config' command is executed.
+14:33:51 INFO  : 'con' command is executed.
+14:33:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:33:52 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:33:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:33:54 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:33:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+14:33:54 INFO  : Memory regions updated for context APU
+14:33:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:33:55 INFO  : 'con' command is executed.
+14:33:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:35:43 INFO  : Disconnected from the channel tcfchan#5.
+14:35:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:35:45 INFO  : 'fpga -state' command is executed.
+14:35:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:35:45 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:35:46 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:35:47 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:35:47 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:35:48 INFO  : 'stop' command is executed.
+14:35:56 INFO  : 'ps7_init' command is executed.
+14:35:57 INFO  : 'ps7_post_config' command is executed.
+14:35:57 INFO  : 'con' command is executed.
+14:35:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:35:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:35:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:35:59 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:35:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+14:36:00 INFO  : Memory regions updated for context APU
+14:36:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:36:01 INFO  : 'con' command is executed.
+14:36:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:38:38 INFO  : Disconnected from the channel tcfchan#6.
+14:38:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:38:39 INFO  : 'fpga -state' command is executed.
+14:38:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:38:39 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:38:39 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:38:40 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:38:40 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:38:40 INFO  : 'stop' command is executed.
+14:38:58 INFO  : 'ps7_init' command is executed.
+14:38:58 INFO  : 'ps7_post_config' command is executed.
+14:38:58 INFO  : 'con' command is executed.
+14:38:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:38:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:38:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:39:00 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:39:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+14:39:00 INFO  : Memory regions updated for context APU
+14:39:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:39:01 INFO  : 'con' command is executed.
+14:39:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:39:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:39:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:39:47 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+14:41:15 INFO  : Disconnected from the channel tcfchan#7.
+14:41:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:41:16 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:41:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:41:19 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+14:41:19 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:41:19 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:41:20 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:41:20 INFO  : 'stop' command is executed.
+14:41:32 INFO  : 'ps7_init' command is executed.
+14:41:32 INFO  : 'ps7_post_config' command is executed.
+14:41:32 INFO  : 'con' command is executed.
+14:41:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:41:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:35 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:41:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+14:41:36 INFO  : Memory regions updated for context APU
+14:41:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:41:37 INFO  : 'con' command is executed.
+14:41:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:42:39 INFO  : Disconnected from the channel tcfchan#8.
+14:42:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:42:39 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:42:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:42:43 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+14:42:43 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:42:43 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:42:44 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:42:44 INFO  : 'stop' command is executed.
+14:42:56 INFO  : 'ps7_init' command is executed.
+14:42:56 INFO  : 'ps7_post_config' command is executed.
+14:42:56 INFO  : 'con' command is executed.
+14:42:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:42:57 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:42:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:42:59 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:42:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+14:43:00 INFO  : Memory regions updated for context APU
+14:43:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:43:00 INFO  : 'con' command is executed.
+14:43:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:44:46 INFO  : Disconnected from the channel tcfchan#9.
+14:44:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:44:47 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:44:48 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:44:52 INFO  : System reset is completed.
+14:44:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:44:58 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+14:44:59 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:44:59 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:45:11 INFO  : 'ps7_init' command is executed.
+14:45:11 INFO  : 'ps7_post_config' command is executed.
+14:45:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:45:13 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:45:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+14:45:14 INFO  : Memory regions updated for context APU
+14:45:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:45:14 INFO  : 'con' command is executed.
+14:45:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:49:38 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+14:49:41 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+16:01:19 ERROR : Timed out. 180 seconds have elapsed while waiting for XSDB server to launch.
+16:01:19 WARN  : Unexpected exception occurred.
+java.lang.Exception: java.lang.Error: Channel is waiting for Hello message
+	at org.eclipse.tcf.core.Command.<init>(Command.java:83)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager$8.<init>(XSDBCommandManager.java:384)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager.issueTcfCmd(XSDBCommandManager.java:384)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager.access$4(XSDBCommandManager.java:381)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager$7.run(XSDBCommandManager.java:376)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.Error: Channel is waiting for Hello message
+	at org.eclipse.tcf.core.AbstractChannel.sendCommand(AbstractChannel.java:874)
+	at org.eclipse.tcf.core.Command.<init>(Command.java:79)
+	... 6 more
+21:04:57 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+21:04:59 INFO  : XSDB server has started successfully.
+21:05:02 INFO  : Restoring local repository preferences: 
+		 C:\xapp1285\SW\sw_lib
+21:05:02 INFO  : Processing command line option -hwspec C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss.hdf.
+21:05:02 INFO  : Checking for hwspec changes in the project scaler_to_vpss_hw_platform_0.
+21:09:39 INFO  : Refreshed build settings on project hdmi_in_out
+22:51:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:51:35 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+22:51:37 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+22:51:45 INFO  : System reset is completed.
+22:51:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+22:51:52 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+22:51:52 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+22:51:52 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+22:51:56 INFO  : 'ps7_init' command is executed.
+22:51:56 INFO  : 'ps7_post_config' command is executed.
+22:51:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:51:59 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:51:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+22:51:59 INFO  : Memory regions updated for context APU
+22:51:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:51:59 INFO  : 'con' command is executed.
+22:51:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+22:53:51 INFO  : Disconnected from the channel tcfchan#1.
+22:53:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:53:51 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+22:53:52 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+22:53:57 INFO  : System reset is completed.
+22:54:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+22:54:03 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+22:54:03 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+22:54:04 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+22:54:16 INFO  : 'ps7_init' command is executed.
+22:54:16 INFO  : 'ps7_post_config' command is executed.
+22:54:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:54:17 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:54:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+22:54:18 INFO  : Memory regions updated for context APU
+22:54:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:54:19 INFO  : 'con' command is executed.
+22:54:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+23:47:44 INFO  : Disconnected from the channel tcfchan#2.
+23:47:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+23:47:48 INFO  : 'fpga -state' command is executed.
+23:47:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+23:47:49 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+23:47:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+23:47:49 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+23:47:50 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+23:47:50 INFO  : 'stop' command is executed.
+23:47:57 INFO  : 'ps7_init' command is executed.
+23:47:57 INFO  : 'ps7_post_config' command is executed.
+23:47:58 INFO  : 'con' command is executed.
+23:47:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:47:59 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+23:47:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:48:00 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+23:48:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+23:48:01 INFO  : Memory regions updated for context APU
+23:48:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+23:48:01 INFO  : 'con' command is executed.
+23:48:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+23:55:54 INFO  : Disconnected from the channel tcfchan#3.
+23:56:09 INFO  : ps7_init is completed.
+23:56:09 INFO  : ps7_post_config is completed.
+23:56:10 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:57:20 INFO  : Processor reset is completed for ps7_cortexa9_0
+00:03:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:03:56 INFO  : 'fpga -state' command is executed.
+00:03:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:03:57 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:03:57 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:03:57 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:03:58 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:03:58 INFO  : 'stop' command is executed.
+00:04:02 INFO  : 'ps7_init' command is executed.
+00:04:03 INFO  : 'ps7_post_config' command is executed.
+00:04:03 INFO  : 'con' command is executed.
+00:04:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:04:04 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+00:04:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:04:05 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:04:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+00:04:05 INFO  : Memory regions updated for context APU
+00:04:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:04:06 INFO  : 'con' command is executed.
+00:04:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:08:31 INFO  : Disconnected from the channel tcfchan#4.
+00:08:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:08:32 INFO  : 'fpga -state' command is executed.
+00:08:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:08:32 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:08:33 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:08:33 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:08:33 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:08:34 INFO  : 'stop' command is executed.
+00:09:01 INFO  : 'ps7_init' command is executed.
+00:09:02 INFO  : 'ps7_post_config' command is executed.
+00:09:02 INFO  : 'con' command is executed.
+00:09:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:09:04 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+00:09:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:09:07 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:09:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+00:09:07 INFO  : Memory regions updated for context APU
+00:09:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:09:08 INFO  : 'con' command is executed.
+00:09:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:11:10 INFO  : Disconnected from the channel tcfchan#5.
+00:11:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:11:12 INFO  : 'fpga -state' command is executed.
+00:11:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:11:12 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:11:12 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:11:13 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:11:13 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:11:13 INFO  : 'stop' command is executed.
+00:11:18 INFO  : 'ps7_init' command is executed.
+00:11:18 INFO  : 'ps7_post_config' command is executed.
+00:11:19 INFO  : 'con' command is executed.
+00:11:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:11:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+00:11:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:11:20 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:11:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+00:11:21 INFO  : Memory regions updated for context APU
+00:11:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:11:21 INFO  : 'con' command is executed.
+00:11:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:13:44 INFO  : Disconnected from the channel tcfchan#6.
+00:13:46 INFO  : Processor reset is completed for ps7_cortexa9_0
+00:15:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:15:31 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:15:32 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:15:36 INFO  : System reset is completed.
+00:15:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:15:42 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:15:42 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:15:42 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:15:45 INFO  : 'ps7_init' command is executed.
+00:15:45 INFO  : 'ps7_post_config' command is executed.
+00:15:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:15:47 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:15:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:15:47 INFO  : Memory regions updated for context APU
+00:15:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:15:47 INFO  : 'con' command is executed.
+00:15:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:16:22 INFO  : Disconnected from the channel tcfchan#7.
+00:16:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:16:22 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:16:23 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:16:27 INFO  : System reset is completed.
+00:16:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:16:33 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:16:34 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:16:34 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:16:35 INFO  : 'ps7_init' command is executed.
+00:16:35 INFO  : 'ps7_post_config' command is executed.
+00:16:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:16:37 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:16:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:16:37 INFO  : Memory regions updated for context APU
+00:16:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:16:37 INFO  : 'con' command is executed.
+00:16:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:17:16 INFO  : Disconnected from the channel tcfchan#8.
+00:17:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:17:17 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:17:17 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:17:22 INFO  : System reset is completed.
+00:17:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:17:28 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:17:28 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:17:28 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:17:31 INFO  : 'ps7_init' command is executed.
+00:17:31 INFO  : 'ps7_post_config' command is executed.
+00:17:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:17:32 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:17:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:17:33 INFO  : Memory regions updated for context APU
+00:17:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:17:34 INFO  : 'con' command is executed.
+00:17:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:18:40 INFO  : Disconnected from the channel tcfchan#9.
+00:18:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:18:40 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:18:41 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:18:45 INFO  : System reset is completed.
+00:18:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:18:51 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:18:51 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:18:51 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:18:56 INFO  : 'ps7_init' command is executed.
+00:18:56 INFO  : 'ps7_post_config' command is executed.
+00:18:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:18:58 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:18:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:18:58 INFO  : Memory regions updated for context APU
+00:18:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:18:58 INFO  : 'con' command is executed.
+00:18:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:20:02 INFO  : Disconnected from the channel tcfchan#10.
+00:20:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:20:02 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:20:02 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:20:07 INFO  : System reset is completed.
+00:20:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:20:14 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:20:14 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:20:14 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:20:16 INFO  : 'ps7_init' command is executed.
+00:20:17 INFO  : 'ps7_post_config' command is executed.
+00:20:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:20:18 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:20:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:20:19 INFO  : Memory regions updated for context APU
+00:20:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:20:19 INFO  : 'con' command is executed.
+00:20:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:21:34 INFO  : Disconnected from the channel tcfchan#11.
+00:21:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:21:34 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:21:35 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:21:38 INFO  : System reset is completed.
+00:21:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:21:44 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:21:44 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:21:45 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:21:46 INFO  : 'ps7_init' command is executed.
+00:21:46 INFO  : 'ps7_post_config' command is executed.
+00:21:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:21:48 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:21:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:21:48 INFO  : Memory regions updated for context APU
+00:21:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:21:49 INFO  : 'con' command is executed.
+00:21:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:22:37 INFO  : Disconnected from the channel tcfchan#12.
+00:22:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:22:38 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:22:38 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:22:43 INFO  : System reset is completed.
+00:22:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:22:49 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:22:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:22:50 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:22:53 INFO  : 'ps7_init' command is executed.
+00:22:53 INFO  : 'ps7_post_config' command is executed.
+00:22:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:22:54 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:22:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:22:55 INFO  : Memory regions updated for context APU
+00:22:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:22:55 INFO  : 'con' command is executed.
+00:22:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:26:45 INFO  : Disconnected from the channel tcfchan#13.
+00:26:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:26:45 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:26:46 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:26:50 INFO  : System reset is completed.
+00:26:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:26:56 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:26:56 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:26:56 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:27:00 INFO  : 'ps7_init' command is executed.
+00:27:00 INFO  : 'ps7_post_config' command is executed.
+00:27:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:27:02 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:27:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:27:02 INFO  : Memory regions updated for context APU
+00:27:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:27:02 INFO  : 'con' command is executed.
+00:27:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:27:35 INFO  : Disconnected from the channel tcfchan#14.
+00:27:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:27:35 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:27:35 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:27:40 INFO  : System reset is completed.
+00:27:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:27:46 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:27:47 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:27:47 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:27:48 INFO  : 'ps7_init' command is executed.
+00:27:49 INFO  : 'ps7_post_config' command is executed.
+00:27:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:27:50 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:27:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:27:50 INFO  : Memory regions updated for context APU
+00:27:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:27:51 INFO  : 'con' command is executed.
+00:27:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:30:19 INFO  : Disconnected from the channel tcfchan#15.
+00:30:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:30:19 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:30:20 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:30:24 INFO  : System reset is completed.
+00:30:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:30:30 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:30:31 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:30:31 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:30:34 INFO  : 'ps7_init' command is executed.
+00:30:34 INFO  : 'ps7_post_config' command is executed.
+00:30:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:30:35 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:30:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:30:35 INFO  : Memory regions updated for context APU
+00:30:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:30:36 INFO  : 'con' command is executed.
+00:30:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:36:01 INFO  : Disconnected from the channel tcfchan#16.
+00:36:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:36:02 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:36:02 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:36:06 INFO  : System reset is completed.
+00:36:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:36:12 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:36:13 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:36:13 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:36:15 INFO  : 'ps7_init' command is executed.
+00:36:15 INFO  : 'ps7_post_config' command is executed.
+00:36:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:36:16 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:36:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:36:16 INFO  : Memory regions updated for context APU
+00:36:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:36:16 INFO  : 'con' command is executed.
+00:36:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:39:21 INFO  : Disconnected from the channel tcfchan#17.
+00:39:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:39:21 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:39:22 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:39:25 INFO  : System reset is completed.
+00:39:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:39:32 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:39:32 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:39:32 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:39:34 INFO  : 'ps7_init' command is executed.
+00:39:35 INFO  : 'ps7_post_config' command is executed.
+00:39:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:39:36 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:39:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:39:36 INFO  : Memory regions updated for context APU
+00:39:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:39:37 INFO  : 'con' command is executed.
+00:39:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:41:15 INFO  : Disconnected from the channel tcfchan#18.
+00:41:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:41:17 INFO  : 'fpga -state' command is executed.
+00:41:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:41:18 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:41:18 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:41:18 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:41:18 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:41:19 INFO  : 'stop' command is executed.
+00:41:23 INFO  : 'ps7_init' command is executed.
+00:41:23 INFO  : 'ps7_post_config' command is executed.
+00:41:24 INFO  : 'con' command is executed.
+00:41:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:41:25 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+00:41:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:41:27 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:41:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+00:41:27 INFO  : Memory regions updated for context APU
+00:41:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:41:27 INFO  : 'con' command is executed.
+00:41:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:41:30 INFO  : Disconnected from the channel tcfchan#19.
+00:41:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:41:32 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:41:33 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:41:39 INFO  : System reset is completed.
+00:41:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:41:45 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:41:46 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:41:46 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:41:48 INFO  : 'ps7_init' command is executed.
+00:41:48 INFO  : 'ps7_post_config' command is executed.
+00:41:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:41:50 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:41:50 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:41:50 INFO  : Memory regions updated for context APU
+00:41:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:41:51 INFO  : 'con' command is executed.
+00:41:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:42:32 INFO  : Disconnected from the channel tcfchan#20.
+00:42:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:42:33 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:42:33 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:42:37 INFO  : System reset is completed.
+00:42:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:42:43 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:42:43 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:42:43 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:42:44 INFO  : 'ps7_init' command is executed.
+00:42:45 INFO  : 'ps7_post_config' command is executed.
+00:42:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:42:46 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:42:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:42:46 INFO  : Memory regions updated for context APU
+00:42:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:42:46 INFO  : 'con' command is executed.
+00:42:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:43:24 INFO  : Disconnected from the channel tcfchan#21.
+00:43:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:43:25 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:43:25 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:43:29 INFO  : System reset is completed.
+00:43:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:43:35 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:43:36 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:43:36 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:43:39 INFO  : 'ps7_init' command is executed.
+00:43:39 INFO  : 'ps7_post_config' command is executed.
+00:43:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:43:40 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:43:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:43:40 INFO  : Memory regions updated for context APU
+00:43:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:43:41 INFO  : 'con' command is executed.
+00:43:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:44:52 INFO  : Disconnected from the channel tcfchan#22.
+00:44:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:44:53 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:44:54 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:44:58 INFO  : System reset is completed.
+00:45:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:45:04 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:45:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:45:05 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:45:08 INFO  : 'ps7_init' command is executed.
+00:45:08 INFO  : 'ps7_post_config' command is executed.
+00:45:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:45:10 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:45:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:45:10 INFO  : Memory regions updated for context APU
+00:45:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:45:10 INFO  : 'con' command is executed.
+00:45:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:46:10 INFO  : Disconnected from the channel tcfchan#23.
+00:46:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:46:10 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:46:11 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:46:15 INFO  : System reset is completed.
+00:46:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:46:21 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:46:22 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:46:22 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:46:24 INFO  : 'ps7_init' command is executed.
+00:46:24 INFO  : 'ps7_post_config' command is executed.
+00:46:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:46:26 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:46:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:46:26 INFO  : Memory regions updated for context APU
+00:46:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:46:26 INFO  : 'con' command is executed.
+00:46:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:47:54 INFO  : Disconnected from the channel tcfchan#24.
+00:47:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:47:55 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:47:55 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:47:59 INFO  : System reset is completed.
+00:48:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:48:05 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:48:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:48:05 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:48:06 INFO  : 'ps7_init' command is executed.
+00:48:07 INFO  : 'ps7_post_config' command is executed.
+00:48:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:48:08 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:48:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:48:08 INFO  : Memory regions updated for context APU
+00:48:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:48:09 INFO  : 'con' command is executed.
+00:48:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:48:54 INFO  : Disconnected from the channel tcfchan#25.
+00:48:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:48:54 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:48:55 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:48:58 INFO  : System reset is completed.
+00:49:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:49:04 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:49:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:49:05 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:49:07 INFO  : 'ps7_init' command is executed.
+00:49:08 INFO  : 'ps7_post_config' command is executed.
+00:49:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:49:09 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:49:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:49:09 INFO  : Memory regions updated for context APU
+00:49:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:49:09 INFO  : 'con' command is executed.
+00:49:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:51:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:51:19 INFO  : 'fpga -state' command is executed.
+00:51:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:51:20 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:51:20 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:51:20 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:51:21 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:51:21 INFO  : 'stop' command is executed.
+00:51:29 INFO  : 'ps7_init' command is executed.
+00:51:29 INFO  : 'ps7_post_config' command is executed.
+00:51:29 INFO  : 'con' command is executed.
+00:51:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:51:30 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+00:51:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:51:31 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:51:31 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:51:31 INFO  : Memory regions updated for context APU
+00:51:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:51:32 INFO  : 'con' command is executed.
+00:51:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:51:33 INFO  : Apm configuration has been updated and stored to 'C:\xapp1285\HW\proj\scaler_to_vpss_v1_0\scaler_to_vpss_v1_0.sdk\scaler_to_vpss_hw_platform_0\apmconfigs\apm_default.json' for the project 'scaler_to_vpss_hw_platform_0'
+00:51:33 INFO  : Performance data for 'PS' will be exported to the file 'C:\xapp1285\HW\proj\scaler_to_vpss_v1_0\scaler_to_vpss_v1_0.sdk\scaler_to_vpss_hw_platform_0_Traces\Traces\Run_Feb-12_00-51\PS_Trace_Feb-12_00-51\trace'
+00:51:33 INFO  : Created tracing project 'scaler_to_vpss_hw_platform_0_Traces'
+00:51:33 INFO  : Added tracing folder 'C:\xapp1285\HW\proj\scaler_to_vpss_v1_0\scaler_to_vpss_v1_0.sdk\scaler_to_vpss_hw_platform_0_Traces\Traces\Run_Feb-12_00-51\PS_Trace_Feb-12_00-51' into  'scaler_to_vpss_hw_platform_0_Traces'
+00:51:34 INFO  : Attempting to open tracing file 'PS_Trace_Feb-12_00-51'
+00:51:49 INFO  : Disconnected from the channel tcfchan#26.
+00:51:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:51:50 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:51:52 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:51:55 INFO  : System reset is completed.
+00:51:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:52:02 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:52:02 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:52:02 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:52:12 INFO  : 'ps7_init' command is executed.
+00:52:12 INFO  : 'ps7_post_config' command is executed.
+00:52:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:52:13 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:52:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:52:14 INFO  : Memory regions updated for context APU
+00:52:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:52:15 INFO  : 'con' command is executed.
+00:52:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:52:34 INFO  : Disconnected from the channel tcfchan#27.
+00:52:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:52:34 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:52:35 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:52:39 INFO  : System reset is completed.
+00:52:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:52:45 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:52:46 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:52:46 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:52:49 INFO  : 'ps7_init' command is executed.
+00:52:49 INFO  : 'ps7_post_config' command is executed.
+00:52:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:52:52 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:52:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:52:52 INFO  : Memory regions updated for context APU
+00:52:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:52:53 INFO  : 'con' command is executed.
+00:52:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:53:08 INFO  : Performance data for 'PS' has been exported to the file 'C:\xapp1285\HW\proj\scaler_to_vpss_v1_0\scaler_to_vpss_v1_0.sdk\scaler_to_vpss_hw_platform_0_Traces\Traces\Run_Feb-12_00-51\PS_Trace_Feb-12_00-51\trace'
+00:53:08 WARN  : Unexpected exception occurred.
+java.lang.Exception: java.lang.Error: Channel is waiting for Hello message
+	at org.eclipse.tcf.core.Command.<init>(Command.java:83)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager$8.<init>(XSDBCommandManager.java:384)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager.issueTcfCmd(XSDBCommandManager.java:384)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager.access$4(XSDBCommandManager.java:381)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager$7.run(XSDBCommandManager.java:376)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.Error: Channel is waiting for Hello message
+	at org.eclipse.tcf.core.AbstractChannel.sendCommand(AbstractChannel.java:874)
+	at org.eclipse.tcf.core.Command.<init>(Command.java:79)
+	... 6 more
+00:53:09 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+00:53:10 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+00:53:27 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+00:53:29 INFO  : XSDB server has started successfully.
+00:53:32 INFO  : Restoring local repository preferences: 
+		 C:\xapp1285\SW\sw_lib
+00:53:32 INFO  : Processing command line option -hwspec C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss.hdf.
+00:53:32 INFO  : Checking for hwspec changes in the project scaler_to_vpss_hw_platform_0.
+00:53:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:53:51 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:53:52 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:53:57 INFO  : System reset is completed.
+00:54:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:54:04 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:54:04 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:54:05 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:54:12 INFO  : 'ps7_init' command is executed.
+00:54:12 INFO  : 'ps7_post_config' command is executed.
+00:54:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:54:15 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:54:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:54:16 INFO  : Memory regions updated for context APU
+00:54:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:54:17 INFO  : 'con' command is executed.
+00:54:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:56:10 ERROR : Timed out. 180 seconds have elapsed while waiting for XSDB server to launch.
+00:56:10 WARN  : Unexpected exception occurred.
+java.lang.Exception: java.lang.Error: Channel is waiting for Hello message
+	at org.eclipse.tcf.core.Command.<init>(Command.java:83)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager$8.<init>(XSDBCommandManager.java:384)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager.issueTcfCmd(XSDBCommandManager.java:384)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager.access$4(XSDBCommandManager.java:381)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager$7.run(XSDBCommandManager.java:376)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.Error: Channel is waiting for Hello message
+	at org.eclipse.tcf.core.AbstractChannel.sendCommand(AbstractChannel.java:874)
+	at org.eclipse.tcf.core.Command.<init>(Command.java:79)
+	... 6 more
+00:56:20 INFO  : Disconnected from the channel tcfchan#1.
+00:56:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:56:21 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:56:22 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:56:26 INFO  : System reset is completed.
+00:56:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:56:32 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:56:32 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:56:33 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:56:40 INFO  : 'ps7_init' command is executed.
+00:56:40 INFO  : 'ps7_post_config' command is executed.
+00:56:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:56:41 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:56:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:56:41 INFO  : Memory regions updated for context APU
+00:56:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:56:41 INFO  : 'con' command is executed.
+00:56:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+00:57:50 INFO  : Disconnected from the channel tcfchan#2.
+00:57:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+00:57:51 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+00:57:52 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:57:57 INFO  : System reset is completed.
+00:58:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+00:58:04 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+00:58:04 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+00:58:05 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+00:58:07 INFO  : 'ps7_init' command is executed.
+00:58:08 INFO  : 'ps7_post_config' command is executed.
+00:58:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:58:10 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+00:58:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+00:58:10 INFO  : Memory regions updated for context APU
+00:58:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+00:58:11 INFO  : 'con' command is executed.
+00:58:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:00:08 INFO  : Disconnected from the channel tcfchan#3.
+01:00:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:00:08 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:00:09 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:00:14 INFO  : System reset is completed.
+01:00:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:00:20 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:00:20 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:00:20 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:00:27 INFO  : 'ps7_init' command is executed.
+01:00:27 INFO  : 'ps7_post_config' command is executed.
+01:00:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:00:29 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:00:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:00:29 INFO  : Memory regions updated for context APU
+01:00:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:00:31 INFO  : 'con' command is executed.
+01:00:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:02:35 INFO  : Disconnected from the channel tcfchan#4.
+01:02:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:02:36 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:02:37 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:02:41 INFO  : System reset is completed.
+01:02:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:02:49 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:02:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:02:49 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:02:59 INFO  : 'ps7_init' command is executed.
+01:03:00 INFO  : 'ps7_post_config' command is executed.
+01:03:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:03:03 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:03:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:03:03 INFO  : Memory regions updated for context APU
+01:03:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:03:05 INFO  : 'con' command is executed.
+01:03:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:04:35 INFO  : Disconnected from the channel tcfchan#5.
+01:04:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:04:36 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:04:37 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:04:42 INFO  : System reset is completed.
+01:04:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:04:48 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:04:48 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:04:48 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:04:49 INFO  : 'ps7_init' command is executed.
+01:04:51 INFO  : 'ps7_post_config' command is executed.
+01:04:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:04:53 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:04:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:04:54 INFO  : Memory regions updated for context APU
+01:04:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:04:55 INFO  : 'con' command is executed.
+01:04:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:05:27 INFO  : Disconnected from the channel tcfchan#6.
+01:05:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:05:27 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:05:28 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:05:33 INFO  : System reset is completed.
+01:05:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:05:40 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:05:41 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:05:41 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:05:47 INFO  : 'ps7_init' command is executed.
+01:05:47 INFO  : 'ps7_post_config' command is executed.
+01:05:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:05:49 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:05:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:05:49 INFO  : Memory regions updated for context APU
+01:05:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:05:49 INFO  : 'con' command is executed.
+01:05:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:06:53 INFO  : Disconnected from the channel tcfchan#7.
+01:06:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:06:54 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:06:55 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:07:00 INFO  : System reset is completed.
+01:07:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:07:06 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:07:06 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:07:07 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:07:10 INFO  : 'ps7_init' command is executed.
+01:07:10 INFO  : 'ps7_post_config' command is executed.
+01:07:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:07:11 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:07:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:07:12 INFO  : Memory regions updated for context APU
+01:07:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:07:13 INFO  : 'con' command is executed.
+01:07:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:08:41 INFO  : Disconnected from the channel tcfchan#8.
+01:08:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:08:42 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:08:43 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:08:47 INFO  : System reset is completed.
+01:08:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:08:53 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:08:54 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:08:54 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:08:56 INFO  : 'ps7_init' command is executed.
+01:08:57 INFO  : 'ps7_post_config' command is executed.
+01:08:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:08:58 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:08:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:08:58 INFO  : Memory regions updated for context APU
+01:08:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:08:59 INFO  : 'con' command is executed.
+01:08:59 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:10:22 INFO  : Disconnected from the channel tcfchan#9.
+01:10:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:10:22 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:10:23 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:10:27 INFO  : System reset is completed.
+01:10:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:10:34 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:10:35 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:10:35 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:10:43 INFO  : 'ps7_init' command is executed.
+01:10:43 INFO  : 'ps7_post_config' command is executed.
+01:10:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:10:44 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:10:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:10:44 INFO  : Memory regions updated for context APU
+01:10:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:10:45 INFO  : 'con' command is executed.
+01:10:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:11:09 INFO  : Disconnected from the channel tcfchan#10.
+01:11:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:11:10 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:11:10 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:11:14 INFO  : System reset is completed.
+01:11:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:11:21 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:11:22 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:11:22 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:11:23 INFO  : 'ps7_init' command is executed.
+01:11:23 INFO  : 'ps7_post_config' command is executed.
+01:11:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:11:24 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:11:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:11:26 INFO  : Memory regions updated for context APU
+01:11:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:11:26 INFO  : 'con' command is executed.
+01:11:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:17:49 INFO  : Disconnected from the channel tcfchan#11.
+01:17:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:17:51 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:17:51 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:17:55 INFO  : System reset is completed.
+01:17:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:18:03 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:18:04 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:18:04 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:18:08 INFO  : 'ps7_init' command is executed.
+01:18:08 INFO  : 'ps7_post_config' command is executed.
+01:18:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:18:09 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:18:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:18:09 INFO  : Memory regions updated for context APU
+01:18:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:18:11 INFO  : 'con' command is executed.
+01:18:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:21:42 INFO  : Disconnected from the channel tcfchan#12.
+01:21:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:21:43 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:21:43 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:21:49 INFO  : System reset is completed.
+01:21:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:21:56 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:21:57 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:21:57 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:22:05 INFO  : 'ps7_init' command is executed.
+01:22:06 INFO  : 'ps7_post_config' command is executed.
+01:22:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:22:08 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:22:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:22:10 INFO  : Memory regions updated for context APU
+01:22:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:22:10 INFO  : 'con' command is executed.
+01:22:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:24:01 INFO  : Disconnected from the channel tcfchan#13.
+01:24:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:24:01 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:24:02 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:24:07 INFO  : System reset is completed.
+01:24:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:24:13 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:24:13 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:24:14 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:24:17 INFO  : 'ps7_init' command is executed.
+01:24:17 INFO  : 'ps7_post_config' command is executed.
+01:24:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:24:20 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:24:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:24:20 INFO  : Memory regions updated for context APU
+01:24:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:24:20 INFO  : 'con' command is executed.
+01:24:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:26:03 INFO  : Disconnected from the channel tcfchan#14.
+01:26:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:26:04 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:26:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:26:09 INFO  : System reset is completed.
+01:26:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:26:15 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:26:15 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:26:15 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:26:22 INFO  : 'ps7_init' command is executed.
+01:26:22 INFO  : 'ps7_post_config' command is executed.
+01:26:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:26:23 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:26:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:26:24 INFO  : Memory regions updated for context APU
+01:26:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:26:25 INFO  : 'con' command is executed.
+01:26:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:29:31 INFO  : Disconnected from the channel tcfchan#15.
+01:29:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:29:32 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:29:33 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:29:38 INFO  : System reset is completed.
+01:29:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:29:43 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:29:44 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:29:44 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:29:47 INFO  : 'ps7_init' command is executed.
+01:29:47 INFO  : 'ps7_post_config' command is executed.
+01:29:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:29:48 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:29:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:29:49 INFO  : Memory regions updated for context APU
+01:29:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:29:50 INFO  : 'con' command is executed.
+01:29:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:37:38 INFO  : Disconnected from the channel tcfchan#16.
+01:37:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:37:39 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:37:40 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:37:44 INFO  : System reset is completed.
+01:37:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:37:50 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:37:50 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:37:50 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:37:55 INFO  : 'ps7_init' command is executed.
+01:37:55 INFO  : 'ps7_post_config' command is executed.
+01:37:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:37:57 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:37:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:37:57 INFO  : Memory regions updated for context APU
+01:37:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:37:58 INFO  : 'con' command is executed.
+01:37:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:45:22 INFO  : Disconnected from the channel tcfchan#17.
+01:45:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:45:24 INFO  : 'fpga -state' command is executed.
+01:45:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:45:24 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:45:25 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:45:25 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:45:25 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:45:25 INFO  : 'stop' command is executed.
+01:45:30 INFO  : 'ps7_init' command is executed.
+01:45:30 INFO  : 'ps7_post_config' command is executed.
+01:45:31 INFO  : 'con' command is executed.
+01:45:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:45:32 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:45:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:45:34 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:45:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+01:45:34 INFO  : Memory regions updated for context APU
+01:45:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:45:35 INFO  : 'con' command is executed.
+01:45:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:46:14 INFO  : Disconnected from the channel tcfchan#18.
+01:46:23 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doSystemReset(TM.java:988)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:469)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:616)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+01:46:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:46:34 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:46:35 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:46:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:46:40 INFO  : System reset is completed.
+01:46:40 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:46:41 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:46:45 INFO  : System reset is completed.
+01:46:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:46:49 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:46:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:46:54 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:46:54 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:46:54 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:46:54 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:46:54 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:47:04 INFO  : 'ps7_init' command is executed.
+01:47:07 INFO  : 'ps7_post_config' command is executed.
+01:47:07 INFO  : 'ps7_init' command is executed.
+01:47:08 INFO  : 'ps7_post_config' command is executed.
+01:47:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:47:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:47:11 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:47:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+01:47:13 INFO  : Memory regions updated for context APU
+01:47:13 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:47:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/vpss_scaler/Debug/vpss_scaler.elf
+----------------End of Script----------------
+
+01:47:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:47:16 INFO  : 'con' command is executed.
+01:47:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:47:17 INFO  : Memory regions updated for context APU
+01:47:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:47:17 ERROR : Already running
+01:47:36 INFO  : Disconnected from the channel tcfchan#19.
+01:47:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:47:36 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:47:38 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:47:43 INFO  : System reset is completed.
+01:47:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:47:50 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:47:51 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:47:51 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:48:03 INFO  : 'ps7_init' command is executed.
+01:48:03 INFO  : 'ps7_post_config' command is executed.
+01:48:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:48:05 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:48:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+01:48:06 INFO  : Memory regions updated for context APU
+01:48:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:48:06 INFO  : 'con' command is executed.
+01:48:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:48:57 INFO  : Disconnected from the channel tcfchan#20.
+01:48:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:48:58 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:49:00 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:49:05 INFO  : System reset is completed.
+01:49:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:49:12 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:49:12 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:49:12 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:49:19 INFO  : 'ps7_init' command is executed.
+01:49:19 INFO  : 'ps7_post_config' command is executed.
+01:49:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:49:20 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:49:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+01:49:21 INFO  : Memory regions updated for context APU
+01:49:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:49:22 INFO  : 'con' command is executed.
+01:49:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:49:47 INFO  : Disconnected from the channel tcfchan#21.
+01:49:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:49:47 INFO  : Sourcing of 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+01:49:49 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:49:54 INFO  : System reset is completed.
+01:49:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+01:50:01 INFO  : FPGA configured successfully with bitstream "C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+01:50:01 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+01:50:01 INFO  : Hardware design information is loaded from 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+01:50:10 INFO  : 'ps7_init' command is executed.
+01:50:11 INFO  : 'ps7_post_config' command is executed.
+01:50:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:50:13 INFO  : The application 'C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:50:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+01:50:13 INFO  : Memory regions updated for context APU
+01:50:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:50:13 INFO  : 'con' command is executed.
+01:50:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+01:50:33 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+01:50:33 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+01:53:34 ERROR : Timed out. 180 seconds have elapsed while waiting for XSDB server to launch.
+01:53:34 WARN  : Unexpected exception occurred.
+java.lang.Exception: java.lang.Error: Channel is waiting for Hello message
+	at org.eclipse.tcf.core.Command.<init>(Command.java:83)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager$8.<init>(XSDBCommandManager.java:384)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager.issueTcfCmd(XSDBCommandManager.java:384)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager.access$4(XSDBCommandManager.java:381)
+	at com.xilinx.sdk.xsdb.XSDBCommandManager$7.run(XSDBCommandManager.java:376)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.Error: Channel is waiting for Hello message
+	at org.eclipse.tcf.core.AbstractChannel.sendCommand(AbstractChannel.java:874)
+	at org.eclipse.tcf.core.Command.<init>(Command.java:79)
+	... 6 more
+22:17:09 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+22:17:11 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+22:17:12 INFO  : XSDB server has started successfully.
+22:17:12 INFO  : XSDB server has started successfully.
+22:17:16 INFO  : Restoring local repository preferences: 
+		 C:\xapp1285\SW\sw_lib
+22:17:18 INFO  : Processing command line option -hwspec C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss.hdf.
+22:17:20 INFO  : Checking for hwspec changes in the project scaler_to_vpss_hw_platform_0.

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# 
+# Start of session at: Sun Feb 12 00:53:08 2017
+# Process ID: 4068
+# Current directory: C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/webtalk/webtalk.log
+# Journal file: C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

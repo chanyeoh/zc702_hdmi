@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>scaler_to_vpss_hw_platform_0_Traces</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.linuxtools.tmf.project.nature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Traces/Run_Feb-12_00-51/PS_Trace_Feb-12_00-51/PS_Trace_Feb-12_00-51_</name>
+			<type>1</type>
+			<location>C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0_Traces/Traces/.bookmarks</location>
+		</link>
+	</linkedResources>
+</projectDescription>

@@ -1,0 +1,47 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port S_AXI_HP1 -pg 1 -y 610 -defaultsOSRD
+preplace port DDR -pg 1 -y 550 -defaultsOSRD
+preplace port M_AXI_VTD -pg 1 -y 310 -defaultsOSRD
+preplace port M_AXI_VTG -pg 1 -y 250 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 570 -defaultsOSRD
+preplace port clk200 -pg 1 -y 740 -defaultsOSRD
+preplace port M_AXI_SCALER_NEW -pg 1 -y 350 -defaultsOSRD
+preplace port FMC_IMAGEON_IIC -pg 1 -y 40 -defaultsOSRD
+preplace port vid_clk -pg 1 -y 710 -defaultsOSRD
+preplace port M_AXI_VDMA_NEW -pg 1 -y 330 -defaultsOSRD
+preplace port ctrl_clk -pg 1 -y 590 -defaultsOSRD
+preplace portBus ctrl_peripheral_resetn -pg 1 -y 490 -defaultsOSRD
+preplace portBus vid_interconnect_resetn -pg 1 -y 450 -defaultsOSRD
+preplace portBus FMC_IMAGEON_IIC_RST -pg 1 -y 80 -defaultsOSRD
+preplace portBus vid_peripheral_resetn -pg 1 -y 470 -defaultsOSRD
+preplace portBus interconnect_resetn_200 -pg 1 -y 1080 -defaultsOSRD
+preplace inst axi_iic_0 -pg 1 -lvl 3 -y 60 -defaultsOSRD
+preplace inst rst_gen -pg 1 -lvl 2 -y 722 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 2 -y 250 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 3 -y 660 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 3 2 NJ 550 NJ
+preplace netloc rst_gen_interconnect_aresetn 1 2 3 NJ 850 NJ 850 NJ
+preplace netloc proc_sys_rst_ctrl_peripheral_aresetn 1 2 3 400 490 NJ 490 NJ
+preplace netloc S_AXI_HP1_1 1 0 3 NJ 600 NJ 600 NJ
+preplace netloc axi_interconnect_0_M02_AXI 1 2 3 N 250 NJ 250 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 3 NJ 830 NJ 830 860
+preplace netloc proc_sys_rst_vid_peripheral_aresetn 1 2 3 NJ 470 NJ 470 NJ
+preplace netloc axi_interconnect_0_M04_AXI 1 2 3 N 290 NJ 290 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 3 2 NJ 570 NJ
+preplace netloc S00_AXI_1 1 1 3 NJ 450 NJ 450 860
+preplace netloc proc_sys_rst_vid_interconnect_aresetn 1 2 3 NJ 460 NJ 450 NJ
+preplace netloc axi_iic_0_IIC 1 3 2 NJ 40 NJ
+preplace netloc axi_interconnect_0_M00_AXI 1 2 1 380
+preplace netloc axi_iic_0_gpo 1 3 2 NJ 80 NJ
+preplace netloc axi_interconnect_0_M01_AXI 1 2 3 N 230 NJ 230 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 4 60 50 430 810 880 590 NJ
+preplace netloc proc_sys_rst_ctrl_interconnect_aresetn 1 1 2 80 460 380
+preplace netloc axi_interconnect_0_M06_AXI 1 2 3 N 270 NJ 270 NJ
+preplace netloc processing_system7_0_FCLK_CLK1 1 1 4 80 840 NJ 840 890 710 NJ
+preplace netloc processing_system7_0_FCLK_CLK2 1 1 4 80 620 390 820 870 740 NJ
+levelinfo -pg 1 0 40 230 650 1060 1250 -top -40 -bot 1220
+",
+}
+0

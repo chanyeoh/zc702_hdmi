@@ -1,0 +1,21 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.8
+#  -string -flagsOSRD
+preplace port s_axi_CTRL -pg 1 -y 40 -defaultsOSRD
+preplace port ap_clk -pg 1 -y 110 -defaultsOSRD
+preplace port m_axis_video -pg 1 -y 60 -defaultsOSRD
+preplace port S_AXIS -pg 1 -y 90 -defaultsOSRD
+preplace portBus ap_rst_n -pg 1 -y 10 -defaultsOSRD
+preplace inst tpg_old -pg 1 -lvl 2 -y 70 -defaultsOSRD
+preplace inst axis_subset_converter_1 -pg 1 -lvl 1 -y 110 -defaultsOSRD
+preplace inst axis_subset_converter_2 -pg 1 -lvl 1 -y 260 -defaultsOSRD
+preplace netloc axis_subset_converter_1_M_AXIS 1 1 1 320
+preplace netloc s_axi_CTRL_3 1 0 2 NJ 40 NJ
+preplace netloc tpg_old_m_axis_video 1 0 3 30 180 NJ 180 640
+preplace netloc hdmi_in_video_out_old 1 0 1 NJ
+preplace netloc axis_subset_converter_2_M_AXIS 1 1 2 NJ -10 650
+preplace netloc v_proc_ss_0_aresetn_io_axis 1 0 2 10 10 NJ
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 2 20 30 NJ
+levelinfo -pg 1 -10 160 480 670 -top -20 -bot 330
+",
+}

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1486657223">
+  <File Type="OPT-DCP" Name="scaler_to_vpss_opt.dcp"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="ROUTE-DCP" Name="scaler_to_vpss_routed.dcp"/>
+  <File Type="PA-TCL" Name="scaler_to_vpss.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="OPT-DRC" Name="scaler_to_vpss_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="scaler_to_vpss_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="scaler_to_vpss_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="scaler_to_vpss.hwdef"/>
+  <File Type="PWROPT-DCP" Name="scaler_to_vpss_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="scaler_to_vpss_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="scaler_to_vpss_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="scaler_to_vpss_placed.dcp"/>
+  <File Type="PLACE-IO" Name="scaler_to_vpss_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="scaler_to_vpss_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="scaler_to_vpss_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="scaler_to_vpss_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="scaler_to_vpss_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="scaler_to_vpss_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="scaler_to_vpss_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="scaler_to_vpss_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="scaler_to_vpss_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="scaler_to_vpss_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="scaler_to_vpss_physopt.dcp"/>
+  <File Type="RDI-RDI" Name="scaler_to_vpss.vdi"/>
+  <File Type="PHYSOPT-DRC" Name="scaler_to_vpss_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="scaler_to_vpss_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-DRC" Name="scaler_to_vpss_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="scaler_to_vpss_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="scaler_to_vpss_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="scaler_to_vpss_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="scaler_to_vpss_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="scaler_to_vpss_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="scaler_to_vpss_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="scaler_to_vpss_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="scaler_to_vpss_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="scaler_to_vpss_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="scaler_to_vpss_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="scaler_to_vpss_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="scaler_to_vpss_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="scaler_to_vpss_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="scaler_to_vpss_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="scaler_to_vpss.bit"/>
+  <File Type="BG-BIN" Name="scaler_to_vpss.bin"/>
+  <File Type="BITSTR-MSK" Name="scaler_to_vpss.msk"/>
+  <File Type="BITSTR-RBT" Name="scaler_to_vpss.rbt"/>
+  <File Type="BITSTR-NKY" Name="scaler_to_vpss.nky"/>
+  <File Type="BITSTR-BMM" Name="scaler_to_vpss_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="scaler_to_vpss.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="scaler_to_vpss.sysdef"/>
+  <File Type="BG-BGN" Name="scaler_to_vpss.bgn"/>
+  <File Type="BG-DRC" Name="scaler_to_vpss.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/design_1_wrapper.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v"/>
+        <Attr Name="ImportTime" Val="1486654698"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/scaler_to_vpss.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../rtl/design_1_scaler_old_0.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="scaler_to_vpss"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../xdc/scaler_to_vpss_phys.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../xdc/scaler_to_vpss_timing.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../xdc/scaler_to_vpss_phys.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Performance_ExplorePostRoutePhysOpt" Flow="Vivado Implementation 2015">
+      <Desc>Similar to Peformance_Explore, but enables the physical optimization step (phys_opt_design) with the Explore directive after routing.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design">
+      <Option Id="Directive">0</Option>
+    </Step>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design">
+      <Option Id="Directive">0</Option>
+    </Step>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="1">
+      <Option Id="Directive">2</Option>
+    </Step>
+    <Step Id="route_design">
+      <Option Id="MoreOptsStr"><![CDATA[-tns_cleanup]]></Option>
+      <Option Id="Directive">0</Option>
+    </Step>
+    <Step Id="post_route_phys_opt_design" EnableStepBool="1">
+      <Option Id="Directive">1</Option>
+    </Step>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

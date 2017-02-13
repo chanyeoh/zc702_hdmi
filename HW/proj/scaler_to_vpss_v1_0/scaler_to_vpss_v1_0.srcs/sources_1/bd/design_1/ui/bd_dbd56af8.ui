@@ -1,0 +1,30 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.8
+#  -string -flagsOSRD
+preplace port S_AXI_LITE_VDMA -pg 1 -y 70 -defaultsOSRD
+preplace port S_AXIS_VDMA -pg 1 -y 90 -defaultsOSRD
+preplace port M_AXIS_VDMA -pg 1 -y 120 -defaultsOSRD
+preplace port clk200 -pg 1 -y 230 -defaultsOSRD
+preplace port vid_clk -pg 1 -y 130 -defaultsOSRD
+preplace port M_AXI_VDMA -pg 1 -y 270 -defaultsOSRD
+preplace port ctrl_clk -pg 1 -y 110 -defaultsOSRD
+preplace portBus ctrl_resetn -pg 1 -y 210 -defaultsOSRD
+preplace portBus vid_interconnect_resetn -pg 1 -y 20 -defaultsOSRD
+preplace portBus interconnect_resetn_200 -pg 1 -y 270 -defaultsOSRD
+preplace inst axi_vdma_new -pg 1 -lvl 1 -y 140 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 2 -y 270 -defaultsOSRD
+preplace netloc proc_sys_rst_ctrl_peripheral_aresetn 1 0 1 NJ
+preplace netloc axi_vdma_0_M_AXIS_MM2S 1 1 2 NJ 120 NJ
+preplace netloc ARESETN_1 1 0 2 NJ 270 NJ
+preplace netloc m_axi_mm2s_aclk_1 1 0 2 10 260 350
+preplace netloc v_scaler_0_video_out 1 0 1 NJ
+preplace netloc S01_AXI_1 1 1 1 350
+preplace netloc S00_AXI_2 1 1 1 360
+preplace netloc vid_interconnect_resetn_1 1 0 2 NJ 360 N
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 1 NJ
+preplace netloc axi_interconnect_1_M00_AXI 1 2 1 NJ
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 2 -10 340 N
+preplace netloc axi_interconnect_0_M03_AXI 1 0 1 NJ
+levelinfo -pg 1 -30 180 630 800 -top 0 -bot 420
+",
+}

@@ -1,0 +1,40 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port vid_from_output_mux -pg 1 -y 40 -defaultsOSRD
+preplace port vid_out_clk -pg 1 -y 20 -defaultsOSRD
+preplace port S_AXI_VTG -pg 1 -y 120 -defaultsOSRD
+preplace port clk200 -pg 1 -y 80 -defaultsOSRD
+preplace port vid_old_to_output_mux -pg 1 -y 240 -defaultsOSRD
+preplace port vid_new_to_output_mux -pg 1 -y 540 -defaultsOSRD
+preplace port io_hdmio -pg 1 -y 140 -defaultsOSRD
+preplace port video_in_new -pg 1 -y 390 -defaultsOSRD
+preplace port ctrl_clk -pg 1 -y 180 -defaultsOSRD
+preplace port audio_spdif -pg 1 -y 340 -defaultsOSRD
+preplace portBus ctrl_resetn -pg 1 -y 160 -defaultsOSRD
+preplace inst vtg -pg 1 -lvl 1 -y 200 -defaultsOSRD
+preplace inst v_axi4s_vid_out_1 -pg 1 -lvl 1 -y 520 -defaultsOSRD
+preplace inst fmc_imageon_hdmi_out_0 -pg 1 -lvl 3 -y 180 -defaultsOSRD
+preplace inst net_gnd -pg 1 -lvl 2 -y 490 -defaultsOSRD
+preplace inst net_vcc -pg 1 -lvl 3 -y 390 -defaultsOSRD
+preplace netloc Conn1 1 3 1 890
+preplace netloc Conn2 1 0 1 NJ
+preplace netloc vtg_hsync_out 1 0 2 -80 40 240
+preplace netloc s_axi_aclk_1 1 0 1 NJ
+preplace netloc s_axi_aresetn_1 1 0 1 NJ
+preplace netloc Conn4 1 1 3 NJ 440 NJ 440 NJ
+preplace netloc vid_io_out_reset_1 1 0 3 -120 10 N 10 520
+preplace netloc Conn5 1 0 1 N
+preplace netloc audio_spdif_1 1 0 3 NJ 340 NJ 340 NJ
+preplace netloc Conn7 1 0 3 NJ -20 NJ -20 NJ
+preplace netloc vtg_active_video_out 1 0 2 -100 20 260
+preplace netloc vtg_hblank_out 1 0 2 -90 30 250
+preplace netloc clk_1 1 0 3 -140 -10 N -10 NJ
+preplace netloc net_vcc_dout 1 0 4 -130 0 N 0 530 320 890
+preplace netloc vtg_vblank_out 1 0 2 -70 70 230
+preplace netloc aclk_1 1 0 1 NJ
+preplace netloc vtg_vsync_out 1 0 2 -110 50 270
+levelinfo -pg 1 -180 100 460 760 920 -top -30 -bot 700
+",
+}
+0

@@ -1,0 +1,169 @@
+13:43:46 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+13:43:48 INFO  : XSDB server has started successfully.
+13:43:50 INFO  : Processing command line option -hwspec C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss.hdf.
+13:46:59 INFO  : Saving repository preferences.
+13:46:59 INFO  : Reading in cores from local repositories: 
+		 C:\xapp1285\SW\sw_lib
+13:46:59 INFO  : Cleaning BSP projects in the workspace.
+13:47:38 INFO  : Refreshed build settings on project hdmi_in_out
+13:52:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:52:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+13:52:47 INFO  : FPGA configured successfully with bitstream "C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+13:53:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+13:53:04 INFO  : 'fpga -state' command is executed.
+13:53:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:53:04 INFO  : Sourcing of 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+13:53:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+13:53:05 INFO  : Hardware design information is loaded from 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+13:53:05 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+13:53:06 INFO  : 'stop' command is executed.
+13:53:09 INFO  : 'ps7_init' command is executed.
+13:53:09 INFO  : 'ps7_post_config' command is executed.
+13:53:09 INFO  : 'con' command is executed.
+13:53:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:53:10 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:53:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:53:11 INFO  : The application 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:53:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+stop
+ps7_init
+ps7_post_config
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+13:53:11 INFO  : Memory regions updated for context APU
+13:53:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:53:11 INFO  : 'con' command is executed.
+13:53:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+13:53:39 INFO  : Disconnected from the channel tcfchan#1.
+13:53:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:53:39 INFO  : Sourcing of 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+13:53:40 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+13:53:44 INFO  : System reset is completed.
+13:53:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+13:53:50 INFO  : FPGA configured successfully with bitstream "C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+13:53:50 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+13:53:51 INFO  : Hardware design information is loaded from 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+13:53:58 INFO  : 'ps7_init' command is executed.
+13:53:59 INFO  : 'ps7_post_config' command is executed.
+13:53:59 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:54:00 INFO  : The application 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:54:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+13:54:00 INFO  : Memory regions updated for context APU
+13:54:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:54:00 INFO  : 'con' command is executed.
+13:54:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+13:55:22 WARN  : Unexpected exception occurred.
+java.io.IOException: Command [C 230 xsdb eval "disconnect tcfchan#2"] aborted
+	at org.eclipse.tcf.core.AbstractChannel$9.run(AbstractChannel.java:753)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.eclipse.tcf.core.ChannelTCP.get(ChannelTCP.java:162)
+	at org.eclipse.tcf.core.StreamChannel.read(StreamChannel.java:84)
+	at org.eclipse.tcf.core.AbstractChannel$1.run(AbstractChannel.java:254)
+14:37:28 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+14:37:31 INFO  : XSDB server has started successfully.
+14:37:33 INFO  : Restoring local repository preferences: 
+		 C:\xapp1285\SW\sw_lib
+14:37:33 INFO  : Processing command line option -hwspec C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss.hdf.
+14:37:33 INFO  : Checking for hwspec changes in the project scaler_to_vpss_hw_platform_0.
+14:37:37 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1487014600724,  Project:1487007750507
+14:37:37 INFO  : The hardware specification for project 'scaler_to_vpss_hw_platform_0' is different from C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss.hdf.
+14:37:37 INFO  : Copied contents of C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss.hdf into \scaler_to_vpss_hw_platform_0\system.hdf.
+14:37:43 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:37:50 INFO  : 
+14:37:51 INFO  : Updating hardware inferred compiler options for hdmi_in_out.
+14:37:51 INFO  : Clearing existing target manager status.
+14:38:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:38:11 INFO  : Sourcing of 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl' is done.
+14:38:12 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:38:16 INFO  : System reset is completed.
+14:38:19 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1' command is executed.
+14:38:22 INFO  : FPGA configured successfully with bitstream "C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit"
+14:38:23 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0' command is executed.
+14:38:23 INFO  : Hardware design information is loaded from 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf'.
+14:38:28 INFO  : 'ps7_init' command is executed.
+14:38:28 INFO  : 'ps7_post_config' command is executed.
+14:38:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:38:29 INFO  : The application 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:38:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+rst -system
+targets -set -filter {jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A" && level==0} -index 1
+fpga -file C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/scaler_to_vpss.bit
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+loadhw C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss_hw_platform_0/system.hdf
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+dow C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/hdmi_in_out/Debug/hdmi_in_out.elf
+----------------End of Script----------------
+
+14:38:29 INFO  : Memory regions updated for context APU
+14:38:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:38:30 INFO  : 'con' command is executed.
+14:38:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent JTAG-SMT1 210203801399A"} -index 0
+con
+----------------End of Script----------------
+
+14:45:35 WARN  : Unexpected exception occurred.
+java.io.IOException: Command [C 74 xsdb eval "disconnect tcfchan#1"] aborted
+	at org.eclipse.tcf.core.AbstractChannel$9.run(AbstractChannel.java:753)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.eclipse.tcf.core.ChannelTCP.get(ChannelTCP.java:162)
+	at org.eclipse.tcf.core.StreamChannel.read(StreamChannel.java:84)
+	at org.eclipse.tcf.core.AbstractChannel$1.run(AbstractChannel.java:254)
+14:45:36 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+15:52:44 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+15:52:46 INFO  : XSDB server has started successfully.
+15:52:49 INFO  : Restoring local repository preferences: 
+		 C:\xapp1285\SW\sw_lib
+15:52:49 INFO  : Processing command line option -hwspec C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.sdk/scaler_to_vpss.hdf.
+15:52:50 INFO  : Checking for hwspec changes in the project scaler_to_vpss_hw_platform_0.

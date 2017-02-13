@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Thu Feb 09 11:20:24 2017
+# Process ID: 1152
+# Current directory: C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.runs/synth_1
+# Command line: vivado.exe -log scaler_to_vpss.vds -mode batch -messageDb vivado.pb -notrace -source scaler_to_vpss.tcl
+# Log file: C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.runs/synth_1/scaler_to_vpss.vds
+# Journal file: C:/xapp1285/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source scaler_to_vpss.tcl -notrace

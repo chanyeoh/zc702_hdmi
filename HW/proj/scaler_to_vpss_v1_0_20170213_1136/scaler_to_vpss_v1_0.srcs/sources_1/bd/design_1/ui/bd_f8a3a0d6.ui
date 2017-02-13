@@ -1,0 +1,31 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port io_hdmii_clk -pg 1 -y 100 -defaultsOSRD
+preplace port IO_HDMII -pg 1 -y 80 -defaultsOSRD
+preplace port vid_clk -pg 1 -y 360 -defaultsOSRD
+preplace port audio_spdif -pg 1 -y 450 -defaultsOSRD
+preplace port video_out_new -pg 1 -y 250 -defaultsOSRD
+preplace portBus aresetn -pg 1 -y 380 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 1 -y 430 -defaultsOSRD
+preplace inst fmc_imageon_hdmi_in_0 -pg 1 -lvl 1 -y 90 -defaultsOSRD
+preplace inst net_gnd -pg 1 -lvl 1 -y 320 -defaultsOSRD
+preplace inst net_vcc -pg 1 -lvl 1 -y 240 -defaultsOSRD
+preplace inst v_vid_in_axi4s_1 -pg 1 -lvl 2 -y 290 -defaultsOSRD
+preplace netloc Conn2 1 2 1 NJ
+preplace netloc fmc_imageon_hdmi_in_0_video_hblank 1 1 1 340
+preplace netloc fmc_imageon_hdmi_in_0_video_data 1 1 1 330
+preplace netloc clk_1 1 0 2 20 190 NJ
+preplace netloc net_vcc_dout 1 1 1 280
+preplace netloc net_gnd_dout 1 1 1 NJ
+preplace netloc aresetn_1 1 0 2 NJ 380 NJ
+preplace netloc fmc_imageon_hdmi_in_0_audio_spdif 1 1 2 NJ 450 NJ
+preplace netloc fmc_imageon_hdmi_in_0_video_de 1 1 1 320
+preplace netloc IO_HDMII_1 1 0 1 NJ
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 2 NJ 370 NJ
+preplace netloc fmc_imageon_hdmi_in_0_video_vblank 1 1 1 310
+preplace netloc xlslice_0_Dout 1 1 1 NJ
+levelinfo -pg 1 0 150 470 620 -top 0 -bot 480
+",
+}
+0

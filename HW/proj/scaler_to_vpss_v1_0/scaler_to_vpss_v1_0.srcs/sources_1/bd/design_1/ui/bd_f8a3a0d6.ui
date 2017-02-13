@@ -1,0 +1,40 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port io_hdmii_clk -pg 1 -y 60 -defaultsOSRD
+preplace port S_AXI_VTD -pg 1 -y 390 -defaultsOSRD
+preplace port IO_HDMII -pg 1 -y 40 -defaultsOSRD
+preplace port vid_clk -pg 1 -y 280 -defaultsOSRD
+preplace port ctrl_clk -pg 1 -y 470 -defaultsOSRD
+preplace port audio_spdif -pg 1 -y 40 -defaultsOSRD
+preplace port video_out_new -pg 1 -y 530 -defaultsOSRD
+preplace portBus ctrl_resetn -pg 1 -y 550 -defaultsOSRD
+preplace portBus vid_resetn -pg 1 -y 300 -defaultsOSRD
+preplace portBus aresetn -pg 1 -y 750 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 3 -y 420 -defaultsOSRD
+preplace inst net_gnd -pg 1 -lvl 1 -y 320 -defaultsOSRD
+preplace inst fmc_imageon_hdmi_in_0 -pg 1 -lvl 1 -y 90 -defaultsOSRD
+preplace inst net_vcc -pg 1 -lvl 1 -y 240 -defaultsOSRD
+preplace inst v_vid_in_axi4s_1 -pg 1 -lvl 3 -y 650 -defaultsOSRD
+preplace inst vtd -pg 1 -lvl 2 -y 550 -defaultsOSRD
+preplace netloc Conn1 1 0 2 NJ 390 NJ
+preplace netloc Conn2 1 3 1 940
+preplace netloc s_axi_aclk_1 1 0 2 NJ 470 NJ
+preplace netloc s_axi_aresetn_1 1 0 2 NJ 550 NJ
+preplace netloc fmc_imageon_hdmi_in_0_video_hblank 1 1 2 N 60 610
+preplace netloc fmc_imageon_hdmi_in_0_video_data 1 1 2 N 80 600
+preplace netloc clk_1 1 0 3 -110 -10 NJ 400 NJ
+preplace netloc net_vcc_dout 1 1 2 210 680 NJ
+preplace netloc v_tc_0_intc_if 1 2 1 570
+preplace netloc net_gnd_dout 1 1 2 NJ 320 540
+preplace netloc aresetn_1 1 0 3 NJ 740 NJ 740 NJ
+preplace netloc fmc_imageon_hdmi_in_0_video_de 1 1 2 N 120 590
+preplace netloc fmc_imageon_hdmi_in_0_audio_spdif 1 1 3 NJ 40 NJ 40 NJ
+preplace netloc IO_HDMII_1 1 0 1 NJ
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 3 NJ 190 NJ 190 550
+preplace netloc fmc_imageon_hdmi_in_0_video_vblank 1 1 2 N 100 580
+preplace netloc v_vid_in_axi4s_1_vtiming_out 1 1 3 240 420 NJ 470 930
+preplace netloc xlslice_0_Dout 1 2 2 620 480 940
+levelinfo -pg 1 -140 60 420 800 990 -top -20 -bot 820
+",
+}

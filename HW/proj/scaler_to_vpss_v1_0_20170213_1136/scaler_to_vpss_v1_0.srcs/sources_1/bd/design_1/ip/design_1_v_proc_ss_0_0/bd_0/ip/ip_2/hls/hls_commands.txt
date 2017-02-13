@@ -1,0 +1,7 @@
+
+config_rtl -form_dsp
+config_schedule -verbose
+config_dataflow -default_channel fifo
+set_directive_interface -mode axis -register v_vscaler s_axis_video 
+set_directive_interface -mode axis -register v_vscaler m_axis_video 
+config_interface -input_reg_mode both -output_reg_mode both

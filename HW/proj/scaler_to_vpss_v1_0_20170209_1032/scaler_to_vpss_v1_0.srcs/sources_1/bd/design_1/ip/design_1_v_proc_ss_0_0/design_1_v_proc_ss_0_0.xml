@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>customized_ip</spirit:library>
+  <spirit:name>design_1_v_proc_ss_0_0</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_165ed04b</spirit:name>
+      <spirit:enumeration>64</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_24dc1c23</spirit:name>
+      <spirit:enumeration>4</spirit:enumeration>
+      <spirit:enumeration>6</spirit:enumeration>
+      <spirit:enumeration>8</spirit:enumeration>
+      <spirit:enumeration>10</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_43153db4</spirit:name>
+      <spirit:enumeration>3</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_4d50b981</spirit:name>
+      <spirit:enumeration>6</spirit:enumeration>
+      <spirit:enumeration>8</spirit:enumeration>
+      <spirit:enumeration>10</spirit:enumeration>
+      <spirit:enumeration>12</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_e6469819</spirit:name>
+      <spirit:enumeration>1</spirit:enumeration>
+      <spirit:enumeration>2</spirit:enumeration>
+      <spirit:enumeration>4</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_list_f1407c6a</spirit:name>
+      <spirit:enumeration>8</spirit:enumeration>
+      <spirit:enumeration>10</spirit:enumeration>
+      <spirit:enumeration>12</spirit:enumeration>
+      <spirit:enumeration>16</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_1afaa245</spirit:name>
+      <spirit:enumeration spirit:text="Bilinear">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Bicubic">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="Polyphase">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_1d7ba987</spirit:name>
+      <spirit:enumeration spirit:text="Drop Repeat">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Predefined">1</spirit:enumeration>
+      <spirit:enumeration spirit:text="FIR">2</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_23551af9</spirit:name>
+      <spirit:enumeration spirit:text="Scaler Only">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="Full Fledged">1</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:description>Video Processing Subsystem</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:displayName>Component Name</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">design_1_v_proc_ss_0_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_SCALER_ALGORITHM</spirit:name>
+      <spirit:displayName>Algorithm</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_SCALER_ALGORITHM" spirit:choiceRef="choice_pairs_1afaa245" spirit:order="2">2</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_TOPOLOGY</spirit:name>
+      <spirit:displayName>Video Processing Functionality</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_TOPOLOGY" spirit:choiceRef="choice_pairs_23551af9" spirit:order="3">0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_SAMPLES_PER_CLK</spirit:name>
+      <spirit:displayName>Samples Per Clock</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SAMPLES_PER_CLK" spirit:choiceRef="choice_list_e6469819" spirit:order="4">2</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_MAX_DATA_WIDTH</spirit:name>
+      <spirit:displayName>Maximum Data Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_MAX_DATA_WIDTH" spirit:choiceRef="choice_list_f1407c6a" spirit:order="5">10</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_NUM_VIDEO_COMPONENTS</spirit:name>
+      <spirit:displayName>Number of Video Components</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_VIDEO_COMPONENTS" spirit:choiceRef="choice_list_43153db4" spirit:order="6">3</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_MAX_COLS</spirit:name>
+      <spirit:displayName>Maximum Number of Pixels</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_MAX_COLS" spirit:order="7" spirit:minimum="64" spirit:maximum="4096" spirit:rangeType="long">3840</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_MAX_ROWS</spirit:name>
+      <spirit:displayName>Maximum Number of Lines</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_MAX_ROWS" spirit:order="8" spirit:minimum="64" spirit:maximum="2160" spirit:rangeType="long">2160</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_H_SCALER_TAPS</spirit:name>
+      <spirit:displayName>Horizontal Taps</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_H_SCALER_TAPS" spirit:choiceRef="choice_list_4d50b981" spirit:order="9">6</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_V_SCALER_TAPS</spirit:name>
+      <spirit:displayName>Vertical Taps</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_V_SCALER_TAPS" spirit:choiceRef="choice_list_4d50b981" spirit:order="10">6</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_H_SCALER_PHASES</spirit:name>
+      <spirit:displayName>Horizontal Phases</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_H_SCALER_PHASES" spirit:choiceRef="choice_list_165ed04b" spirit:order="11">64</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_V_SCALER_PHASES</spirit:name>
+      <spirit:displayName>Vertical Phases</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_V_SCALER_PHASES" spirit:choiceRef="choice_list_165ed04b" spirit:order="12">64</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_CHROMA_ALGORITHM</spirit:name>
+      <spirit:displayName>Algorithm</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_CHROMA_ALGORITHM" spirit:choiceRef="choice_pairs_1d7ba987" spirit:order="13">2</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_H_CHROMA_TAPS</spirit:name>
+      <spirit:displayName>Horizontal Taps</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_H_CHROMA_TAPS" spirit:choiceRef="choice_list_24dc1c23" spirit:order="14">4</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_V_CHROMA_TAPS</spirit:name>
+      <spirit:displayName>Vertical Taps</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_V_CHROMA_TAPS" spirit:choiceRef="choice_list_24dc1c23" spirit:order="15">4</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:displayName>Video Processing Subsystem</xilinx:displayName>
+      <xilinx:coreRevision>1</xilinx:coreRevision>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2015.4</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="944c1460"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="bf4c97e2"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

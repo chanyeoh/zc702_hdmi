@@ -1,0 +1,49 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port io_hdmii_clk -pg 1 -y 150 -defaultsOSRD
+preplace port S_AXI_LITE_VDMA -pg 1 -y 530 -defaultsOSRD
+preplace port S_AXI_VTD -pg 1 -y 70 -defaultsOSRD
+preplace port M_AXIS_VDMA -pg 1 -y 570 -defaultsOSRD
+preplace port clk200 -pg 1 -y 550 -defaultsOSRD
+preplace port IO_HDMII -pg 1 -y 50 -defaultsOSRD
+preplace port M_AXI_VDMA -pg 1 -y 590 -defaultsOSRD
+preplace port aclk_axis -pg 1 -y 310 -defaultsOSRD
+preplace port audio_spdif -pg 1 -y 130 -defaultsOSRD
+preplace port ctrl_clk -pg 1 -y 440 -defaultsOSRD
+preplace port s_axi_ctrl -pg 1 -y 380 -defaultsOSRD
+preplace portBus ctrl_resetn -pg 1 -y 460 -defaultsOSRD
+preplace portBus vid_interconnect_resetn -pg 1 -y 650 -defaultsOSRD
+preplace portBus vid_resetn -pg 1 -y 190 -defaultsOSRD
+preplace portBus interconnect_resetn_200 -pg 1 -y 610 -defaultsOSRD
+preplace inst v_proc_ss_0 -pg 1 -lvl 2 -y 420 -defaultsOSRD
+preplace inst axi_vdma_new -pg 1 -lvl 4 -y 490 -defaultsOSRD
+preplace inst axis_subset_converter_0 -pg 1 -lvl 3 -y 460 -defaultsOSRD
+preplace inst axis_subset_converter_1 -pg 1 -lvl 1 -y 310 -defaultsOSRD
+preplace inst hdmi_in -pg 1 -lvl 4 -y 120 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 5 -y 720 -defaultsOSRD
+preplace netloc axis_subset_converter_1_M_AXIS 1 1 1 290
+preplace netloc axis_subset_converter_0_M_AXIS 1 3 1 910
+preplace netloc proc_sys_rst_ctrl_peripheral_aresetn 1 0 4 NJ 460 290 540 NJ 540 930
+preplace netloc control_path_M_AXI_SCALER_NEW 1 0 2 NJ 380 NJ
+preplace netloc hdmi_in_audio_spdif 1 4 2 NJ 130 NJ
+preplace netloc S_AXI_HP1_1 1 5 1 1640
+preplace netloc framebuffer_new_M_AXIS_VDMA 1 4 2 NJ 470 NJ
+preplace netloc v_proc_ss_0_m_axis 1 2 1 630
+preplace netloc proc_sys_rst_vid_peripheral_aresetn 1 0 4 NJ 190 NJ 190 NJ 190 NJ
+preplace netloc control_path_M05_AXI 1 0 4 NJ 70 NJ 70 NJ 70 NJ
+preplace netloc hdmi_in_video_out_new 1 0 5 30 240 NJ 240 NJ 240 NJ 240 1330
+preplace netloc clk_1 1 0 4 NJ 150 NJ 150 NJ 150 NJ
+preplace netloc proc_sys_rst_vid_interconnect_aresetn 1 0 5 NJ 650 NJ 650 NJ 650 NJ 650 1280
+preplace netloc m_axi_mm2s_aclk_1 1 0 5 NJ 550 NJ 550 NJ 550 NJ 620 1300
+preplace netloc S01_AXI_1 1 4 1 1320
+preplace netloc S00_AXI_2 1 4 1 1330
+preplace netloc control_path_M06_AXI 1 0 4 NJ 220 NJ 220 NJ 220 NJ
+preplace netloc control_path_interconnect_aresetn 1 0 5 NJ 610 NJ 610 NJ 610 NJ 610 1310
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 NJ 440 300 530 NJ 530 920
+preplace netloc IO_HDMII_1 1 0 4 NJ 50 NJ 50 NJ 50 NJ
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 5 0 390 300 330 640 330 950 630 1290
+preplace netloc v_proc_ss_0_aresetn_io_axis 1 0 4 20 230 NJ 230 650 90 N
+levelinfo -pg 1 -20 160 470 780 1120 1490 1660 -top 0 -bot 870
+",
+}
