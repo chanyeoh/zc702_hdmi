@@ -125,6 +125,18 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==bd_0_auto_cc_2 
 # IP: bd/design_1/ip/design_1_axis_subset_converter_1_3/design_1_axis_subset_converter_1_3.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axis_subset_converter_1_3 || ORIG_REF_NAME==design_1_axis_subset_converter_1_3}]
 
+# IP: bd/design_1/ip/design_1_v_cresample_0_1/design_1_v_cresample_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_v_cresample_0_1 || ORIG_REF_NAME==design_1_v_cresample_0_1}]
+
+# IP: bd/design_1/ip/design_1_v_cresample_1_0/design_1_v_cresample_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_v_cresample_1_0 || ORIG_REF_NAME==design_1_v_cresample_1_0}]
+
+# IP: bd/design_1/ip/design_1_v_ycrcb2rgb_0_0/design_1_v_ycrcb2rgb_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_v_ycrcb2rgb_0_0 || ORIG_REF_NAME==design_1_v_ycrcb2rgb_0_0}]
+
+# IP: bd/design_1/ip/design_1_v_rgb2ycrcb_0_0/design_1_v_rgb2ycrcb_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_v_rgb2ycrcb_0_0 || ORIG_REF_NAME==design_1_v_rgb2ycrcb_0_0}]
+
 # IP: bd/design_1/ip/design_1_s00_regslice_0/design_1_s00_regslice_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_s00_regslice_0 || ORIG_REF_NAME==design_1_s00_regslice_0}]
 
@@ -272,6 +284,26 @@ set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {R
 # XDC: bd/design_1/ip/design_1_v_proc_ss_0_0/design_1_v_proc_ss_0_0_ooc.xdc
 
 # XDC: bd/design_1/ip/design_1_axis_subset_converter_1_3/design_1_axis_subset_converter_1_3_ooc.xdc
+
+# XDC: bd/design_1/ip/design_1_v_cresample_0_1/design_1_v_cresample_0_1_clocks.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_v_cresample_0_1 || ORIG_REF_NAME==design_1_v_cresample_0_1}] {/U0 }]/U0 ]]
+
+# XDC: bd/design_1/ip/design_1_v_cresample_0_1/design_1_v_cresample_0_1_ooc.xdc
+
+# XDC: bd/design_1/ip/design_1_v_cresample_1_0/design_1_v_cresample_1_0_clocks.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_v_cresample_1_0 || ORIG_REF_NAME==design_1_v_cresample_1_0}] {/U0 }]/U0 ]]
+
+# XDC: bd/design_1/ip/design_1_v_cresample_1_0/design_1_v_cresample_1_0_ooc.xdc
+
+# XDC: bd/design_1/ip/design_1_v_ycrcb2rgb_0_0/design_1_v_ycrcb2rgb_0_0_clocks.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_v_ycrcb2rgb_0_0 || ORIG_REF_NAME==design_1_v_ycrcb2rgb_0_0}] {/U0 }]/U0 ]]
+
+# XDC: bd/design_1/ip/design_1_v_ycrcb2rgb_0_0/design_1_v_ycrcb2rgb_0_0_ooc.xdc
+
+# XDC: bd/design_1/ip/design_1_v_rgb2ycrcb_0_0/design_1_v_rgb2ycrcb_0_0_clocks.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==design_1_v_rgb2ycrcb_0_0 || ORIG_REF_NAME==design_1_v_rgb2ycrcb_0_0}] {/U0 }]/U0 ]]
+
+# XDC: bd/design_1/ip/design_1_v_rgb2ycrcb_0_0/design_1_v_rgb2ycrcb_0_0_ooc.xdc
 
 # XDC: bd/design_1/ip/design_1_s00_regslice_0/design_1_s00_regslice_0_ooc.xdc
 

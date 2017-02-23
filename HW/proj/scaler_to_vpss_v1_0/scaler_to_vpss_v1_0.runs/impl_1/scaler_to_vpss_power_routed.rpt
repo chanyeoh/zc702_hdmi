@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date             : Mon Feb 13 14:35:23 2017
+| Date             : Wed Feb 22 22:48:10 2017
 | Host             : DESKTOP-AO4G6AL running 64-bit major release  (build 9200)
 | Command          : 
 | Design           : scaler_to_vpss
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 2.070 |
-| Dynamic (W)              | 1.902 |
-| Device Static (W)        | 0.169 |
+| Total On-Chip Power (W)  | 2.117 |
+| Dynamic (W)              | 1.946 |
+| Device Static (W)        | 0.170 |
 | Effective TJA (C/W)      | 11.5  |
-| Max Ambient (C)          | 61.1  |
-| Junction Temperature (C) | 48.9  |
+| Max Ambient (C)          | 60.6  |
+| Junction Temperature (C) | 49.4  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,22 +49,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.102 |        7 |       --- |             --- |
-| Slice Logic              |     0.027 |    36871 |       --- |             --- |
-|   LUT as Logic           |     0.021 |    12237 |     53200 |           23.00 |
-|   Register               |     0.003 |    20878 |    106400 |           19.62 |
-|   LUT as Distributed RAM |     0.002 |      664 |     17400 |            3.82 |
-|   CARRY4                 |     0.001 |      493 |     13300 |            3.71 |
+| Clocks                   |     0.117 |        7 |       --- |             --- |
+| Slice Logic              |     0.032 |    40213 |       --- |             --- |
+|   LUT as Logic           |     0.024 |    13323 |     53200 |           25.04 |
+|   Register               |     0.004 |    22233 |    106400 |           20.90 |
+|   LUT as Distributed RAM |     0.003 |      808 |     17400 |            4.64 |
+|   CARRY4                 |     0.002 |      682 |     13300 |            5.13 |
 |   F7/F8 Muxes            |    <0.001 |      229 |     53200 |            0.43 |
-|   LUT as Shift Register  |    <0.001 |      135 |     17400 |            0.78 |
-|   Others                 |     0.000 |     1411 |       --- |             --- |
-| Signals                  |     0.057 |    29780 |       --- |             --- |
-| Block RAM                |     0.035 |     38.5 |       140 |           27.50 |
-| DSPs                     |     0.081 |       48 |       220 |           21.82 |
+|   LUT as Shift Register  |    <0.001 |      161 |     17400 |            0.93 |
+|   Others                 |     0.000 |     1589 |       --- |             --- |
+| Signals                  |     0.066 |    31961 |       --- |             --- |
+| Block RAM                |     0.042 |     38.5 |       140 |           27.50 |
+| DSPs                     |     0.089 |       56 |       220 |           25.45 |
 | I/O                      |     0.021 |       60 |       200 |           30.00 |
 | PS7                      |     1.579 |        1 |       --- |             --- |
-| Static Power             |     0.169 |          |           |                 |
-| Total                    |     2.070 |          |           |                 |
+| Static Power             |     0.170 |          |           |                 |
+| Total                    |     2.117 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.319 |       0.300 |      0.019 |
+| Vccint    |       1.000 |     0.364 |       0.344 |      0.020 |
 | Vccaux    |       1.800 |     0.022 |       0.001 |      0.021 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.009 |       0.008 |      0.001 |
@@ -83,11 +83,11 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.006 |       0.003 |      0.004 |
+| Vccbram   |       1.000 |     0.007 |       0.003 |      0.004 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.764 |       0.729 |      0.035 |
+| Vccpint   |       1.000 |     0.765 |       0.729 |      0.036 |
 | Vccpaux   |       1.800 |     0.084 |       0.074 |      0.010 |
 | Vccpll    |       1.800 |     0.018 |       0.015 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.459 |       0.457 |      0.002 |
@@ -154,9 +154,9 @@ Table of Contents
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                                                                                                                                        | Power (W) |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+
-| scaler_to_vpss                                                                                                                                                                                              |     1.902 |
-|   design_1_wrapper_inst                                                                                                                                                                                     |     1.891 |
-|     design_1_i                                                                                                                                                                                              |     1.891 |
+| scaler_to_vpss                                                                                                                                                                                              |     1.946 |
+|   design_1_wrapper_inst                                                                                                                                                                                     |     1.936 |
+|     design_1_i                                                                                                                                                                                              |     1.936 |
 |       control_path                                                                                                                                                                                          |     1.585 |
 |         axi_iic_0                                                                                                                                                                                           |     0.001 |
 |           U0                                                                                                                                                                                                |     0.001 |
@@ -240,8 +240,8 @@ Table of Contents
 |                 ACTIVE_LOW_EXT.ACT_LO_EXT                                                                                                                                                                   |    <0.001 |
 |               SEQ                                                                                                                                                                                           |    <0.001 |
 |                 SEQ_COUNTER                                                                                                                                                                                 |    <0.001 |
-|       hdmi_in_proc                                                                                                                                                                                          |     0.270 |
-|         axi_interconnect_1                                                                                                                                                                                  |     0.027 |
+|       hdmi_in_proc                                                                                                                                                                                          |     0.277 |
+|         axi_interconnect_1                                                                                                                                                                                  |     0.028 |
 |           m00_couplers                                                                                                                                                                                      |     0.012 |
 |             auto_pc                                                                                                                                                                                         |     0.004 |
 |               inst                                                                                                                                                                                          |     0.004 |
@@ -536,8 +536,8 @@ Table of Contents
 |                   wrouter_aw_fifo                                                                                                                                                                           |    <0.001 |
 |                     gen_srls[0].gen_rep[0].srl_nx1                                                                                                                                                          |    <0.001 |
 |                 splitter_aw_mi                                                                                                                                                                              |    <0.001 |
-|         axi_vdma_new                                                                                                                                                                                        |     0.032 |
-|           U0                                                                                                                                                                                                |     0.032 |
+|         axi_vdma_new                                                                                                                                                                                        |     0.034 |
+|           U0                                                                                                                                                                                                |     0.034 |
 |             AXI_LITE_REG_INTERFACE_I                                                                                                                                                                        |     0.003 |
 |               GEN_AXI_LITE_IF.AXI_LITE_IF_I                                                                                                                                                                 |     0.003 |
 |                 GEN_LITE_IS_ASYNC.GEN_ASYNC_LITE_ACCESS.LITE_WVALID_MM2S_CDC_I                                                                                                                              |    <0.001 |
@@ -613,7 +613,7 @@ Table of Contents
 |               GEN_CDC_FOR_ASYNC.FSYNC_OUT_CDC_I                                                                                                                                                             |    <0.001 |
 |               GEN_CDC_FOR_ASYNC.SOF_CDC_I                                                                                                                                                                   |    <0.001 |
 |             I_AXI_DMA_INTRPT                                                                                                                                                                                |    <0.001 |
-|             I_PRMRY_DATAMOVER                                                                                                                                                                               |     0.016 |
+|             I_PRMRY_DATAMOVER                                                                                                                                                                               |     0.017 |
 |               GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER                                                                                                                                                             |     0.008 |
 |                 GEN_INCLUDE_MM2S_SF.I_RD_SF                                                                                                                                                                 |     0.004 |
 |                   I_DATA_FIFO                                                                                                                                                                               |     0.004 |
@@ -669,7 +669,7 @@ Table of Contents
 |                         DYNSHREG_F_I                                                                                                                                                                        |    <0.001 |
 |                 I_RD_STATUS_CNTLR                                                                                                                                                                           |    <0.001 |
 |                 I_RESET                                                                                                                                                                                     |    <0.001 |
-|               GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER                                                                                                                                                             |     0.008 |
+|               GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER                                                                                                                                                             |     0.009 |
 |                 GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT                                                                                                                                                         |     0.001 |
 |                   ENABLE_AXIS_SKID.I_INDET_BTT_SKID_BUF                                                                                                                                                     |    <0.001 |
 |                   I_DATA_FIFO                                                                                                                                                                               |    <0.001 |
@@ -724,7 +724,7 @@ Table of Contents
 |                       I_SRL_FIFO_RBU_F                                                                                                                                                                      |    <0.001 |
 |                         CNTR_INCR_DECR_ADDN_F_I                                                                                                                                                             |    <0.001 |
 |                         DYNSHREG_F_I                                                                                                                                                                        |    <0.001 |
-|                 I_ADDR_CNTL                                                                                                                                                                                 |    <0.001 |
+|                 I_ADDR_CNTL                                                                                                                                                                                 |     0.001 |
 |                   GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO                                                                                                                                                            |    <0.001 |
 |                     USE_SRL_FIFO.I_SYNC_FIFO                                                                                                                                                                |    <0.001 |
 |                       I_SRL_FIFO_RBU_F                                                                                                                                                                      |    <0.001 |
@@ -760,7 +760,7 @@ Table of Contents
 |                       I_SRL_FIFO_RBU_F                                                                                                                                                                      |    <0.001 |
 |                         CNTR_INCR_DECR_ADDN_F_I                                                                                                                                                             |    <0.001 |
 |                         DYNSHREG_F_I                                                                                                                                                                        |    <0.001 |
-|             I_RST_MODULE                                                                                                                                                                                    |    <0.001 |
+|             I_RST_MODULE                                                                                                                                                                                    |     0.001 |
 |               GEN_RESET_FOR_MM2S.RESET_I                                                                                                                                                                    |    <0.001 |
 |                 GEN_MIN_FOR_ASYNC.AXIS_CLR_CDC_I                                                                                                                                                            |    <0.001 |
 |                 GEN_MIN_FOR_ASYNC.AXIS_IDLE_CDC_I                                                                                                                                                           |    <0.001 |
@@ -785,7 +785,7 @@ Table of Contents
 |                 GEN_RESET_FOR_ASYNC.HARD_RESET_CDC_I                                                                                                                                                        |    <0.001 |
 |         axis_subset_converter_0                                                                                                                                                                             |     0.000 |
 |         axis_subset_converter_1                                                                                                                                                                             |     0.000 |
-|         hdmi_in                                                                                                                                                                                             |     0.023 |
+|         hdmi_in                                                                                                                                                                                             |     0.022 |
 |           fmc_imageon_hdmi_in_0                                                                                                                                                                             |     0.001 |
 |             U0                                                                                                                                                                                              |     0.001 |
 |           net_gnd                                                                                                                                                                                           |     0.000 |
@@ -824,10 +824,10 @@ Table of Contents
 |                                     prim_noinit.ram                                                                                                                                                         |    <0.001 |
 |                         rstblk                                                                                                                                                                              |    <0.001 |
 |               FORMATTER_INST                                                                                                                                                                                |    <0.001 |
-|           vtd                                                                                                                                                                                               |     0.020 |
-|             U0                                                                                                                                                                                              |     0.020 |
+|           vtd                                                                                                                                                                                               |     0.019 |
+|             U0                                                                                                                                                                                              |     0.019 |
 |               U_TC_TOP                                                                                                                                                                                      |     0.005 |
-|                 GEN_DETECTION.U_tc_DET                                                                                                                                                                      |     0.005 |
+|                 GEN_DETECTION.U_tc_DET                                                                                                                                                                      |     0.004 |
 |               U_VIDEO_CTRL                                                                                                                                                                                  |     0.015 |
 |                 AXI4_LITE_INTERFACE.AXI_LITE_IPIF_I                                                                                                                                                         |    <0.001 |
 |                   I_SLAVE_ATTACHMENT                                                                                                                                                                        |    <0.001 |
@@ -837,14 +837,14 @@ Table of Contents
 |                 AXI4_LITE_INTERFACE.SYNC2PROCCLK_I                                                                                                                                                          |    <0.001 |
 |                 AXI4_LITE_INTERFACE.SYNC2VIDCLK_I                                                                                                                                                           |     0.002 |
 |           xlslice_0                                                                                                                                                                                         |     0.000 |
-|         v_proc_ss_0                                                                                                                                                                                         |     0.188 |
-|           inst                                                                                                                                                                                              |     0.188 |
-|             axi_interconnect_0                                                                                                                                                                              |     0.014 |
-|               m00_couplers                                                                                                                                                                                  |     0.005 |
-|                 auto_cc                                                                                                                                                                                     |     0.005 |
-|                   inst                                                                                                                                                                                      |     0.005 |
-|                     gen_clock_conv.gen_async_conv.asyncfifo_axi                                                                                                                                             |     0.005 |
-|                       inst_fifo_gen                                                                                                                                                                         |     0.005 |
+|         v_proc_ss_0                                                                                                                                                                                         |     0.193 |
+|           inst                                                                                                                                                                                              |     0.193 |
+|             axi_interconnect_0                                                                                                                                                                              |     0.015 |
+|               m00_couplers                                                                                                                                                                                  |     0.006 |
+|                 auto_cc                                                                                                                                                                                     |     0.006 |
+|                   inst                                                                                                                                                                                      |     0.006 |
+|                     gen_clock_conv.gen_async_conv.asyncfifo_axi                                                                                                                                             |     0.006 |
+|                       inst_fifo_gen                                                                                                                                                                         |     0.006 |
 |                         gaxi_full_lite.gread_ch.grach2.axi_rach                                                                                                                                             |     0.001 |
 |                           grf.rf                                                                                                                                                                            |     0.001 |
 |                             gntv_or_sync_fifo.gcx.clkx                                                                                                                                                      |    <0.001 |
@@ -987,8 +987,8 @@ Table of Contents
 |                                 RAM_reg_0_15_12_17                                                                                                                                                          |    <0.001 |
 |                                 RAM_reg_0_15_6_11                                                                                                                                                           |    <0.001 |
 |                             rstblk                                                                                                                                                                          |    <0.001 |
-|                         gaxi_full_lite.gread_ch.grdch2.axi_rdch                                                                                                                                             |    <0.001 |
-|                           grf.rf                                                                                                                                                                            |    <0.001 |
+|                         gaxi_full_lite.gread_ch.grdch2.axi_rdch                                                                                                                                             |     0.001 |
+|                           grf.rf                                                                                                                                                                            |     0.001 |
 |                             gntv_or_sync_fifo.gcx.clkx                                                                                                                                                      |    <0.001 |
 |                               gsync_stage[1].rd_stg_inst                                                                                                                                                    |    <0.001 |
 |                               gsync_stage[1].wr_stg_inst                                                                                                                                                    |    <0.001 |
@@ -1243,8 +1243,8 @@ Table of Contents
 |                   ACTIVE_LOW_EXT.ACT_LO_EXT                                                                                                                                                                 |    <0.001 |
 |                 SEQ                                                                                                                                                                                         |    <0.001 |
 |                   SEQ_COUNTER                                                                                                                                                                               |    <0.001 |
-|             v_hscaler                                                                                                                                                                                       |     0.079 |
-|               inst                                                                                                                                                                                          |     0.079 |
+|             v_hscaler                                                                                                                                                                                       |     0.080 |
+|               inst                                                                                                                                                                                          |     0.080 |
 |                 HwReg_ColorMode_channel16_U                                                                                                                                                                 |    <0.001 |
 |                   U_bd_0_v_hscaler_0_FIFO_v_hscaler_HwReg_ColorMode_channel16_ram                                                                                                                           |    <0.001 |
 |                 HwReg_ColorMode_channel_U                                                                                                                                                                   |    <0.001 |
@@ -1435,15 +1435,15 @@ Table of Contents
 |                   grp_v_hscaler_hscale_polyphase_fu_566                                                                                                                                                     |     0.049 |
 |                     v_hscaler_mac_muladd_16s_8ns_27s_27_1_U31                                                                                                                                               |     0.002 |
 |                       bd_0_v_hscaler_0_v_hscaler_mac_muladd_16s_8ns_27s_27_1_DSP48_0_U                                                                                                                      |     0.002 |
-|                     v_hscaler_mac_muladd_16s_8ns_27s_27_1_U32                                                                                                                                               |     0.002 |
+|                     v_hscaler_mac_muladd_16s_8ns_27s_27_1_U35                                                                                                                                               |     0.002 |
 |                       bd_0_v_hscaler_0_v_hscaler_mac_muladd_16s_8ns_27s_27_1_DSP48_0_U                                                                                                                      |     0.002 |
-|                     v_hscaler_mac_muladd_16s_8ns_27s_27_1_U37                                                                                                                                               |     0.002 |
+|                     v_hscaler_mac_muladd_16s_8ns_27s_27_1_U51                                                                                                                                               |     0.002 |
 |                       bd_0_v_hscaler_0_v_hscaler_mac_muladd_16s_8ns_27s_27_1_DSP48_0_U                                                                                                                      |     0.002 |
 |                   grp_v_hscaler_reg_ap_uint_9_s_fu_610                                                                                                                                                      |    <0.001 |
 |                 v_hscaler_v_hcresampler_core721_U0                                                                                                                                                          |     0.001 |
 |                 v_hscaler_v_hcresampler_core731_U0                                                                                                                                                          |     0.001 |
-|             v_vscaler                                                                                                                                                                                       |     0.093 |
-|               inst                                                                                                                                                                                          |     0.093 |
+|             v_vscaler                                                                                                                                                                                       |     0.097 |
+|               inst                                                                                                                                                                                          |     0.097 |
 |                 OutYUV_V_val_V_U                                                                                                                                                                            |    <0.001 |
 |                   U_bd_0_v_vscaler_0_FIFO_v_vscaler_OutYUV_V_val_V_ram                                                                                                                                      |    <0.001 |
 |                 SrcYUV_V_val_V_U                                                                                                                                                                            |    <0.001 |
@@ -1456,9 +1456,9 @@ Table of Contents
 |                 v_vscaler_MultiPixStream2AXIvideo_U0                                                                                                                                                        |    <0.001 |
 |                   grp_v_vscaler_reg_unsigned_short_s_fu_148                                                                                                                                                 |    <0.001 |
 |                   grp_v_vscaler_reg_unsigned_short_s_fu_154                                                                                                                                                 |    <0.001 |
-|                 v_vscaler_vscale_core_polyphase_U0                                                                                                                                                          |     0.080 |
-|                   FiltCoeff_0_U                                                                                                                                                                             |    <0.001 |
-|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |    <0.001 |
+|                 v_vscaler_vscale_core_polyphase_U0                                                                                                                                                          |     0.085 |
+|                   FiltCoeff_0_U                                                                                                                                                                             |     0.001 |
+|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |     0.001 |
 |                       ram_reg_0_63_0_0                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_10_10                                                                                                                                                                    |    <0.001 |
 |                       ram_reg_0_63_11_11                                                                                                                                                                    |    <0.001 |
@@ -1475,8 +1475,8 @@ Table of Contents
 |                       ram_reg_0_63_7_7                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_8_8                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_9_9                                                                                                                                                                      |    <0.001 |
-|                   FiltCoeff_1_U                                                                                                                                                                             |    <0.001 |
-|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |    <0.001 |
+|                   FiltCoeff_1_U                                                                                                                                                                             |     0.001 |
+|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |     0.001 |
 |                       ram_reg_0_63_0_0                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_10_10                                                                                                                                                                    |    <0.001 |
 |                       ram_reg_0_63_11_11                                                                                                                                                                    |    <0.001 |
@@ -1493,8 +1493,8 @@ Table of Contents
 |                       ram_reg_0_63_7_7                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_8_8                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_9_9                                                                                                                                                                      |    <0.001 |
-|                   FiltCoeff_2_U                                                                                                                                                                             |    <0.001 |
-|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |    <0.001 |
+|                   FiltCoeff_2_U                                                                                                                                                                             |     0.001 |
+|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |     0.001 |
 |                       ram_reg_0_63_0_0                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_10_10                                                                                                                                                                    |    <0.001 |
 |                       ram_reg_0_63_11_11                                                                                                                                                                    |    <0.001 |
@@ -1511,8 +1511,8 @@ Table of Contents
 |                       ram_reg_0_63_7_7                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_8_8                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_9_9                                                                                                                                                                      |    <0.001 |
-|                   FiltCoeff_3_U                                                                                                                                                                             |    <0.001 |
-|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |    <0.001 |
+|                   FiltCoeff_3_U                                                                                                                                                                             |     0.002 |
+|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |     0.002 |
 |                       ram_reg_0_63_0_0                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_10_10                                                                                                                                                                    |    <0.001 |
 |                       ram_reg_0_63_11_11                                                                                                                                                                    |    <0.001 |
@@ -1529,8 +1529,8 @@ Table of Contents
 |                       ram_reg_0_63_7_7                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_8_8                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_9_9                                                                                                                                                                      |    <0.001 |
-|                   FiltCoeff_4_U                                                                                                                                                                             |    <0.001 |
-|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |    <0.001 |
+|                   FiltCoeff_4_U                                                                                                                                                                             |     0.002 |
+|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |     0.002 |
 |                       ram_reg_0_63_0_0                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_10_10                                                                                                                                                                    |    <0.001 |
 |                       ram_reg_0_63_11_11                                                                                                                                                                    |    <0.001 |
@@ -1547,8 +1547,8 @@ Table of Contents
 |                       ram_reg_0_63_7_7                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_8_8                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_9_9                                                                                                                                                                      |    <0.001 |
-|                   FiltCoeff_5_U                                                                                                                                                                             |    <0.001 |
-|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |    <0.001 |
+|                   FiltCoeff_5_U                                                                                                                                                                             |     0.002 |
+|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |     0.002 |
 |                       ram_reg_0_63_0_0                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_10_10                                                                                                                                                                    |    <0.001 |
 |                       ram_reg_0_63_11_11                                                                                                                                                                    |    <0.001 |
@@ -1565,8 +1565,8 @@ Table of Contents
 |                       ram_reg_0_63_7_7                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_8_8                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_9_9                                                                                                                                                                      |    <0.001 |
-|                   FiltCoeff_6_U                                                                                                                                                                             |    <0.001 |
-|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |    <0.001 |
+|                   FiltCoeff_6_U                                                                                                                                                                             |     0.002 |
+|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |     0.002 |
 |                       ram_reg_0_63_0_0                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_10_10                                                                                                                                                                    |    <0.001 |
 |                       ram_reg_0_63_11_11                                                                                                                                                                    |    <0.001 |
@@ -1583,8 +1583,8 @@ Table of Contents
 |                       ram_reg_0_63_7_7                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_8_8                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_9_9                                                                                                                                                                      |    <0.001 |
-|                   FiltCoeff_7_U                                                                                                                                                                             |    <0.001 |
-|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |    <0.001 |
+|                   FiltCoeff_7_U                                                                                                                                                                             |     0.001 |
+|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_FiltCoeff_0_ram_U                                                                                                                      |     0.001 |
 |                       ram_reg_0_63_0_0                                                                                                                                                                      |    <0.001 |
 |                       ram_reg_0_63_10_10                                                                                                                                                                    |    <0.001 |
 |                       ram_reg_0_63_11_11                                                                                                                                                                    |    <0.001 |
@@ -1613,8 +1613,8 @@ Table of Contents
 |                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_LineBuf_val_val_V_0_0_ram_U                                                                                                            |    <0.001 |
 |                   LineBuf_val_val_V_1_2_U                                                                                                                                                                   |    <0.001 |
 |                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_LineBuf_val_val_V_0_0_ram_U                                                                                                            |    <0.001 |
-|                   LineBuf_val_val_V_2_0_U                                                                                                                                                                   |     0.001 |
-|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_LineBuf_val_val_V_0_0_ram_U                                                                                                            |     0.001 |
+|                   LineBuf_val_val_V_2_0_U                                                                                                                                                                   |    <0.001 |
+|                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_LineBuf_val_val_V_0_0_ram_U                                                                                                            |    <0.001 |
 |                   LineBuf_val_val_V_2_1_U                                                                                                                                                                   |    <0.001 |
 |                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_LineBuf_val_val_V_0_0_ram_U                                                                                                            |    <0.001 |
 |                   LineBuf_val_val_V_2_2_U                                                                                                                                                                   |    <0.001 |
@@ -1649,27 +1649,27 @@ Table of Contents
 |                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_LineBuf_val_val_V_0_0_ram_U                                                                                                            |    <0.001 |
 |                   LineBuf_val_val_V_7_2_U                                                                                                                                                                   |    <0.001 |
 |                     bd_0_v_vscaler_0_v_vscaler_vscale_core_polyphase_LineBuf_val_val_V_0_0_ram_U                                                                                                            |    <0.001 |
-|                   v_vscaler_mac_muladd_16s_8ns_27s_27_1_U14                                                                                                                                                 |     0.002 |
-|                     bd_0_v_vscaler_0_v_vscaler_mac_muladd_16s_8ns_27s_27_1_DSP48_0_U                                                                                                                        |     0.002 |
-|                   v_vscaler_mac_muladd_16s_8ns_27s_27_1_U25                                                                                                                                                 |     0.002 |
-|                     bd_0_v_vscaler_0_v_vscaler_mac_muladd_16s_8ns_27s_27_1_DSP48_0_U                                                                                                                        |     0.002 |
-|                   v_vscaler_mac_muladd_16s_8ns_27s_27_1_U28                                                                                                                                                 |     0.002 |
-|                     bd_0_v_vscaler_0_v_vscaler_mac_muladd_16s_8ns_27s_27_1_DSP48_0_U                                                                                                                        |     0.002 |
+|                   v_vscaler_mac_muladd_16s_8ns_27s_27_1_U21                                                                                                                                                 |     0.002 |
+|                     bd_0_v_vscaler_0_v_vscaler_mac_muladd_16s_8ns_27s_27_1_DSP48_1_U                                                                                                                        |     0.002 |
+|                   v_vscaler_mac_muladd_16s_8ns_27s_27_1_U26                                                                                                                                                 |     0.002 |
+|                     bd_0_v_vscaler_0_v_vscaler_mac_muladd_16s_8ns_27s_27_1_DSP48_1_U                                                                                                                        |     0.002 |
+|                   v_vscaler_mac_muladd_16s_8ns_27s_27_1_U34                                                                                                                                                 |     0.002 |
+|                     bd_0_v_vscaler_0_v_vscaler_mac_muladd_16s_8ns_27s_27_1_DSP48_1_U                                                                                                                        |     0.002 |
 |             xlslice_0                                                                                                                                                                                       |     0.000 |
 |             xlslice_1                                                                                                                                                                                       |     0.000 |
-|       hdmi_out                                                                                                                                                                                              |     0.035 |
-|         fmc_imageon_hdmi_out_0                                                                                                                                                                              |     0.012 |
-|           U0                                                                                                                                                                                                |     0.012 |
+|       hdmi_out                                                                                                                                                                                              |     0.074 |
+|         fmc_imageon_hdmi_out_0                                                                                                                                                                              |     0.013 |
+|           U0                                                                                                                                                                                                |     0.013 |
 |             embed_syncs_l                                                                                                                                                                                   |     0.001 |
 |         net_gnd                                                                                                                                                                                             |     0.000 |
 |         net_vcc                                                                                                                                                                                             |     0.000 |
-|         v_axi4s_vid_out_1                                                                                                                                                                                   |     0.006 |
-|           inst                                                                                                                                                                                              |     0.006 |
-|             COUPLER_INST                                                                                                                                                                                    |     0.005 |
-|               FIFO_INST                                                                                                                                                                                     |     0.005 |
-|                 inst_fifo_gen                                                                                                                                                                               |     0.005 |
-|                   gconvfifo.rf                                                                                                                                                                              |     0.005 |
-|                     grf.rf                                                                                                                                                                                  |     0.005 |
+|         v_axi4s_vid_out_1                                                                                                                                                                                   |     0.015 |
+|           inst                                                                                                                                                                                              |     0.015 |
+|             COUPLER_INST                                                                                                                                                                                    |     0.014 |
+|               FIFO_INST                                                                                                                                                                                     |     0.014 |
+|                 inst_fifo_gen                                                                                                                                                                               |     0.014 |
+|                   gconvfifo.rf                                                                                                                                                                              |     0.014 |
+|                     grf.rf                                                                                                                                                                                  |     0.014 |
 |                       gntv_or_sync_fifo.gcx.clkx                                                                                                                                                            |     0.002 |
 |                         gsync_stage[1].rd_stg_inst                                                                                                                                                          |    <0.001 |
 |                         gsync_stage[1].wr_stg_inst                                                                                                                                                          |    <0.001 |
@@ -1687,30 +1687,184 @@ Table of Contents
 |                           c1                                                                                                                                                                                |    <0.001 |
 |                           c2                                                                                                                                                                                |    <0.001 |
 |                         wpntr                                                                                                                                                                               |    <0.001 |
-|                       gntv_or_sync_fifo.mem                                                                                                                                                                 |     0.002 |
-|                         gbm.gbmg.gbmgb.ngecc.bmg                                                                                                                                                            |     0.002 |
-|                           inst_blk_mem_gen                                                                                                                                                                  |     0.002 |
-|                             gnativebmg.native_blk_mem_gen                                                                                                                                                   |     0.002 |
-|                               valid.cstr                                                                                                                                                                    |     0.002 |
-|                                 ramloop[0].ram.r                                                                                                                                                            |    <0.001 |
-|                                   prim_noinit.ram                                                                                                                                                           |    <0.001 |
-|                                 ramloop[1].ram.r                                                                                                                                                            |    <0.001 |
-|                                   prim_noinit.ram                                                                                                                                                           |    <0.001 |
-|                                 ramloop[2].ram.r                                                                                                                                                            |    <0.001 |
-|                                   prim_noinit.ram                                                                                                                                                           |    <0.001 |
+|                       gntv_or_sync_fifo.mem                                                                                                                                                                 |     0.010 |
+|                         gbm.gbmg.gbmgb.ngecc.bmg                                                                                                                                                            |     0.010 |
+|                           inst_blk_mem_gen                                                                                                                                                                  |     0.010 |
+|                             gnativebmg.native_blk_mem_gen                                                                                                                                                   |     0.010 |
+|                               valid.cstr                                                                                                                                                                    |     0.010 |
+|                                 ramloop[0].ram.r                                                                                                                                                            |     0.002 |
+|                                   prim_noinit.ram                                                                                                                                                           |     0.002 |
+|                                 ramloop[1].ram.r                                                                                                                                                            |     0.004 |
+|                                   prim_noinit.ram                                                                                                                                                           |     0.004 |
+|                                 ramloop[2].ram.r                                                                                                                                                            |     0.004 |
+|                                   prim_noinit.ram                                                                                                                                                           |     0.004 |
 |                       rstblk                                                                                                                                                                                |    <0.001 |
 |             FORMATTER_INST                                                                                                                                                                                  |    <0.001 |
 |             SYNC_INST                                                                                                                                                                                       |    <0.001 |
-|         vtg                                                                                                                                                                                                 |     0.017 |
-|           U0                                                                                                                                                                                                |     0.017 |
+|         v_cresample_0                                                                                                                                                                                       |     0.003 |
+|           U0                                                                                                                                                                                                |     0.003 |
+|             obsfbeireagdzmj4jtr52igusd                                                                                                                                                                      |     0.003 |
+|               obsiafzd2chdkncofb                                                                                                                                                                            |     0.001 |
+|               obsiedkmeoira                                                                                                                                                                                 |    <0.001 |
+|                 obsacujyz4phdt2thptz245rbueogvirct                                                                                                                                                          |    <0.001 |
+|               obsnafzd2ig5quqfha                                                                                                                                                                            |    <0.001 |
+|                 obsa2putxm1pw1zrtpvgzjza                                                                                                                                                                    |    <0.001 |
+|                   obsfgbbrl                                                                                                                                                                                 |    <0.001 |
+|                     obsavbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g1521optob                                                                                                                               |    <0.001 |
+|                     obsfvbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g15205hd                                                                                                                                 |    <0.001 |
+|                     obsivbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g153a5g1d                                                                                                                                |    <0.001 |
+|               obsnafzd2oke5ykictc                                                                                                                                                                           |     0.001 |
+|                 obsn2mw0p4so3tn41pggn4u1fhc                                                                                                                                                                 |     0.001 |
+|                   obsfgbbrl                                                                                                                                                                                 |    <0.001 |
+|                     obsavbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g1521optob                                                                                                                               |    <0.001 |
+|                     obsavbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g1521rptrn                                                                                                                               |    <0.001 |
+|                     obsfvbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g15205hd                                                                                                                                 |    <0.001 |
+|                     obsivbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g1522pptrp                                                                                                                               |    <0.001 |
+|                     obsivbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g153a5g1d                                                                                                                                |    <0.001 |
+|             obsi2pxgzhumx0nx01d                                                                                                                                                                             |     0.000 |
+|         v_cresample_1                                                                                                                                                                                       |     0.005 |
+|           U0                                                                                                                                                                                                |     0.005 |
+|             obsfbeireagdzmj4jtr52igusd                                                                                                                                                                      |     0.005 |
+|               obsiafzd2chdkncofb                                                                                                                                                                            |     0.001 |
+|               obsiedkmeoira                                                                                                                                                                                 |    <0.001 |
+|                 obsicujyz4pht12thptzy25rbueogvirct                                                                                                                                                          |    <0.001 |
+|               obsnafzd2ig5quqfha                                                                                                                                                                            |     0.002 |
+|                 obsa2putxm1pw1zrtpvgzjza                                                                                                                                                                    |     0.002 |
+|                   obsfgbbrl                                                                                                                                                                                 |     0.001 |
+|                     obsavbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g1521optob                                                                                                                               |    <0.001 |
+|                     obsavbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g1521rptrn                                                                                                                               |    <0.001 |
+|                     obsfvbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g15205hd                                                                                                                                 |    <0.001 |
+|                     obsivbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g1522pptrp                                                                                                                               |    <0.001 |
+|                     obsivbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g153a5g1d                                                                                                                                |    <0.001 |
+|               obsnafzd2oke5ykictc                                                                                                                                                                           |     0.002 |
+|                 obsn2mw0p4so3tn41pggn4u1fhc                                                                                                                                                                 |     0.002 |
+|                   obsfgbbrl                                                                                                                                                                                 |    <0.001 |
+|                     obsavbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g1521optob                                                                                                                               |    <0.001 |
+|                     obsfvbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g15205hd                                                                                                                                 |    <0.001 |
+|                     obsivbbuiraeysooke5jcijrfeqrje2t4egtaqz4ira1205g153a5g1d                                                                                                                                |    <0.001 |
+|             obsi2pxgzhumx0nx01d                                                                                                                                                                             |     0.000 |
+|         v_rgb2ycrcb_0                                                                                                                                                                                       |     0.013 |
+|           U0                                                                                                                                                                                                |     0.013 |
+|             U_VIDEO_CTRL                                                                                                                                                                                    |     0.000 |
+|             rgb2ycrcb_top_inst                                                                                                                                                                              |     0.013 |
+|               axi_control                                                                                                                                                                                   |    <0.001 |
+|               axi_in_fifo                                                                                                                                                                                   |     0.001 |
+|                 U_AXIS_SYNC_FIFO                                                                                                                                                                            |     0.001 |
+|                   mem1                                                                                                                                                                                      |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_0_5                                                                                                                                                |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_12_17                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_18_23                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_24_25                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_6_11                                                                                                                                               |    <0.001 |
+|               axi_out_fifo                                                                                                                                                                                  |     0.001 |
+|                 UOSD_AXIS_SYNC_FIFO                                                                                                                                                                         |     0.001 |
+|                   mem1                                                                                                                                                                                      |     0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_0_5                                                                                                                                                |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_12_17                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_18_23                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_24_25                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_6_11                                                                                                                                               |    <0.001 |
+|               intcore                                                                                                                                                                                       |     0.010 |
+|                 add_aRG_bBG_G                                                                                                                                                                               |    <0.001 |
+|                   use_fabric.adder                                                                                                                                                                          |    <0.001 |
+|                     reg                                                                                                                                                                                     |    <0.001 |
+|                 clamp.min_Cb                                                                                                                                                                                |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 clamp.min_Cr                                                                                                                                                                                |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 clamp.min_Y                                                                                                                                                                                 |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 clip.max_Cb                                                                                                                                                                                 |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 clip.max_Cr                                                                                                                                                                                 |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 clip.max_Y                                                                                                                                                                                  |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 del_B                                                                                                                                                                                       |    <0.001 |
+|                 del_G                                                                                                                                                                                       |    <0.001 |
+|                 del_R                                                                                                                                                                                       |    <0.001 |
+|                 del_Y                                                                                                                                                                                       |    <0.001 |
+|                 mult_aRG                                                                                                                                                                                    |     0.001 |
+|                   reg                                                                                                                                                                                       |     0.001 |
+|                 sub_BG                                                                                                                                                                                      |    <0.001 |
+|                   use_fabric.adder                                                                                                                                                                          |    <0.001 |
+|                     reg                                                                                                                                                                                     |    <0.001 |
+|                 sub_BY                                                                                                                                                                                      |    <0.001 |
+|                   use_fabric.adder                                                                                                                                                                          |    <0.001 |
+|                     reg                                                                                                                                                                                     |    <0.001 |
+|                 sub_RG                                                                                                                                                                                      |    <0.001 |
+|                   use_fabric.adder                                                                                                                                                                          |    <0.001 |
+|                     reg                                                                                                                                                                                     |    <0.001 |
+|                 sub_RY                                                                                                                                                                                      |    <0.001 |
+|                   use_fabric.adder                                                                                                                                                                          |    <0.001 |
+|                     reg                                                                                                                                                                                     |    <0.001 |
+|                 v4_mac1.mult_aCr                                                                                                                                                                            |     0.002 |
+|                 v4_mac23.mac_cBY                                                                                                                                                                            |     0.002 |
+|                 v4_mac23.mac_cRY                                                                                                                                                                            |     0.002 |
+|                 y_needs_round.round_Y                                                                                                                                                                       |    <0.001 |
+|                   adder                                                                                                                                                                                     |    <0.001 |
+|                     use_fabric.adder                                                                                                                                                                        |    <0.001 |
+|                       reg                                                                                                                                                                                   |    <0.001 |
+|         v_ycrcb2rgb_0                                                                                                                                                                                       |     0.005 |
+|           U0                                                                                                                                                                                                |     0.005 |
+|             U_VIDEO_CTRL                                                                                                                                                                                    |     0.000 |
+|             ycrcb2rgb_top_inst                                                                                                                                                                              |     0.005 |
+|               axi_control                                                                                                                                                                                   |    <0.001 |
+|               axi_in_fifo                                                                                                                                                                                   |     0.001 |
+|                 U_AXIS_SYNC_FIFO                                                                                                                                                                            |    <0.001 |
+|                   mem1                                                                                                                                                                                      |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_0_5                                                                                                                                                |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_12_17                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_18_23                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_24_25                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_6_11                                                                                                                                               |    <0.001 |
+|               axi_out_fifo                                                                                                                                                                                  |     0.001 |
+|                 UOSD_AXIS_SYNC_FIFO                                                                                                                                                                         |     0.001 |
+|                   mem1                                                                                                                                                                                      |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_0_5                                                                                                                                                |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_12_17                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_18_23                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_24_25                                                                                                                                              |    <0.001 |
+|                     GenerateDoutWriteFirstA.mem_reg_0_15_6_11                                                                                                                                               |    <0.001 |
+|               intcore                                                                                                                                                                                       |     0.002 |
+|                 add_B                                                                                                                                                                                       |    <0.001 |
+|                   use_fabric.adder                                                                                                                                                                          |    <0.001 |
+|                     reg                                                                                                                                                                                     |    <0.001 |
+|                 add_G                                                                                                                                                                                       |    <0.001 |
+|                   use_fabric.adder                                                                                                                                                                          |    <0.001 |
+|                     reg                                                                                                                                                                                     |    <0.001 |
+|                 add_R                                                                                                                                                                                       |    <0.001 |
+|                   use_fabric.adder                                                                                                                                                                          |    <0.001 |
+|                     reg                                                                                                                                                                                     |    <0.001 |
+|                 clamp.min_B                                                                                                                                                                                 |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 clamp.min_G                                                                                                                                                                                 |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 clamp.min_R                                                                                                                                                                                 |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 clip.max_B                                                                                                                                                                                  |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 clip.max_G                                                                                                                                                                                  |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 clip.max_R                                                                                                                                                                                  |    <0.001 |
+|                   reg                                                                                                                                                                                       |    <0.001 |
+|                 del_Cb                                                                                                                                                                                      |    <0.001 |
+|                 del_Cr                                                                                                                                                                                      |    <0.001 |
+|                 del_Y                                                                                                                                                                                       |    <0.001 |
+|                 mult_BCr                                                                                                                                                                                    |    <0.001 |
+|                 mult_DCb                                                                                                                                                                                    |    <0.001 |
+|                 mult_aCr                                                                                                                                                                                    |    <0.001 |
+|                 mult_cCb                                                                                                                                                                                    |    <0.001 |
+|         vtg                                                                                                                                                                                                 |     0.019 |
+|           U0                                                                                                                                                                                                |     0.019 |
 |             U_TC_TOP                                                                                                                                                                                        |     0.002 |
 |               GEN_GENERATOR.U_TC_GEN                                                                                                                                                                        |     0.002 |
-|             U_VIDEO_CTRL                                                                                                                                                                                    |     0.015 |
+|             U_VIDEO_CTRL                                                                                                                                                                                    |     0.017 |
 |               AXI4_LITE_INTERFACE.AXI_LITE_IPIF_I                                                                                                                                                           |    <0.001 |
 |                 I_SLAVE_ATTACHMENT                                                                                                                                                                          |    <0.001 |
 |                   I_DECODER                                                                                                                                                                                 |    <0.001 |
 |               AXI4_LITE_INTERFACE.CORE_MUX0                                                                                                                                                                 |     0.001 |
-|               AXI4_LITE_INTERFACE.GENR_MUX0                                                                                                                                                                 |     0.003 |
+|               AXI4_LITE_INTERFACE.GENR_MUX0                                                                                                                                                                 |     0.004 |
 |               AXI4_LITE_INTERFACE.SYNC2PROCCLK_I                                                                                                                                                            |    <0.001 |
 |               AXI4_LITE_INTERFACE.SYNC2VIDCLK_I                                                                                                                                                             |     0.002 |
 |     fmc_imageon_iic_scl_iobuf                                                                                                                                                                               |     0.000 |

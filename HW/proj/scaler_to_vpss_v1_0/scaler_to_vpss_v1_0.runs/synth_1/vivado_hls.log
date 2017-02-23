@@ -5,7 +5,7 @@
   Copyright (C) 2015 Xilinx Inc. All rights reserved.
 ================================================================
 @I [HLS-10] Running 'C:/Xilinx/Vivado_HLS/2015.4/bin/unwrapped/win64.o/vivado_hls.exe'
-            for user 'chan_' on host 'desktop-ao4g6al' (Windows NT_amd64 version 6.2) on Mon Feb 13 14:06:12 -0500 2017
+            for user 'chan_' on host 'desktop-ao4g6al' (Windows NT_amd64 version 6.2) on Wed Feb 22 22:12:32 -0500 2017
             in directory 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.runs/synth_1'
 @I [HLS-10] Creating and opening project 'C:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.runs/synth_1/bd_0_v_hscaler_0'.
 @I [HLS-10] Adding design file 'c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_3/src/v_hscaler_config.h' to the project
@@ -79,7 +79,7 @@
 @I [XFORM-401] Performing if-conversion on hyperblock in function 'hscale_polyphase'... converting 145 basic blocks.
 @I [XFORM-401] Performing if-conversion on hyperblock from (c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_3/src/v_hscaler.cpp:1131:7) to (c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_3/src/v_hscaler.cpp:1129:64) in function 'MultiPixStream2AXIvideo'... converting 4 basic blocks.
 @I [XFORM-401] Performing if-conversion on hyperblock from (C:/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/hls/hls_axi_io.h:49:14) to (c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_3/src/v_hscaler.cpp:1017:57) in function 'AXIvideo2MultiPixStream83'... converting 10 basic blocks.
-@I [HLS-111] Elapsed time: 77.853 seconds; current memory usage: 362 MB.
+@I [HLS-111] Elapsed time: 56.923 seconds; current memory usage: 362 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'v_hscaler' ...
 @W [SYN-103] Legalizing function name 'v_hscaler_Block__proc' to 'v_hscaler_Block_proc'.
@@ -121,7 +121,7 @@
 @I [SCHED-11] Start constructing STG ...
 @I [SCHED-11] Finished constructing STG.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.35 seconds; current memory usage: 363 MB.
+@I [HLS-111] Elapsed time: 0.321 seconds; current memory usage: 362 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'v_hscaler_AXIvideo2MultiPixStream83' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -130,7 +130,7 @@
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.952 seconds; current memory usage: 363 MB.
+@I [HLS-111] Elapsed time: 0.765 seconds; current memory usage: 362 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'v_hscaler_Block_proc' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -162,7 +162,7 @@
 @I [SCHED-11] Start constructing STG ...
 @I [SCHED-11] Finished constructing STG.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.959 seconds; current memory usage: 363 MB.
+@I [HLS-111] Elapsed time: 0.844 seconds; current memory usage: 362 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'v_hscaler_Block_proc' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -171,7 +171,7 @@
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.118 seconds; current memory usage: 363 MB.
+@I [HLS-111] Elapsed time: 0.109 seconds; current memory usage: 362 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'v_hscaler_v_hcresampler_core721' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -215,7 +215,7 @@
 @I [SCHED-11] Start constructing STG ...
 @I [SCHED-11] Finished constructing STG.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.442 seconds; current memory usage: 363 MB.
+@I [HLS-111] Elapsed time: 0.411 seconds; current memory usage: 362 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'v_hscaler_v_hcresampler_core721' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -224,7 +224,7 @@
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.41 seconds; current memory usage: 363 MB.
+@I [HLS-111] Elapsed time: 0.346 seconds; current memory usage: 362 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'v_hscaler_reg_ap_uint_9_s' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -258,7 +258,7 @@
 @I [SCHED-11] Start constructing STG ...
 @I [SCHED-11] Finished constructing STG.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.384 seconds; current memory usage: 363 MB.
+@I [HLS-111] Elapsed time: 0.332 seconds; current memory usage: 362 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'v_hscaler_reg_ap_uint_9_s' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -267,7 +267,7 @@
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.12 seconds; current memory usage: 363 MB.
+@I [HLS-111] Elapsed time: 0.114 seconds; current memory usage: 362 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'v_hscaler_hscale_polyphase' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -427,7 +427,7 @@
 	'icmp' operation ('icmp', c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_3/src/v_hscaler.cpp:702) (1.97 ns)
 @I [SCHED-11] Finished constructing STG.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 1.012 seconds; current memory usage: 365 MB.
+@I [HLS-111] Elapsed time: 0.38 seconds; current memory usage: 365 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'v_hscaler_hscale_polyphase' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -436,7 +436,7 @@
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.79 seconds; current memory usage: 365 MB.
+@I [HLS-111] Elapsed time: 0.625 seconds; current memory usage: 365 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'v_hscaler_hscale_core_polyphase' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -474,7 +474,7 @@
 	'call' operation ('call_ret', c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_3/src/v_hscaler.cpp:610) to 'v_hscaler_hscale_polyphase' (8.35 ns)
 @I [SCHED-11] Finished constructing STG.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 1.049 seconds; current memory usage: 366 MB.
+@I [HLS-111] Elapsed time: 0.903 seconds; current memory usage: 366 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'v_hscaler_hscale_core_polyphase' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -491,7 +491,7 @@
 @W [BIND-102] The specified resource core for memory 'FiltCoeff_7_0' will be ignored if a simpler one can be used.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.896 seconds; current memory usage: 367 MB.
+@I [HLS-111] Elapsed time: 0.777 seconds; current memory usage: 366 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'v_hscaler_v_hcresampler_core731' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -535,7 +535,7 @@
 @I [SCHED-11] Start constructing STG ...
 @I [SCHED-11] Finished constructing STG.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 1.929 seconds; current memory usage: 367 MB.
+@I [HLS-111] Elapsed time: 0.946 seconds; current memory usage: 366 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'v_hscaler_v_hcresampler_core731' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -544,7 +544,7 @@
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.386 seconds; current memory usage: 367 MB.
+@I [HLS-111] Elapsed time: 0.357 seconds; current memory usage: 366 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'v_hscaler_MultiPixStream2AXIvideo' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -578,7 +578,7 @@
 @I [SCHED-11] Start constructing STG ...
 @I [SCHED-11] Finished constructing STG.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.507 seconds; current memory usage: 367 MB.
+@I [HLS-111] Elapsed time: 0.461 seconds; current memory usage: 367 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'v_hscaler_MultiPixStream2AXIvideo' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -587,7 +587,7 @@
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.518 seconds; current memory usage: 367 MB.
+@I [HLS-111] Elapsed time: 0.44 seconds; current memory usage: 367 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Scheduling module 'v_hscaler' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -619,7 +619,7 @@
 @I [SCHED-11] Start constructing STG ...
 @I [SCHED-11] Finished constructing STG.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 1.693 seconds; current memory usage: 367 MB.
+@I [HLS-111] Elapsed time: 0.432 seconds; current memory usage: 367 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'v_hscaler' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -628,31 +628,31 @@
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 2.218 seconds; current memory usage: 367 MB.
+@I [HLS-111] Elapsed time: 0.542 seconds; current memory usage: 367 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'v_hscaler_AXIvideo2MultiPixStream83' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'v_hscaler_AXIvideo2MultiPixStream83'.
-@I [HLS-111] Elapsed time: 0.484 seconds; current memory usage: 367 MB.
+@I [HLS-111] Elapsed time: 0.397 seconds; current memory usage: 367 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'v_hscaler_Block_proc' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'v_hscaler_Block_proc'.
-@I [HLS-111] Elapsed time: 1.167 seconds; current memory usage: 368 MB.
+@I [HLS-111] Elapsed time: 0.927 seconds; current memory usage: 368 MB.
 @I [WVHDL-304] Encrypting RTL VHDL done.
 @I [WVHDL-304] Encrypting RTL Verilog done.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'v_hscaler_v_hcresampler_core721' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'v_hscaler_v_hcresampler_core721'.
-@I [HLS-111] Elapsed time: 0.452 seconds; current memory usage: 369 MB.
+@I [HLS-111] Elapsed time: 0.224 seconds; current memory usage: 368 MB.
 @I [WVHDL-304] Encrypting RTL VHDL done.
 @I [WVHDL-304] Encrypting RTL Verilog done.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'v_hscaler_reg_ap_uint_9_s' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'v_hscaler_reg_ap_uint_9_s'.
-@I [HLS-111] Elapsed time: 1.715 seconds; current memory usage: 369 MB.
+@I [HLS-111] Elapsed time: 0.473 seconds; current memory usage: 369 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'v_hscaler_hscale_polyphase' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -665,21 +665,21 @@
 @I [RTGEN-100] Generating core module 'v_hscaler_mac_muladd_8ns_16s_27s_27_1': 3 instance(s).
 @I [RTGEN-100] Generating core module 'v_hscaler_mux_10to1_sel4_8_1': 3 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'v_hscaler_hscale_polyphase'.
-@I [HLS-111] Elapsed time: 0.312 seconds; current memory usage: 371 MB.
+@I [HLS-111] Elapsed time: 0.233 seconds; current memory usage: 371 MB.
 @I [WVHDL-304] Encrypting RTL VHDL done.
 @I [WVHDL-304] Encrypting RTL Verilog done.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'v_hscaler_hscale_core_polyphase' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'v_hscaler_hscale_core_polyphase'.
-@I [HLS-111] Elapsed time: 1.03 seconds; current memory usage: 372 MB.
+@I [HLS-111] Elapsed time: 0.896 seconds; current memory usage: 372 MB.
 @I [WVHDL-304] Encrypting RTL VHDL done.
 @I [WVHDL-304] Encrypting RTL Verilog done.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'v_hscaler_v_hcresampler_core731' 
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Finished creating RTL model for 'v_hscaler_v_hcresampler_core731'.
-@I [HLS-111] Elapsed time: 1.121 seconds; current memory usage: 373 MB.
+@I [HLS-111] Elapsed time: 0.904 seconds; current memory usage: 373 MB.
 @I [WVHDL-304] Encrypting RTL VHDL done.
 @I [WVHDL-304] Encrypting RTL Verilog done.
 @I [HLS-10] ----------------------------------------------------------------
@@ -687,7 +687,7 @@
 @I [HLS-10] ----------------------------------------------------------------
 @I [RTGEN-100] Generating core module 'v_hscaler_mux_3to1_sel2_8_1': 3 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'v_hscaler_MultiPixStream2AXIvideo'.
-@I [HLS-111] Elapsed time: 1.974 seconds; current memory usage: 374 MB.
+@I [HLS-111] Elapsed time: 0.488 seconds; current memory usage: 374 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'v_hscaler' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -714,7 +714,7 @@
 @I [RTGEN-500] Setting interface mode on port 'v_hscaler/m_axis_video_V_dest_V' to 'axis' (register).
 @I [RTGEN-500] Setting interface mode on function 'v_hscaler' to 's_axilite & ap_ctrl_hs'.
 @I [RTGEN-100] Finished creating RTL model for 'v_hscaler'.
-@I [HLS-111] Elapsed time: 1.381 seconds; current memory usage: 375 MB.
+@I [HLS-111] Elapsed time: 0.713 seconds; current memory usage: 375 MB.
 @I [WVHDL-304] Encrypting RTL VHDL done.
 @I [WVHDL-304] Encrypting RTL Verilog done.
 @I [RTMG-278] Implementing memory 'bd_0_v_hscaler_0_v_hscaler_hscale_core_polyphase_FiltCoeff_0_0_ram' using distributed RAMs.
@@ -739,5 +739,5 @@ source run_ippack.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.4/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Mon Feb 13 14:08:13 2017...
-@I [HLS-112] Total elapsed time: 134.235 seconds; peak memory usage: 375 MB.
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 22 22:13:54 2017...
+@I [HLS-112] Total elapsed time: 96.381 seconds; peak memory usage: 375 MB.

@@ -29,6 +29,9 @@ vlib msim/axis_subset_converter_v1_1_7
 vlib msim/axi_gpio_v2_0_9
 vlib msim/axis_data_fifo_v1_1_8
 vlib msim/axi_clock_converter_v2_1_6
+vlib msim/v_cresample_v4_0_7
+vlib msim/v_ycrcb2rgb_v7_1_6
+vlib msim/v_rgb2ycrcb_v7_1_6
 vlib msim/axi_protocol_converter_v2_1_7
 vlib msim/axi_dwidth_converter_v2_1_7
 
@@ -60,6 +63,9 @@ vmap axis_subset_converter_v1_1_7 msim/axis_subset_converter_v1_1_7
 vmap axi_gpio_v2_0_9 msim/axi_gpio_v2_0_9
 vmap axis_data_fifo_v1_1_8 msim/axis_data_fifo_v1_1_8
 vmap axi_clock_converter_v2_1_6 msim/axi_clock_converter_v2_1_6
+vmap v_cresample_v4_0_7 msim/v_cresample_v4_0_7
+vmap v_ycrcb2rgb_v7_1_6 msim/v_ycrcb2rgb_v7_1_6
+vmap v_rgb2ycrcb_v7_1_6 msim/v_rgb2ycrcb_v7_1_6
 vmap axi_protocol_converter_v2_1_7 msim/axi_protocol_converter_v2_1_7
 vmap axi_dwidth_converter_v2_1_7 msim/axi_dwidth_converter_v2_1_7
 
@@ -452,6 +458,27 @@ vlog -work xil_defaultlib -64 -incr "+incdir+../../../ipstatic/axi_infrastructur
 "../../../bd/design_1/ip/design_1_axis_subset_converter_1_3/axis_subset_converter_v1_1/hdl/verilog/axis_subset_converter_v1_1_tlast_remap_design_1_axis_subset_converter_1_3.v" \
 "../../../bd/design_1/ip/design_1_axis_subset_converter_1_3/axis_subset_converter_v1_1/hdl/verilog/axis_subset_converter_v1_1_axis_subset_converter_design_1_axis_subset_converter_1_3.v" \
 "../../../bd/design_1/ip/design_1_axis_subset_converter_1_3/sim/design_1_axis_subset_converter_1_3.v" \
+
+vcom -work v_cresample_v4_0_7 -64 -93 \
+"../../../ipstatic/v_cresample_v4_0/hdl/v_cresample_v4_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/design_1/ip/design_1_v_cresample_0_1/sim/design_1_v_cresample_0_1.vhd" \
+"../../../bd/design_1/ip/design_1_v_cresample_1_0/sim/design_1_v_cresample_1_0.vhd" \
+
+vcom -work v_ycrcb2rgb_v7_1_6 -64 -93 \
+"../../../ipstatic/v_ycrcb2rgb_v7_1/hdl/v_ycrcb2rgb_v7_1_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/design_1/ip/design_1_v_ycrcb2rgb_0_0/sim/design_1_v_ycrcb2rgb_0_0.vhd" \
+
+vcom -work v_rgb2ycrcb_v7_1_6 -64 -93 \
+"../../../ipstatic/v_rgb2ycrcb_v7_1/hdl/v_rgb2ycrcb_v7_1_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/design_1/ip/design_1_v_rgb2ycrcb_0_0/sim/design_1_v_rgb2ycrcb_0_0.vhd" \
+
+vlog -work xil_defaultlib -64 -incr "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/axi_vdma_v6_2/hdl/src/verilog" "+incdir+../../../ipstatic/axis_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../../scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_1/axi_infrastructure_v1_1_0/hdl/verilog" "+incdir+../../../../scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_4/axis_infrastructure_v1_1_0/hdl/verilog" "+incdir+../../../../scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_7/axis_infrastructure_v1_1_0/hdl/verilog" "+incdir+../../../../scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_8/axis_infrastructure_v1_1_0/hdl/verilog" "+incdir+../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/axi_vdma_v6_2/hdl/src/verilog" "+incdir+../../../ipstatic/axis_infrastructure_v1_1/hdl/verilog" "+incdir+../../../ipstatic/processing_system7_bfm_v2_0/hdl" "+incdir+../../../../scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_1/axi_infrastructure_v1_1_0/hdl/verilog" "+incdir+../../../../scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_4/axis_infrastructure_v1_1_0/hdl/verilog" "+incdir+../../../../scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_7/axis_infrastructure_v1_1_0/hdl/verilog" "+incdir+../../../../scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_8/axis_infrastructure_v1_1_0/hdl/verilog" \
 "../../../bd/design_1/ip/design_1_s00_regslice_0/sim/design_1_s00_regslice_0.v" \
 "../../../bd/design_1/ip/design_1_s00_data_fifo_0/sim/design_1_s00_data_fifo_0.v" \
 "../../../bd/design_1/ip/design_1_s01_regslice_0/sim/design_1_s01_regslice_0.v" \

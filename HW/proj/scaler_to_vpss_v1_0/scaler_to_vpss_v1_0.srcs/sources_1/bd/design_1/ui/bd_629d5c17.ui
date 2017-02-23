@@ -1,0 +1,48 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port vid_from_output_mux -pg 1 -y 380 -defaultsOSRD
+preplace port vid_out_clk -pg 1 -y 110 -defaultsOSRD
+preplace port S_AXI_VTG -pg 1 -y 90 -defaultsOSRD
+preplace port clk200 -pg 1 -y 330 -defaultsOSRD
+preplace port vid_new_to_output_mux -pg 1 -y 120 -defaultsOSRD
+preplace port io_hdmio -pg 1 -y 430 -defaultsOSRD
+preplace port video_in_old -pg 1 -y 20 -defaultsOSRD
+preplace port video_in_new -pg 1 -y 40 -defaultsOSRD
+preplace port ctrl_clk -pg 1 -y 210 -defaultsOSRD
+preplace port audio_spdif -pg 1 -y 480 -defaultsOSRD
+preplace portBus ctrl_resetn -pg 1 -y 230 -defaultsOSRD
+preplace inst vtg -pg 1 -lvl 7 -y 170 -defaultsOSRD
+preplace inst v_axi4s_vid_out_1 -pg 1 -lvl 6 -y -70 -defaultsOSRD
+preplace inst fmc_imageon_hdmi_out_0 -pg 1 -lvl 8 -y 530 -defaultsOSRD
+preplace inst net_gnd -pg 1 -lvl 5 -y 390 -defaultsOSRD
+preplace inst net_vcc -pg 1 -lvl 5 -y 150 -defaultsOSRD
+preplace inst v_cresample_0 -pg 1 -lvl 1 -y -110 -defaultsOSRD
+preplace inst v_cresample_1 -pg 1 -lvl 4 -y -150 -defaultsOSRD
+preplace inst v_ycrcb2rgb_0 -pg 1 -lvl 2 -y -60 -defaultsOSRD
+preplace inst v_rgb2ycrcb_0 -pg 1 -lvl 3 -y -50 -defaultsOSRD
+preplace netloc Conn1 1 8 1 NJ
+preplace netloc Conn2 1 0 7 NJ 90 NJ 90 NJ 90 NJ 90 NJ 90 NJ 110 NJ
+preplace netloc vtg_hsync_out 1 5 3 470 300 NJ 300 1070
+preplace netloc s_axi_aclk_1 1 0 7 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 150 NJ
+preplace netloc v_cresample_1_video_out 1 4 2 300 -200 N
+preplace netloc s_axi_aresetn_1 1 0 7 NJ 230 NJ 230 NJ 230 NJ 230 NJ 230 NJ 230 NJ
+preplace netloc Conn4 1 6 3 NJ -120 NJ -120 NJ
+preplace netloc vid_io_out_reset_1 1 5 3 440 250 760 350 1050
+preplace netloc v_ycrcb2rgb_0_video_out 1 2 1 -140
+preplace netloc audio_spdif_1 1 0 8 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 NJ
+preplace netloc v_cresample_0_video_out 1 1 1 -360
+preplace netloc Conn7 1 0 8 NJ 330 NJ 330 NJ 330 NJ 330 NJ 330 NJ 330 NJ 330 NJ
+preplace netloc vtg_active_video_out 1 5 3 460 130 NJ 40 1040
+preplace netloc vtg_hblank_out 1 5 3 420 -250 NJ -250 1070
+preplace netloc clk_1 1 0 8 NJ 100 NJ 100 N 100 N 100 N 100 450 120 760 30 NJ
+preplace netloc net_vcc_dout 1 0 8 -560 -30 -350 20 -120 40 100 30 N 30 420 140 780 340 NJ
+preplace netloc v_rgb2ycrcb_0_video_out 1 3 1 80
+preplace netloc video_in_new_1 1 0 1 -580
+preplace netloc vtg_vblank_out 1 5 3 480 310 NJ 310 1050
+preplace netloc aclk_1 1 0 6 NJ -20 NJ 30 NJ 30 NJ -60 NJ -60 NJ
+preplace netloc vtg_vsync_out 1 5 3 490 320 NJ 320 1040
+levelinfo -pg 1 -600 -460 -240 -20 200 360 620 910 1190 1320 -top -330 -bot 630
+",
+}
+0

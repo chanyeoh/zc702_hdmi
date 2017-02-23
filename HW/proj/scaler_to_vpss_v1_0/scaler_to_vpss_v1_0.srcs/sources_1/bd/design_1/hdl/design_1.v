@@ -1,7 +1,7 @@
 //Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-//Date        : Mon Feb 13 13:58:05 2017
+//Date        : Wed Feb 22 22:05:07 2017
 //Host        : DESKTOP-AO4G6AL running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -901,7 +901,7 @@ module control_path_imp_1BU48Y2
         .vid_peripheral_resetn(proc_sys_rst_vid_peripheral_aresetn));
 endmodule
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=46,numReposBlks=30,numNonXlnxBlks=2,numHierBlks=16,maxHierDepth=1,synth_mode=Global}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=50,numReposBlks=34,numNonXlnxBlks=2,numHierBlks=16,maxHierDepth=1,synth_mode=Global}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR_addr,
     DDR_ba,
@@ -3116,11 +3116,6 @@ module hdmi_in_imp_RZIXQ5
   wire Conn1_WREADY;
   wire [3:0]Conn1_WSTRB;
   wire Conn1_WVALID;
-  wire [15:0]Conn2_TDATA;
-  wire Conn2_TLAST;
-  wire Conn2_TREADY;
-  wire Conn2_TUSER;
-  wire Conn2_TVALID;
   wire [15:0]IO_HDMII_1_DATA;
   wire IO_HDMII_1_SPDIF;
   wire [0:0]aresetn_1;
@@ -3136,6 +3131,11 @@ module hdmi_in_imp_RZIXQ5
   wire s_axi_aclk_1;
   wire [0:0]s_axi_aresetn_1;
   wire [31:0]v_tc_0_intc_if;
+  wire [15:0]v_vid_in_axi4s_1_video_out_TDATA;
+  wire v_vid_in_axi4s_1_video_out_TLAST;
+  wire v_vid_in_axi4s_1_video_out_TREADY;
+  wire v_vid_in_axi4s_1_video_out_TUSER;
+  wire v_vid_in_axi4s_1_video_out_TVALID;
   wire v_vid_in_axi4s_1_vtiming_out_ACTIVE_VIDEO;
   wire v_vid_in_axi4s_1_vtiming_out_HBLANK;
   wire v_vid_in_axi4s_1_vtiming_out_VBLANK;
@@ -3150,7 +3150,6 @@ module hdmi_in_imp_RZIXQ5
   assign Conn1_WDATA = S_AXI_VTD_wdata[31:0];
   assign Conn1_WSTRB = S_AXI_VTD_wstrb[3:0];
   assign Conn1_WVALID = S_AXI_VTD_wvalid;
-  assign Conn2_TREADY = video_out_new_tready;
   assign IO_HDMII_1_DATA = IO_HDMII_data[15:0];
   assign IO_HDMII_1_SPDIF = IO_HDMII_spdif;
   assign S_AXI_VTD_arready = Conn1_ARREADY;
@@ -3167,10 +3166,11 @@ module hdmi_in_imp_RZIXQ5
   assign processing_system7_0_FCLK_CLK1 = vid_clk;
   assign s_axi_aclk_1 = ctrl_clk;
   assign s_axi_aresetn_1 = ctrl_resetn[0];
-  assign video_out_new_tdata[15:0] = Conn2_TDATA;
-  assign video_out_new_tlast = Conn2_TLAST;
-  assign video_out_new_tuser = Conn2_TUSER;
-  assign video_out_new_tvalid = Conn2_TVALID;
+  assign v_vid_in_axi4s_1_video_out_TREADY = video_out_new_tready;
+  assign video_out_new_tdata[15:0] = v_vid_in_axi4s_1_video_out_TDATA;
+  assign video_out_new_tlast = v_vid_in_axi4s_1_video_out_TLAST;
+  assign video_out_new_tuser = v_vid_in_axi4s_1_video_out_TUSER;
+  assign video_out_new_tvalid = v_vid_in_axi4s_1_video_out_TVALID;
   design_1_fmc_imageon_hdmi_in_0_0 fmc_imageon_hdmi_in_0
        (.audio_spdif(fmc_imageon_hdmi_in_0_audio_spdif),
         .clk(clk_1),
@@ -3189,11 +3189,11 @@ module hdmi_in_imp_RZIXQ5
         .aclken(net_vcc_dout),
         .aresetn(aresetn_1),
         .axis_enable(xlslice_0_Dout),
-        .m_axis_video_tdata(Conn2_TDATA),
-        .m_axis_video_tlast(Conn2_TLAST),
-        .m_axis_video_tready(Conn2_TREADY),
-        .m_axis_video_tuser(Conn2_TUSER),
-        .m_axis_video_tvalid(Conn2_TVALID),
+        .m_axis_video_tdata(v_vid_in_axi4s_1_video_out_TDATA),
+        .m_axis_video_tlast(v_vid_in_axi4s_1_video_out_TLAST),
+        .m_axis_video_tready(v_vid_in_axi4s_1_video_out_TREADY),
+        .m_axis_video_tuser(v_vid_in_axi4s_1_video_out_TUSER),
+        .m_axis_video_tvalid(v_vid_in_axi4s_1_video_out_TVALID),
         .vid_active_video(fmc_imageon_hdmi_in_0_video_de),
         .vid_data(fmc_imageon_hdmi_in_0_video_data),
         .vid_field_id(1'b0),
@@ -4076,11 +4076,6 @@ module hdmi_out_imp_H2TS6X
   wire Conn4_HSYNC;
   wire Conn4_VBLANK;
   wire Conn4_VSYNC;
-  wire [15:0]Conn5_TDATA;
-  wire Conn5_TLAST;
-  wire Conn5_TREADY;
-  wire [0:0]Conn5_TUSER;
-  wire Conn5_TVALID;
   wire Conn7_ACTIVE_VIDEO;
   wire [15:0]Conn7_DATA;
   wire Conn7_HBLANK;
@@ -4091,7 +4086,32 @@ module hdmi_out_imp_H2TS6X
   wire [0:0]net_vcc_dout;
   wire s_axi_aclk_1;
   wire [0:0]s_axi_aresetn_1;
+  wire [23:0]v_cresample_0_video_out_TDATA;
+  wire v_cresample_0_video_out_TLAST;
+  wire v_cresample_0_video_out_TREADY;
+  wire v_cresample_0_video_out_TUSER;
+  wire v_cresample_0_video_out_TVALID;
+  wire [15:0]v_cresample_1_video_out_TDATA;
+  wire v_cresample_1_video_out_TLAST;
+  wire v_cresample_1_video_out_TREADY;
+  wire v_cresample_1_video_out_TUSER;
+  wire v_cresample_1_video_out_TVALID;
+  wire [23:0]v_rgb2ycrcb_0_video_out_TDATA;
+  wire v_rgb2ycrcb_0_video_out_TLAST;
+  wire v_rgb2ycrcb_0_video_out_TREADY;
+  wire v_rgb2ycrcb_0_video_out_TUSER;
+  wire v_rgb2ycrcb_0_video_out_TVALID;
+  wire [23:0]v_ycrcb2rgb_0_video_out_TDATA;
+  wire v_ycrcb2rgb_0_video_out_TLAST;
+  wire v_ycrcb2rgb_0_video_out_TREADY;
+  wire v_ycrcb2rgb_0_video_out_TUSER;
+  wire v_ycrcb2rgb_0_video_out_TVALID;
   wire [0:0]vid_io_out_reset_1;
+  wire [15:0]video_in_new_1_TDATA;
+  wire video_in_new_1_TLAST;
+  wire video_in_new_1_TREADY;
+  wire [0:0]video_in_new_1_TUSER;
+  wire video_in_new_1_TVALID;
   wire vtg_active_video_out;
   wire vtg_hblank_out;
   wire vtg_hsync_out;
@@ -4107,10 +4127,6 @@ module hdmi_out_imp_H2TS6X
   assign Conn2_WDATA = S_AXI_VTG_wdata[31:0];
   assign Conn2_WSTRB = S_AXI_VTG_wstrb[3:0];
   assign Conn2_WVALID = S_AXI_VTG_wvalid;
-  assign Conn5_TDATA = video_in_new_tdata[15:0];
-  assign Conn5_TLAST = video_in_new_tlast;
-  assign Conn5_TUSER = video_in_new_tuser[0];
-  assign Conn5_TVALID = video_in_new_tvalid;
   assign Conn7_ACTIVE_VIDEO = vid_from_output_mux_active_video;
   assign Conn7_DATA = vid_from_output_mux_data[15:0];
   assign Conn7_HBLANK = vid_from_output_mux_hblank;
@@ -4138,7 +4154,11 @@ module hdmi_out_imp_H2TS6X
   assign vid_new_to_output_mux_hsync = Conn4_HSYNC;
   assign vid_new_to_output_mux_vblank = Conn4_VBLANK;
   assign vid_new_to_output_mux_vsync = Conn4_VSYNC;
-  assign video_in_new_tready = Conn5_TREADY;
+  assign video_in_new_1_TDATA = video_in_new_tdata[15:0];
+  assign video_in_new_1_TLAST = video_in_new_tlast;
+  assign video_in_new_1_TUSER = video_in_new_tuser[0];
+  assign video_in_new_1_TVALID = video_in_new_tvalid;
+  assign video_in_new_tready = video_in_new_1_TREADY;
   design_1_fmc_imageon_hdmi_out_0_0 fmc_imageon_hdmi_out_0
        (.audio_spdif(audio_spdif_1),
         .clk(clk_1),
@@ -4161,11 +4181,11 @@ module hdmi_out_imp_H2TS6X
         .aclken(net_vcc_dout),
         .aresetn(net_vcc_dout),
         .fid(vid_io_out_reset_1),
-        .s_axis_video_tdata(Conn5_TDATA),
-        .s_axis_video_tlast(Conn5_TLAST),
-        .s_axis_video_tready(Conn5_TREADY),
-        .s_axis_video_tuser(Conn5_TUSER),
-        .s_axis_video_tvalid(Conn5_TVALID),
+        .s_axis_video_tdata(v_cresample_1_video_out_TDATA),
+        .s_axis_video_tlast(v_cresample_1_video_out_TLAST),
+        .s_axis_video_tready(v_cresample_1_video_out_TREADY),
+        .s_axis_video_tuser(v_cresample_1_video_out_TUSER),
+        .s_axis_video_tvalid(v_cresample_1_video_out_TVALID),
         .vid_active_video(Conn4_ACTIVE_VIDEO),
         .vid_data(Conn4_DATA),
         .vid_field_id(Conn4_FIELD),
@@ -4182,6 +4202,62 @@ module hdmi_out_imp_H2TS6X
         .vtg_hsync(vtg_hsync_out),
         .vtg_vblank(vtg_vblank_out),
         .vtg_vsync(vtg_vsync_out));
+  design_1_v_cresample_0_1 v_cresample_0
+       (.aclk(aclk_1),
+        .aclken(net_vcc_dout),
+        .aresetn(net_vcc_dout),
+        .m_axis_video_tdata(v_cresample_0_video_out_TDATA),
+        .m_axis_video_tlast(v_cresample_0_video_out_TLAST),
+        .m_axis_video_tready(v_cresample_0_video_out_TREADY),
+        .m_axis_video_tuser(v_cresample_0_video_out_TUSER),
+        .m_axis_video_tvalid(v_cresample_0_video_out_TVALID),
+        .s_axis_video_tdata(video_in_new_1_TDATA),
+        .s_axis_video_tlast(video_in_new_1_TLAST),
+        .s_axis_video_tready(video_in_new_1_TREADY),
+        .s_axis_video_tuser(video_in_new_1_TUSER),
+        .s_axis_video_tvalid(video_in_new_1_TVALID));
+  design_1_v_cresample_1_0 v_cresample_1
+       (.aclk(aclk_1),
+        .aclken(net_vcc_dout),
+        .aresetn(net_vcc_dout),
+        .m_axis_video_tdata(v_cresample_1_video_out_TDATA),
+        .m_axis_video_tlast(v_cresample_1_video_out_TLAST),
+        .m_axis_video_tready(v_cresample_1_video_out_TREADY),
+        .m_axis_video_tuser(v_cresample_1_video_out_TUSER),
+        .m_axis_video_tvalid(v_cresample_1_video_out_TVALID),
+        .s_axis_video_tdata(v_rgb2ycrcb_0_video_out_TDATA),
+        .s_axis_video_tlast(v_rgb2ycrcb_0_video_out_TLAST),
+        .s_axis_video_tready(v_rgb2ycrcb_0_video_out_TREADY),
+        .s_axis_video_tuser(v_rgb2ycrcb_0_video_out_TUSER),
+        .s_axis_video_tvalid(v_rgb2ycrcb_0_video_out_TVALID));
+  design_1_v_rgb2ycrcb_0_0 v_rgb2ycrcb_0
+       (.aclk(aclk_1),
+        .aclken(net_vcc_dout),
+        .aresetn(net_vcc_dout),
+        .m_axis_video_tdata(v_rgb2ycrcb_0_video_out_TDATA),
+        .m_axis_video_tlast(v_rgb2ycrcb_0_video_out_TLAST),
+        .m_axis_video_tready(v_rgb2ycrcb_0_video_out_TREADY),
+        .m_axis_video_tuser_sof(v_rgb2ycrcb_0_video_out_TUSER),
+        .m_axis_video_tvalid(v_rgb2ycrcb_0_video_out_TVALID),
+        .s_axis_video_tdata(v_ycrcb2rgb_0_video_out_TDATA),
+        .s_axis_video_tlast(v_ycrcb2rgb_0_video_out_TLAST),
+        .s_axis_video_tready(v_ycrcb2rgb_0_video_out_TREADY),
+        .s_axis_video_tuser_sof(v_ycrcb2rgb_0_video_out_TUSER),
+        .s_axis_video_tvalid(v_ycrcb2rgb_0_video_out_TVALID));
+  design_1_v_ycrcb2rgb_0_0 v_ycrcb2rgb_0
+       (.aclk(aclk_1),
+        .aclken(net_vcc_dout),
+        .aresetn(net_vcc_dout),
+        .m_axis_video_tdata(v_ycrcb2rgb_0_video_out_TDATA),
+        .m_axis_video_tlast(v_ycrcb2rgb_0_video_out_TLAST),
+        .m_axis_video_tready(v_ycrcb2rgb_0_video_out_TREADY),
+        .m_axis_video_tuser_sof(v_ycrcb2rgb_0_video_out_TUSER),
+        .m_axis_video_tvalid(v_ycrcb2rgb_0_video_out_TVALID),
+        .s_axis_video_tdata(v_cresample_0_video_out_TDATA),
+        .s_axis_video_tlast(v_cresample_0_video_out_TLAST),
+        .s_axis_video_tready(v_cresample_0_video_out_TREADY),
+        .s_axis_video_tuser_sof(v_cresample_0_video_out_TUSER),
+        .s_axis_video_tvalid(v_cresample_0_video_out_TVALID));
   design_1_vtg_0 vtg
        (.active_video_out(vtg_active_video_out),
         .clk(clk_1),

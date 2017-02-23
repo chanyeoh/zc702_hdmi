@@ -387,6 +387,27 @@
   "../../../bd/design_1/ip/design_1_axis_subset_converter_1_3/axis_subset_converter_v1_1/hdl/verilog/axis_subset_converter_v1_1_tlast_remap_design_1_axis_subset_converter_1_3.v" \
   "../../../bd/design_1/ip/design_1_axis_subset_converter_1_3/axis_subset_converter_v1_1/hdl/verilog/axis_subset_converter_v1_1_axis_subset_converter_design_1_axis_subset_converter_1_3.v" \
   "../../../bd/design_1/ip/design_1_axis_subset_converter_1_3/sim/design_1_axis_subset_converter_1_3.v" \
+-endlib
+-makelib ies/v_cresample_v4_0_7 \
+  "../../../ipstatic/v_cresample_v4_0/hdl/v_cresample_v4_0_vh_rfs.vhd" \
+-endlib
+-makelib ies/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_v_cresample_0_1/sim/design_1_v_cresample_0_1.vhd" \
+  "../../../bd/design_1/ip/design_1_v_cresample_1_0/sim/design_1_v_cresample_1_0.vhd" \
+-endlib
+-makelib ies/v_ycrcb2rgb_v7_1_6 \
+  "../../../ipstatic/v_ycrcb2rgb_v7_1/hdl/v_ycrcb2rgb_v7_1_vh_rfs.vhd" \
+-endlib
+-makelib ies/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_v_ycrcb2rgb_0_0/sim/design_1_v_ycrcb2rgb_0_0.vhd" \
+-endlib
+-makelib ies/v_rgb2ycrcb_v7_1_6 \
+  "../../../ipstatic/v_rgb2ycrcb_v7_1/hdl/v_rgb2ycrcb_v7_1_vh_rfs.vhd" \
+-endlib
+-makelib ies/xil_defaultlib \
+  "../../../bd/design_1/ip/design_1_v_rgb2ycrcb_0_0/sim/design_1_v_rgb2ycrcb_0_0.vhd" \
+-endlib
+-makelib ies/xil_defaultlib \
   "../../../bd/design_1/ip/design_1_s00_regslice_0/sim/design_1_s00_regslice_0.v" \
   "../../../bd/design_1/ip/design_1_s00_data_fifo_0/sim/design_1_s00_data_fifo_0.v" \
   "../../../bd/design_1/ip/design_1_s01_regslice_0/sim/design_1_s01_regslice_0.v" \

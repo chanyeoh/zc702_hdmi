@@ -109,6 +109,14 @@ set rc [catch {
   set_property processing_order LATE [get_files c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_12/bd_0_auto_cc_1_clocks.xdc]
   read_xdc -ref bd_0_auto_cc_2 -cells inst c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_13/bd_0_auto_cc_2_clocks.xdc
   set_property processing_order LATE [get_files c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_proc_ss_0_0/bd_0/ip/ip_13/bd_0_auto_cc_2_clocks.xdc]
+  read_xdc -ref design_1_v_cresample_0_1 -cells U0 c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_cresample_0_1/design_1_v_cresample_0_1_clocks.xdc
+  set_property processing_order LATE [get_files c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_cresample_0_1/design_1_v_cresample_0_1_clocks.xdc]
+  read_xdc -ref design_1_v_cresample_1_0 -cells U0 c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_cresample_1_0/design_1_v_cresample_1_0_clocks.xdc
+  set_property processing_order LATE [get_files c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_cresample_1_0/design_1_v_cresample_1_0_clocks.xdc]
+  read_xdc -ref design_1_v_ycrcb2rgb_0_0 -cells U0 c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_ycrcb2rgb_0_0/design_1_v_ycrcb2rgb_0_0_clocks.xdc
+  set_property processing_order LATE [get_files c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_ycrcb2rgb_0_0/design_1_v_ycrcb2rgb_0_0_clocks.xdc]
+  read_xdc -ref design_1_v_rgb2ycrcb_0_0 -cells U0 c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_rgb2ycrcb_0_0/design_1_v_rgb2ycrcb_0_0_clocks.xdc
+  set_property processing_order LATE [get_files c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_v_rgb2ycrcb_0_0/design_1_v_rgb2ycrcb_0_0_clocks.xdc]
   read_xdc -ref design_1_auto_us_cc_df_0 -cells inst c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_auto_us_cc_df_0/design_1_auto_us_cc_df_0_clocks.xdc
   set_property processing_order LATE [get_files c:/hdmi_final/HW/proj/scaler_to_vpss_v1_0/scaler_to_vpss_v1_0.srcs/sources_1/bd/design_1/ip/design_1_auto_us_cc_df_0/design_1_auto_us_cc_df_0_clocks.xdc]
   link_design -top scaler_to_vpss -part xc7z020clg484-1

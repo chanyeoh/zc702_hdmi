@@ -807,25 +807,25 @@
         <spirit:externalPortReference spirit:portRef="aclk_axis"/>
         <spirit:internalPortReference spirit:componentRef="v_proc_ss_0" spirit:portRef="aclk_axis"/>
         <spirit:internalPortReference spirit:componentRef="axis_subset_converter_1" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="hdmi_in" spirit:portRef="vid_clk"/>
         <spirit:internalPortReference spirit:componentRef="axis_subset_converter_0" spirit:portRef="aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_new" spirit:portRef="m_axi_s2mm_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_new" spirit:portRef="s_axis_s2mm_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="hdmi_in" spirit:portRef="vid_clk"/>
         <spirit:internalPortReference spirit:componentRef="axi_interconnect_1" spirit:portRef="S01_ACLK"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_CLK0</spirit:name>
         <spirit:externalPortReference spirit:portRef="ctrl_clk"/>
-        <spirit:internalPortReference spirit:componentRef="hdmi_in" spirit:portRef="ctrl_clk"/>
         <spirit:internalPortReference spirit:componentRef="v_proc_ss_0" spirit:portRef="aclk_ctrl"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_new" spirit:portRef="s_axi_lite_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="hdmi_in" spirit:portRef="ctrl_clk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>proc_sys_rst_ctrl_peripheral_aresetn</spirit:name>
         <spirit:externalPortReference spirit:portRef="ctrl_resetn"/>
-        <spirit:internalPortReference spirit:componentRef="hdmi_in" spirit:portRef="ctrl_resetn"/>
         <spirit:internalPortReference spirit:componentRef="v_proc_ss_0" spirit:portRef="aresetn_ctrl"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_new" spirit:portRef="axi_resetn"/>
+        <spirit:internalPortReference spirit:componentRef="hdmi_in" spirit:portRef="ctrl_resetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>m_axi_mm2s_aclk_1</spirit:name>
@@ -2381,7 +2381,7 @@
       <spirit:hierConnection spirit:interfaceRef="S_AXI_VTD/Conn1">
         <spirit:activeInterface spirit:busRef="ctrl" spirit:componentRef="vtd"/>
       </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="video_out_new/Conn2">
+      <spirit:hierConnection spirit:interfaceRef="video_out_new/v_vid_in_axi4s_1_video_out">
         <spirit:activeInterface spirit:busRef="video_out" spirit:componentRef="v_vid_in_axi4s_1"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
@@ -2597,13 +2597,72 @@
           <spirit:configurableElementValue spirit:referenceId="enable_detection">false</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>v_cresample_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="v_cresample" spirit:vendor="xilinx.com" spirit:version="4.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_v_cresample_0_1</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>v_cresample_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="v_cresample" spirit:vendor="xilinx.com" spirit:version="4.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_v_cresample_1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="s_axis_video_format">3</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="m_axis_video_format">2</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>v_ycrcb2rgb_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="v_ycrcb2rgb" spirit:vendor="xilinx.com" spirit:version="7.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_v_ycrcb2rgb_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Standard_Sel">YUV</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Output_Range">0_to_255_for_Computer_Graphics</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>v_rgb2ycrcb_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="v_rgb2ycrcb" spirit:vendor="xilinx.com" spirit:version="7.1"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">design_1_v_rgb2ycrcb_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Standard_Sel">YUV</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Output_Range">0_to_255_for_Computer_Graphics</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
     </spirit:componentInstances>
-    <spirit:interconnections/>
+    <spirit:interconnections>
+      <spirit:interconnection>
+        <spirit:name>v_cresample_1_video_out</spirit:name>
+        <spirit:activeInterface spirit:busRef="video_out" spirit:componentRef="v_cresample_1"/>
+        <spirit:activeInterface spirit:busRef="video_in" spirit:componentRef="v_axi4s_vid_out_1"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>v_cresample_0_video_out</spirit:name>
+        <spirit:activeInterface spirit:busRef="video_out" spirit:componentRef="v_cresample_0"/>
+        <spirit:activeInterface spirit:busRef="video_in" spirit:componentRef="v_ycrcb2rgb_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>v_rgb2ycrcb_0_video_out</spirit:name>
+        <spirit:activeInterface spirit:busRef="video_out" spirit:componentRef="v_rgb2ycrcb_0"/>
+        <spirit:activeInterface spirit:busRef="video_in" spirit:componentRef="v_cresample_1"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>v_ycrcb2rgb_0_video_out</spirit:name>
+        <spirit:activeInterface spirit:busRef="video_out" spirit:componentRef="v_ycrcb2rgb_0"/>
+        <spirit:activeInterface spirit:busRef="video_in" spirit:componentRef="v_rgb2ycrcb_0"/>
+      </spirit:interconnection>
+    </spirit:interconnections>
     <spirit:adHocConnections>
       <spirit:adHocConnection>
         <spirit:name>aclk_1</spirit:name>
         <spirit:externalPortReference spirit:portRef="clk200"/>
         <spirit:internalPortReference spirit:componentRef="v_axi4s_vid_out_1" spirit:portRef="aclk"/>
+        <spirit:internalPortReference spirit:componentRef="v_cresample_0" spirit:portRef="aclk"/>
+        <spirit:internalPortReference spirit:componentRef="v_cresample_1" spirit:portRef="aclk"/>
+        <spirit:internalPortReference spirit:componentRef="v_rgb2ycrcb_0" spirit:portRef="aclk"/>
+        <spirit:internalPortReference spirit:componentRef="v_ycrcb2rgb_0" spirit:portRef="aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>audio_spdif_1</spirit:name>
@@ -2628,6 +2687,14 @@
         <spirit:internalPortReference spirit:componentRef="vtg" spirit:portRef="gen_clken"/>
         <spirit:internalPortReference spirit:componentRef="vtg" spirit:portRef="resetn"/>
         <spirit:internalPortReference spirit:componentRef="vtg" spirit:portRef="s_axi_aclken"/>
+        <spirit:internalPortReference spirit:componentRef="v_cresample_0" spirit:portRef="aclken"/>
+        <spirit:internalPortReference spirit:componentRef="v_cresample_0" spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="v_cresample_1" spirit:portRef="aclken"/>
+        <spirit:internalPortReference spirit:componentRef="v_cresample_1" spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="v_ycrcb2rgb_0" spirit:portRef="aclken"/>
+        <spirit:internalPortReference spirit:componentRef="v_ycrcb2rgb_0" spirit:portRef="aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="v_rgb2ycrcb_0" spirit:portRef="aclken"/>
+        <spirit:internalPortReference spirit:componentRef="v_rgb2ycrcb_0" spirit:portRef="aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>s_axi_aclk_1</spirit:name>
@@ -2687,8 +2754,8 @@
       <spirit:hierConnection spirit:interfaceRef="vid_new_to_output_mux/Conn4">
         <spirit:activeInterface spirit:busRef="vid_io_out" spirit:componentRef="v_axi4s_vid_out_1"/>
       </spirit:hierConnection>
-      <spirit:hierConnection spirit:interfaceRef="video_in_new/Conn5">
-        <spirit:activeInterface spirit:busRef="video_in" spirit:componentRef="v_axi4s_vid_out_1"/>
+      <spirit:hierConnection spirit:interfaceRef="video_in_new/video_in_new_1">
+        <spirit:activeInterface spirit:busRef="video_in" spirit:componentRef="v_cresample_0"/>
       </spirit:hierConnection>
     </spirit:hierConnections>
   </spirit:design>

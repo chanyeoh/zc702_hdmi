@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date         : Mon Feb 13 14:29:11 2017
+| Date         : Wed Feb 22 22:36:20 2017
 | Host         : DESKTOP-AO4G6AL running 64-bit major release  (build 9200)
 | Command      : report_utilization -file scaler_to_vpss_utilization_synth.rpt -pb scaler_to_vpss_utilization_synth.pb
 | Design       : scaler_to_vpss
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 15017 |     0 |     53200 | 28.23 |
-|   LUT as Logic             | 14114 |     0 |     53200 | 26.53 |
-|   LUT as Memory            |   903 |     0 |     17400 |  5.19 |
-|     LUT as Distributed RAM |   712 |     0 |           |       |
-|     LUT as Shift Register  |   191 |     0 |           |       |
-| Slice Registers            | 23778 |    34 |    106400 | 22.35 |
-|   Register as Flip Flop    | 23778 |    34 |    106400 | 22.35 |
+| Slice LUTs*                | 16660 |     0 |     53200 | 31.32 |
+|   LUT as Logic             | 15571 |     0 |     53200 | 29.27 |
+|   LUT as Memory            |  1089 |     0 |     17400 |  6.26 |
+|     LUT as Distributed RAM |   856 |     0 |           |       |
+|     LUT as Shift Register  |   233 |     0 |           |       |
+| Slice Registers            | 24896 |    34 |    106400 | 23.40 |
+|   Register as Flip Flop    | 24896 |    34 |    106400 | 23.40 |
 |   Register as Latch        |     0 |     0 |    106400 |  0.00 |
 | F7 Muxes                   |   285 |     0 |     26600 |  1.07 |
 | F8 Muxes                   |     0 |     0 |     13300 |  0.00 |
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 734   |          Yes |           - |          Set |
 | 1681  |          Yes |           - |        Reset |
-| 818   |          Yes |         Set |            - |
-| 20545 |          Yes |       Reset |            - |
+| 852   |          Yes |         Set |            - |
+| 21629 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -85,8 +85,8 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |   48 |     0 |       220 | 21.82 |
-|   DSP48E1 only |   48 |       |           |       |
+| DSPs           |   56 |     0 |       220 | 25.45 |
+|   DSP48E1 only |   56 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
 
@@ -153,24 +153,24 @@ Table of Contents
 +----------+-------+----------------------+
 | Ref Name |  Used |  Functional Category |
 +----------+-------+----------------------+
-| FDRE     | 20545 |         Flop & Latch |
-| LUT6     |  3711 |                  LUT |
-| LUT3     |  3652 |                  LUT |
-| LUT4     |  2325 |                  LUT |
-| LUT5     |  1882 |                  LUT |
-| LUT2     |  1683 |                  LUT |
+| FDRE     | 21629 |         Flop & Latch |
+| LUT6     |  3958 |                  LUT |
+| LUT3     |  3854 |                  LUT |
+| LUT4     |  2850 |                  LUT |
+| LUT2     |  2100 |                  LUT |
+| LUT5     |  1971 |                  LUT |
 | FDCE     |  1681 |         Flop & Latch |
-| LUT1     |  1145 |                  LUT |
-| FDSE     |   818 |         Flop & Latch |
+| LUT1     |  1461 |                  LUT |
+| RAMD32   |   892 |   Distributed Memory |
+| FDSE     |   852 |         Flop & Latch |
+| CARRY4   |   750 |           CarryLogic |
 | FDPE     |   734 |         Flop & Latch |
-| RAMD32   |   676 |   Distributed Memory |
-| CARRY4   |   517 |           CarryLogic |
+| RAMS32   |   292 |   Distributed Memory |
 | MUXF7    |   285 |                MuxFx |
 | RAMS64E  |   256 |   Distributed Memory |
-| RAMS32   |   220 |   Distributed Memory |
-| SRL16E   |   144 |   Distributed Memory |
+| SRL16E   |   186 |   Distributed Memory |
 | BIBUF    |   130 |                   IO |
-| DSP48E1  |    48 |     Block Arithmetic |
+| DSP48E1  |    56 |     Block Arithmetic |
 | SRLC32E  |    47 |   Distributed Memory |
 | RAMB36E1 |    35 |         Block Memory |
 | OBUF     |    21 |                   IO |

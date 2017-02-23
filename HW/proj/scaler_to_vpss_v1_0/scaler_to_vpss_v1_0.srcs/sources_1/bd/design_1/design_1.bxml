@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1487012342"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1487012342"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1487012342"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1487819173"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1487819173"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1487819173"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\design_1_axi_iic_0_0\design_1_axi_iic_0_0.xci" Type="IP">
         <Instance HierarchyPath="control_path/axi_iic_0"/>
@@ -192,6 +192,38 @@
       </File>
       <File Name="ip\design_1_axis_subset_converter_1_3\design_1_axis_subset_converter_1_3.xci" Type="IP">
         <Instance HierarchyPath="hdmi_in_proc/axis_subset_converter_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_v_cresample_0_1\design_1_v_cresample_0_1.xci" Type="IP">
+        <Instance HierarchyPath="hdmi_out/v_cresample_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_v_cresample_1_0\design_1_v_cresample_1_0.xci" Type="IP">
+        <Instance HierarchyPath="hdmi_out/v_cresample_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_v_ycrcb2rgb_0_0\design_1_v_ycrcb2rgb_0_0.xci" Type="IP">
+        <Instance HierarchyPath="hdmi_out/v_ycrcb2rgb_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_v_rgb2ycrcb_0_0\design_1_v_rgb2ycrcb_0_0.xci" Type="IP">
+        <Instance HierarchyPath="hdmi_out/v_rgb2ycrcb_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

@@ -2,19 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="V_PROC_SS_0_D" key="selection"/>
+		<item value="fb_new_start_addr" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="fb_new_start_addr"/>
+			<item value="main"/>
+			<item value="720"/>
+			<item value="VTG"/>
+			<item value="VDMA"/>
+			<item value="V_PROC"/>
+			<item value="VTD"/>
 			<item value="V_PROC_SS_0_D"/>
-			<item value="V_PROC_SS_0_"/>
-			<item value="V_PROC_SS_0"/>
-			<item value="V_PROC_SS"/>
-			<item value="V_PRO"/>
-			<item value="AXI_GPIO"/>
-			<item value="GPIO"/>
 		</list>
 		<list key="replacehistory">
 		</list>

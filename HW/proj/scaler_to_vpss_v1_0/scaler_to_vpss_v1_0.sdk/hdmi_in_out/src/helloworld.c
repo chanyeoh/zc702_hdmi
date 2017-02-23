@@ -122,11 +122,11 @@ int main()
     		//XPAR_CONTROL_PATH_AXI_GPIO_0_DEVICE_ID,
     		XPAR_CONTROL_PATH_AXI_IIC_0_BASEADDR,
     		XPAR_XIICPS_0_DEVICE_ID,
-    		XPAR_VIDEO_PATH_HDMI_IN_VTD_DEVICE_ID,
+    		XPAR_HDMI_IN_PROC_HDMI_IN_VTD_DEVICE_ID,
         	//XPAR_VIDEO_PATH_TPG_NEW_TPG_NEW_DEVICE_ID,
-        	XPAR_VIDEO_PATH_V_PROC_SS_0_DEVICE_ID,
-        	XPAR_VIDEO_PATH_FRAMEBUFFER_NEW_AXI_VDMA_NEW_DEVICE_ID,
-    		XPAR_VIDEO_PATH_HDMI_OUT_VTG_DEVICE_ID,
+    		XPAR_HDMI_IN_PROC_V_PROC_SS_0_DEVICE_ID,
+    		XPAR_HDMI_IN_PROC_AXI_VDMA_NEW_DEVICE_ID,
+    		XPAR_HDMI_OUT_VTG_DEVICE_ID,
     		FRAMEBUFFER_NEW_START_ADDR);
 
     while(1){}
@@ -199,8 +199,8 @@ int initHDMI(periphs_t*   p_periphs_inst,
 	}
 
 	// Set output frame size (default to 720p)
-	xil_printf("Initialize output to 720p.\n\r");
-	status = periphs_update_output_fsize(p_periphs_inst, VIDEO_RESOLUTION_720P);
+	xil_printf("Initialize output to 1080p.\n\r");
+	status = periphs_update_output_fsize(p_periphs_inst, VIDEO_RESOLUTION_1080P);
 	if (status != 0)
 	{
 		xil_printf("ERROR! Failed to initialize output frame size.\n\r");

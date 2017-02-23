@@ -9,7 +9,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1_DSP48_2 is
+entity bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1_DSP48_3 is
 port (
     in0:  in  std_logic_vector(8 - 1 downto 0);
     in1:  in  std_logic_vector(16 - 1 downto 0);
@@ -18,7 +18,7 @@ port (
 
 end entity;
 
-architecture behav of bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1_DSP48_2 is
+architecture behav of bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1_DSP48_3 is
     signal a       : signed(25-1 downto 0);
     signal b       : signed(18-1 downto 0);
     signal c       : signed(48-1 downto 0);
@@ -55,7 +55,7 @@ entity bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1 is
 end entity;
 
 architecture arch of bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1 is
-    component bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1_DSP48_2 is
+    component bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1_DSP48_3 is
         port (
             in0 : IN STD_LOGIC_VECTOR;
             in1 : IN STD_LOGIC_VECTOR;
@@ -66,7 +66,7 @@ architecture arch of bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1 is
 
 
 begin
-    bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1_DSP48_2_U :  component bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1_DSP48_2
+    bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1_DSP48_3_U :  component bd_0_v_hscaler_0_v_hscaler_mac_muladd_8ns_16s_26s_27_1_DSP48_3
     port map (
         in0 => din0,
         in1 => din1,

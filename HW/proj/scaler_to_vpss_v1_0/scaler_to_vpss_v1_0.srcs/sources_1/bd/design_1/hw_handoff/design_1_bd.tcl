@@ -198,8 +198,8 @@ CONFIG.DOUT_WIDTH {1} \
 
   # Create interface connections
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins S_AXI_VTD] [get_bd_intf_pins vtd/ctrl]
-  connect_bd_intf_net -intf_net Conn2 [get_bd_intf_pins video_out_new] [get_bd_intf_pins v_vid_in_axi4s_1/video_out]
   connect_bd_intf_net -intf_net IO_HDMII_1 [get_bd_intf_pins IO_HDMII] [get_bd_intf_pins fmc_imageon_hdmi_in_0/IO_HDMII]
+  connect_bd_intf_net -intf_net v_vid_in_axi4s_1_video_out [get_bd_intf_pins video_out_new] [get_bd_intf_pins v_vid_in_axi4s_1/video_out]
   connect_bd_intf_net -intf_net v_vid_in_axi4s_1_vtiming_out [get_bd_intf_pins v_vid_in_axi4s_1/vtiming_out] [get_bd_intf_pins vtd/vtiming_in]
 
   # Create port connections
@@ -217,6 +217,48 @@ CONFIG.DOUT_WIDTH {1} \
   connect_bd_net -net s_axi_aresetn_1 [get_bd_pins ctrl_resetn] [get_bd_pins vtd/s_axi_aresetn]
   connect_bd_net -net v_tc_0_intc_if [get_bd_pins vtd/intc_if] [get_bd_pins xlslice_0/Din]
   connect_bd_net -net xlslice_0_Dout [get_bd_pins v_vid_in_axi4s_1/axis_enable] [get_bd_pins xlslice_0/Dout]
+
+  # Perform GUI Layout
+  regenerate_bd_layout -hierarchy [get_bd_cells /hdmi_in_proc/hdmi_in] -layout_string {
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port io_hdmii_clk -pg 1 -y 100 -defaultsOSRD
+preplace port S_AXI_VTD -pg 1 -y 490 -defaultsOSRD
+preplace port IO_HDMII -pg 1 -y 80 -defaultsOSRD
+preplace port vid_clk -pg 1 -y 360 -defaultsOSRD
+preplace port ctrl_clk -pg 1 -y 570 -defaultsOSRD
+preplace port audio_spdif -pg 1 -y 140 -defaultsOSRD
+preplace port video_out_new -pg 1 -y 280 -defaultsOSRD
+preplace portBus ctrl_resetn -pg 1 -y 650 -defaultsOSRD
+preplace portBus vid_resetn -pg 1 -y 20 -defaultsOSRD
+preplace portBus aresetn -pg 1 -y 380 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 1 -y 430 -defaultsOSRD
+preplace inst net_gnd -pg 1 -lvl 1 -y 320 -defaultsOSRD
+preplace inst fmc_imageon_hdmi_in_0 -pg 1 -lvl 1 -y 90 -defaultsOSRD
+preplace inst net_vcc -pg 1 -lvl 1 -y 240 -defaultsOSRD
+preplace inst v_vid_in_axi4s_1 -pg 1 -lvl 2 -y 320 -defaultsOSRD
+preplace inst vtd -pg 1 -lvl 3 -y 670 -defaultsOSRD
+preplace netloc Conn1 1 0 3 NJ 490 NJ 490 NJ
+preplace netloc s_axi_aclk_1 1 0 3 NJ 570 NJ 570 NJ
+preplace netloc s_axi_aresetn_1 1 0 3 NJ 650 NJ 650 NJ
+preplace netloc fmc_imageon_hdmi_in_0_video_hblank 1 1 1 430
+preplace netloc fmc_imageon_hdmi_in_0_video_data 1 1 1 420
+preplace netloc v_vid_in_axi4s_1_video_out 1 2 2 N 230 NJ
+preplace netloc clk_1 1 0 3 -30 -10 410 160 NJ
+preplace netloc net_vcc_dout 1 1 2 380 480 790
+preplace netloc v_tc_0_intc_if 1 0 4 NJ 500 NJ 500 NJ 500 1090
+preplace netloc net_gnd_dout 1 1 1 NJ
+preplace netloc aresetn_1 1 0 2 NJ 380 NJ
+preplace netloc fmc_imageon_hdmi_in_0_video_de 1 1 1 400
+preplace netloc fmc_imageon_hdmi_in_0_audio_spdif 1 1 3 NJ 140 NJ 140 NJ
+preplace netloc IO_HDMII_1 1 0 1 NJ
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 2 NJ 370 NJ
+preplace netloc fmc_imageon_hdmi_in_0_video_vblank 1 1 1 390
+preplace netloc v_vid_in_axi4s_1_vtiming_out 1 2 1 810
+preplace netloc xlslice_0_Dout 1 1 1 NJ
+levelinfo -pg 1 -50 240 600 980 1150 -top -20 -bot 800
+",
+}
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -360,6 +402,44 @@ CONFIG.C_S_AXIS_VIDEO_FORMAT {0} \
 CONFIG.C_VTG_MASTER_SLAVE {1} \
  ] $v_axi4s_vid_out_1
 
+  # Create instance: v_cresample_0, and set properties
+  set v_cresample_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_cresample:4.0 v_cresample_0 ]
+
+  # Create instance: v_cresample_1, and set properties
+  set v_cresample_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_cresample:4.0 v_cresample_1 ]
+  set_property -dict [ list \
+CONFIG.m_axis_video_format {2} \
+CONFIG.num_h_taps {3} \
+CONFIG.num_v_taps {0} \
+CONFIG.s_axis_video_format {3} \
+ ] $v_cresample_1
+
+  # Create instance: v_rgb2ycrcb_0, and set properties
+  set v_rgb2ycrcb_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_rgb2ycrcb:7.1 v_rgb2ycrcb_0 ]
+  set_property -dict [ list \
+CONFIG.Output_Range {0_to_255_for_Computer_Graphics} \
+CONFIG.Standard_Sel {YUV} \
+CONFIG.cbmax {255} \
+CONFIG.cbmin {0} \
+CONFIG.ccoef {0.877283} \
+CONFIG.crmax {255} \
+CONFIG.crmin {0} \
+CONFIG.dcoef {0.492111} \
+CONFIG.ymax {255} \
+CONFIG.ymin {0} \
+ ] $v_rgb2ycrcb_0
+
+  # Create instance: v_ycrcb2rgb_0, and set properties
+  set v_ycrcb2rgb_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_ycrcb2rgb:7.1 v_ycrcb2rgb_0 ]
+  set_property -dict [ list \
+CONFIG.Output_Range {0_to_255_for_Computer_Graphics} \
+CONFIG.Standard_Sel {YUV} \
+CONFIG.ccoef {0.877283} \
+CONFIG.dcoef {0.492111} \
+CONFIG.rgbmax {255} \
+CONFIG.rgbmin {0} \
+ ] $v_ycrcb2rgb_0
+
   # Create instance: vtg, and set properties
   set vtg [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_tc:6.1 vtg ]
   set_property -dict [ list \
@@ -370,14 +450,18 @@ CONFIG.enable_detection {false} \
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins io_hdmio] [get_bd_intf_pins fmc_imageon_hdmi_out_0/IO_HDMIO]
   connect_bd_intf_net -intf_net Conn2 [get_bd_intf_pins S_AXI_VTG] [get_bd_intf_pins vtg/ctrl]
   connect_bd_intf_net -intf_net Conn4 [get_bd_intf_pins vid_new_to_output_mux] [get_bd_intf_pins v_axi4s_vid_out_1/vid_io_out]
-  connect_bd_intf_net -intf_net Conn5 [get_bd_intf_pins video_in_new] [get_bd_intf_pins v_axi4s_vid_out_1/video_in]
   connect_bd_intf_net -intf_net Conn7 [get_bd_intf_pins vid_from_output_mux] [get_bd_intf_pins fmc_imageon_hdmi_out_0/VID_IO_IN]
+  connect_bd_intf_net -intf_net v_cresample_0_video_out [get_bd_intf_pins v_cresample_0/video_out] [get_bd_intf_pins v_ycrcb2rgb_0/video_in]
+  connect_bd_intf_net -intf_net v_cresample_1_video_out [get_bd_intf_pins v_axi4s_vid_out_1/video_in] [get_bd_intf_pins v_cresample_1/video_out]
+  connect_bd_intf_net -intf_net v_rgb2ycrcb_0_video_out [get_bd_intf_pins v_cresample_1/video_in] [get_bd_intf_pins v_rgb2ycrcb_0/video_out]
+  connect_bd_intf_net -intf_net v_ycrcb2rgb_0_video_out [get_bd_intf_pins v_rgb2ycrcb_0/video_in] [get_bd_intf_pins v_ycrcb2rgb_0/video_out]
+  connect_bd_intf_net -intf_net video_in_new_1 [get_bd_intf_pins video_in_new] [get_bd_intf_pins v_cresample_0/video_in]
 
   # Create port connections
-  connect_bd_net -net aclk_1 [get_bd_pins clk200] [get_bd_pins v_axi4s_vid_out_1/aclk]
+  connect_bd_net -net aclk_1 [get_bd_pins clk200] [get_bd_pins v_axi4s_vid_out_1/aclk] [get_bd_pins v_cresample_0/aclk] [get_bd_pins v_cresample_1/aclk] [get_bd_pins v_rgb2ycrcb_0/aclk] [get_bd_pins v_ycrcb2rgb_0/aclk]
   connect_bd_net -net audio_spdif_1 [get_bd_pins audio_spdif] [get_bd_pins fmc_imageon_hdmi_out_0/audio_spdif]
   connect_bd_net -net clk_1 [get_bd_pins vid_out_clk] [get_bd_pins fmc_imageon_hdmi_out_0/clk] [get_bd_pins v_axi4s_vid_out_1/vid_io_out_clk] [get_bd_pins vtg/clk]
-  connect_bd_net -net net_vcc_dout [get_bd_pins fmc_imageon_hdmi_out_0/oe] [get_bd_pins net_vcc/dout] [get_bd_pins v_axi4s_vid_out_1/aclken] [get_bd_pins v_axi4s_vid_out_1/aresetn] [get_bd_pins v_axi4s_vid_out_1/vid_io_out_ce] [get_bd_pins vtg/clken] [get_bd_pins vtg/gen_clken] [get_bd_pins vtg/resetn] [get_bd_pins vtg/s_axi_aclken]
+  connect_bd_net -net net_vcc_dout [get_bd_pins fmc_imageon_hdmi_out_0/oe] [get_bd_pins net_vcc/dout] [get_bd_pins v_axi4s_vid_out_1/aclken] [get_bd_pins v_axi4s_vid_out_1/aresetn] [get_bd_pins v_axi4s_vid_out_1/vid_io_out_ce] [get_bd_pins v_cresample_0/aclken] [get_bd_pins v_cresample_0/aresetn] [get_bd_pins v_cresample_1/aclken] [get_bd_pins v_cresample_1/aresetn] [get_bd_pins v_rgb2ycrcb_0/aclken] [get_bd_pins v_rgb2ycrcb_0/aresetn] [get_bd_pins v_ycrcb2rgb_0/aclken] [get_bd_pins v_ycrcb2rgb_0/aresetn] [get_bd_pins vtg/clken] [get_bd_pins vtg/gen_clken] [get_bd_pins vtg/resetn] [get_bd_pins vtg/s_axi_aclken]
   connect_bd_net -net s_axi_aclk_1 [get_bd_pins ctrl_clk] [get_bd_pins vtg/s_axi_aclk]
   connect_bd_net -net s_axi_aresetn_1 [get_bd_pins ctrl_resetn] [get_bd_pins vtg/s_axi_aresetn]
   connect_bd_net -net vid_io_out_reset_1 [get_bd_pins fmc_imageon_hdmi_out_0/embed_syncs] [get_bd_pins fmc_imageon_hdmi_out_0/reset] [get_bd_pins net_gnd/dout] [get_bd_pins v_axi4s_vid_out_1/fid] [get_bd_pins v_axi4s_vid_out_1/vid_io_out_reset] [get_bd_pins vtg/fsync_in]
@@ -386,6 +470,51 @@ CONFIG.enable_detection {false} \
   connect_bd_net -net vtg_hsync_out [get_bd_pins v_axi4s_vid_out_1/vtg_hsync] [get_bd_pins vtg/hsync_out]
   connect_bd_net -net vtg_vblank_out [get_bd_pins v_axi4s_vid_out_1/vtg_vblank] [get_bd_pins vtg/vblank_out]
   connect_bd_net -net vtg_vsync_out [get_bd_pins v_axi4s_vid_out_1/vtg_vsync] [get_bd_pins vtg/vsync_out]
+
+  # Perform GUI Layout
+  regenerate_bd_layout -hierarchy [get_bd_cells /hdmi_out] -layout_string {
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port vid_from_output_mux -pg 1 -y 380 -defaultsOSRD
+preplace port vid_out_clk -pg 1 -y 110 -defaultsOSRD
+preplace port S_AXI_VTG -pg 1 -y 90 -defaultsOSRD
+preplace port clk200 -pg 1 -y 330 -defaultsOSRD
+preplace port vid_new_to_output_mux -pg 1 -y 120 -defaultsOSRD
+preplace port io_hdmio -pg 1 -y 430 -defaultsOSRD
+preplace port video_in_old -pg 1 -y 20 -defaultsOSRD
+preplace port video_in_new -pg 1 -y 40 -defaultsOSRD
+preplace port ctrl_clk -pg 1 -y 210 -defaultsOSRD
+preplace port audio_spdif -pg 1 -y 480 -defaultsOSRD
+preplace portBus ctrl_resetn -pg 1 -y 230 -defaultsOSRD
+preplace inst vtg -pg 1 -lvl 5 -y 170 -defaultsOSRD
+preplace inst v_axi4s_vid_out_1 -pg 1 -lvl 4 -y -20 -defaultsOSRD
+preplace inst fmc_imageon_hdmi_out_0 -pg 1 -lvl 6 -y 530 -defaultsOSRD
+preplace inst net_gnd -pg 1 -lvl 3 -y 390 -defaultsOSRD
+preplace inst net_vcc -pg 1 -lvl 3 -y 150 -defaultsOSRD
+preplace inst v_cresample_0 -pg 1 -lvl 1 -y -130 -defaultsOSRD
+preplace inst v_cresample_1 -pg 1 -lvl 2 -y -160 -defaultsOSRD
+preplace netloc Conn1 1 6 1 NJ
+preplace netloc Conn2 1 0 5 NJ -300 NJ -300 NJ -300 NJ -300 NJ
+preplace netloc vtg_hsync_out 1 3 3 230 -290 NJ -290 910
+preplace netloc s_axi_aclk_1 1 0 5 NJ 210 NJ 210 NJ 210 NJ 210 NJ
+preplace netloc v_cresample_1_video_out 1 2 2 NJ -200 N
+preplace netloc s_axi_aresetn_1 1 0 5 NJ 230 NJ 230 NJ 230 NJ 230 NJ
+preplace netloc Conn4 1 4 3 NJ -70 NJ -70 NJ
+preplace netloc vid_io_out_reset_1 1 3 3 230 250 610 320 900
+preplace netloc audio_spdif_1 1 0 6 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 NJ
+preplace netloc v_cresample_0_video_out 1 1 1 -150
+preplace netloc Conn7 1 0 6 NJ 340 NJ 340 NJ 340 NJ 340 NJ 340 NJ
+preplace netloc vtg_active_video_out 1 3 3 250 -270 NJ -270 880
+preplace netloc vtg_hblank_out 1 3 3 240 -280 NJ -280 890
+preplace netloc clk_1 1 0 6 NJ 100 NJ 100 N 100 220 -260 600 40 NJ
+preplace netloc net_vcc_dout 1 0 6 -540 -210 -140 -250 N -250 200 -250 590 330 NJ
+preplace netloc video_in_new_1 1 0 1 -560
+preplace netloc vtg_vblank_out 1 3 3 240 300 NJ 300 890
+preplace netloc aclk_1 1 0 4 NJ -220 NJ -240 NJ -240 NJ
+preplace netloc vtg_vsync_out 1 3 3 250 310 NJ 310 880
+levelinfo -pg 1 -590 -250 -30 140 430 750 1050 1180 -top -310 -bot 630
+",
+}
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -519,6 +648,57 @@ CONFIG.C_V_SCALER_TAPS {8} \
   connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins aclk_axis] [get_bd_pins axi_interconnect_1/S01_ACLK] [get_bd_pins axi_vdma_new/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_new/s_axis_s2mm_aclk] [get_bd_pins axis_subset_converter_0/aclk] [get_bd_pins axis_subset_converter_1/aclk] [get_bd_pins hdmi_in/vid_clk] [get_bd_pins v_proc_ss_0/aclk_axis]
   connect_bd_net -net v_proc_ss_0_aresetn_io_axis [get_bd_pins axis_subset_converter_0/aresetn] [get_bd_pins axis_subset_converter_1/aresetn] [get_bd_pins hdmi_in/aresetn] [get_bd_pins v_proc_ss_0/aresetn_io_axis]
 
+  # Perform GUI Layout
+  regenerate_bd_layout -hierarchy [get_bd_cells /hdmi_in_proc] -layout_string {
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port io_hdmii_clk -pg 1 -y 150 -defaultsOSRD
+preplace port S_AXI_LITE_VDMA -pg 1 -y 530 -defaultsOSRD
+preplace port S_AXI_VTD -pg 1 -y 70 -defaultsOSRD
+preplace port M_AXIS_VDMA -pg 1 -y 570 -defaultsOSRD
+preplace port clk200 -pg 1 -y 550 -defaultsOSRD
+preplace port IO_HDMII -pg 1 -y 50 -defaultsOSRD
+preplace port M_AXI_VDMA -pg 1 -y 590 -defaultsOSRD
+preplace port aclk_axis -pg 1 -y 310 -defaultsOSRD
+preplace port audio_spdif -pg 1 -y 130 -defaultsOSRD
+preplace port ctrl_clk -pg 1 -y 440 -defaultsOSRD
+preplace port s_axi_ctrl -pg 1 -y 380 -defaultsOSRD
+preplace portBus ctrl_resetn -pg 1 -y 460 -defaultsOSRD
+preplace portBus vid_interconnect_resetn -pg 1 -y 650 -defaultsOSRD
+preplace portBus vid_resetn -pg 1 -y 190 -defaultsOSRD
+preplace portBus interconnect_resetn_200 -pg 1 -y 610 -defaultsOSRD
+preplace inst v_proc_ss_0 -pg 1 -lvl 2 -y 420 -defaultsOSRD
+preplace inst axi_vdma_new -pg 1 -lvl 4 -y 490 -defaultsOSRD
+preplace inst axis_subset_converter_0 -pg 1 -lvl 3 -y 460 -defaultsOSRD
+preplace inst axis_subset_converter_1 -pg 1 -lvl 1 -y 310 -defaultsOSRD
+preplace inst hdmi_in -pg 1 -lvl 4 -y 120 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 5 -y 720 -defaultsOSRD
+preplace netloc axis_subset_converter_1_M_AXIS 1 1 1 290
+preplace netloc axis_subset_converter_0_M_AXIS 1 3 1 920
+preplace netloc proc_sys_rst_ctrl_peripheral_aresetn 1 0 4 NJ 460 290 540 NJ 540 940
+preplace netloc control_path_M_AXI_SCALER_NEW 1 0 2 NJ 380 NJ
+preplace netloc hdmi_in_audio_spdif 1 4 2 NJ 130 NJ
+preplace netloc S_AXI_HP1_1 1 5 1 1640
+preplace netloc framebuffer_new_M_AXIS_VDMA 1 4 2 NJ 470 NJ
+preplace netloc v_proc_ss_0_m_axis 1 2 1 630
+preplace netloc proc_sys_rst_vid_peripheral_aresetn 1 0 4 NJ 190 NJ 190 NJ 190 NJ
+preplace netloc control_path_M05_AXI 1 0 4 NJ 70 NJ 70 NJ 70 NJ
+preplace netloc hdmi_in_video_out_new 1 0 5 30 240 NJ 240 NJ 240 NJ 240 1340
+preplace netloc clk_1 1 0 4 NJ 150 NJ 150 NJ 150 NJ
+preplace netloc proc_sys_rst_vid_interconnect_aresetn 1 0 5 NJ 650 NJ 650 NJ 650 NJ 650 1290
+preplace netloc m_axi_mm2s_aclk_1 1 0 5 NJ 550 NJ 550 NJ 550 NJ 620 1310
+preplace netloc control_path_M06_AXI 1 0 4 NJ 220 NJ 220 NJ 220 NJ
+preplace netloc S01_AXI_1 1 4 1 1330
+preplace netloc S00_AXI_2 1 4 1 1340
+preplace netloc control_path_interconnect_aresetn 1 0 5 NJ 610 NJ 610 NJ 610 NJ 610 1320
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 NJ 440 300 530 NJ 530 930
+preplace netloc IO_HDMII_1 1 0 4 NJ 50 NJ 50 NJ 50 NJ
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 5 0 390 300 330 640 330 960 630 1300
+preplace netloc v_proc_ss_0_aresetn_io_axis 1 0 4 20 230 NJ 230 650 90 N
+levelinfo -pg 1 -20 160 470 790 1130 1490 1660 -top 0 -bot 870
+",
+}
+
   # Restore current instance
   current_bd_instance $oldCurInst
 }
@@ -624,54 +804,6 @@ CONFIG.preset {ZC702} \
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_gen/ps_resetn]
   connect_bd_net -net rst_gen_interconnect_aresetn [get_bd_pins interconnect_resetn_200] [get_bd_pins rst_gen/interconnect_resetn_200]
 
-  # Perform GUI Layout
-  regenerate_bd_layout -hierarchy [get_bd_cells /control_path] -layout_string {
-   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
-#  -string -flagsOSRD
-preplace port S_AXI_HP1 -pg 1 -y 610 -defaultsOSRD
-preplace port DDR -pg 1 -y 550 -defaultsOSRD
-preplace port M_AXI_VTD -pg 1 -y 310 -defaultsOSRD
-preplace port M_AXI_VTG -pg 1 -y 250 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 570 -defaultsOSRD
-preplace port clk200 -pg 1 -y 740 -defaultsOSRD
-preplace port M_AXI_SCALER_NEW -pg 1 -y 350 -defaultsOSRD
-preplace port FMC_IMAGEON_IIC -pg 1 -y 40 -defaultsOSRD
-preplace port vid_clk -pg 1 -y 710 -defaultsOSRD
-preplace port M_AXI_VDMA_NEW -pg 1 -y 330 -defaultsOSRD
-preplace port ctrl_clk -pg 1 -y 590 -defaultsOSRD
-preplace portBus ctrl_peripheral_resetn -pg 1 -y 490 -defaultsOSRD
-preplace portBus vid_interconnect_resetn -pg 1 -y 450 -defaultsOSRD
-preplace portBus FMC_IMAGEON_IIC_RST -pg 1 -y 80 -defaultsOSRD
-preplace portBus vid_peripheral_resetn -pg 1 -y 470 -defaultsOSRD
-preplace portBus interconnect_resetn_200 -pg 1 -y 1080 -defaultsOSRD
-preplace inst axi_iic_0 -pg 1 -lvl 3 -y 60 -defaultsOSRD
-preplace inst rst_gen -pg 1 -lvl 2 -y 722 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 2 -y 250 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 3 -y 660 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 3 2 NJ 550 NJ
-preplace netloc rst_gen_interconnect_aresetn 1 2 3 NJ 850 NJ 850 NJ
-preplace netloc proc_sys_rst_ctrl_peripheral_aresetn 1 2 3 400 490 NJ 490 NJ
-preplace netloc axi_interconnect_0_M02_AXI 1 2 3 N 250 NJ 250 NJ
-preplace netloc S_AXI_HP1_1 1 0 3 NJ 600 NJ 600 NJ
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 3 NJ 830 NJ 830 860
-preplace netloc proc_sys_rst_vid_peripheral_aresetn 1 2 3 NJ 470 NJ 470 NJ
-preplace netloc axi_interconnect_0_M04_AXI 1 2 3 N 290 NJ 290 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 3 2 NJ 570 NJ
-preplace netloc S00_AXI_1 1 1 3 NJ 450 NJ 450 860
-preplace netloc proc_sys_rst_vid_interconnect_aresetn 1 2 3 NJ 460 NJ 450 NJ
-preplace netloc axi_interconnect_0_M00_AXI 1 2 1 380
-preplace netloc axi_iic_0_IIC 1 3 2 NJ 40 NJ
-preplace netloc axi_iic_0_gpo 1 3 2 NJ 80 NJ
-preplace netloc axi_interconnect_0_M01_AXI 1 2 3 N 230 NJ 230 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 4 60 50 430 810 880 590 NJ
-preplace netloc proc_sys_rst_ctrl_interconnect_aresetn 1 1 2 80 460 380
-preplace netloc axi_interconnect_0_M06_AXI 1 2 3 N 270 NJ 270 NJ
-preplace netloc processing_system7_0_FCLK_CLK1 1 1 4 80 840 NJ 840 890 710 NJ
-preplace netloc processing_system7_0_FCLK_CLK2 1 1 4 80 620 390 820 870 740 NJ
-levelinfo -pg 1 0 40 230 650 1060 1250 -top -40 -bot 1220
-",
-}
-
   # Restore current instance
   current_bd_instance $oldCurInst
 }
@@ -774,31 +906,44 @@ CONFIG.FREQ_HZ {145500000} \
   regenerate_bd_layout -layout_string {
    guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port S_AXI_LITE_VDMA -pg 1 -y 70 -defaultsOSRD
-preplace port S_AXIS_VDMA -pg 1 -y 90 -defaultsOSRD
-preplace port M_AXIS_VDMA -pg 1 -y 120 -defaultsOSRD
-preplace port clk200 -pg 1 -y 130 -defaultsOSRD
-preplace port vid_clk -pg 1 -y 170 -defaultsOSRD
-preplace port M_AXI_VDMA -pg 1 -y 270 -defaultsOSRD
-preplace port ctrl_clk -pg 1 -y 110 -defaultsOSRD
-preplace portBus ctrl_resetn -pg 1 -y 210 -defaultsOSRD
-preplace portBus vid_interconnect_resetn -pg 1 -y 360 -defaultsOSRD
-preplace portBus interconnect_resetn_200 -pg 1 -y 20 -defaultsOSRD
-preplace inst axi_vdma_new -pg 1 -lvl 1 -y 140 -defaultsOSRD
-preplace inst axi_interconnect_1 -pg 1 -lvl 2 -y 270 -defaultsOSRD
-preplace netloc proc_sys_rst_ctrl_peripheral_aresetn 1 0 1 NJ
-preplace netloc axi_vdma_0_M_AXIS_MM2S 1 1 2 NJ 120 NJ
-preplace netloc ARESETN_1 1 0 2 NJ 20 350
-preplace netloc m_axi_mm2s_aclk_1 1 0 2 20 10 370
-preplace netloc v_scaler_0_video_out 1 0 1 NJ
-preplace netloc S01_AXI_1 1 1 1 340
-preplace netloc S00_AXI_2 1 1 1 360
-preplace netloc vid_interconnect_resetn_1 1 0 2 NJ 360 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 1 NJ
-preplace netloc axi_interconnect_1_M00_AXI 1 2 1 NJ
-preplace netloc processing_system7_0_FCLK_CLK1 1 0 2 20 340 NJ
-preplace netloc axi_interconnect_0_M03_AXI 1 0 1 NJ
-levelinfo -pg 1 0 180 520 690 -top 0 -bot 420
+preplace port DDR -pg 1 -y 50 -defaultsOSRD
+preplace port hdmii_clk -pg 1 -y 720 -defaultsOSRD
+preplace port vid_from_output_mux -pg 1 -y 450 -defaultsOSRD
+preplace port hdmio_io -pg 1 -y 500 -defaultsOSRD
+preplace port hdmii_io -pg 1 -y 560 -defaultsOSRD
+preplace port fmc_imageon_iic -pg 1 -y 90 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 70 -defaultsOSRD
+preplace port vid_new_to_output_mux -pg 1 -y 520 -defaultsOSRD
+preplace port vid_clk_synth -pg 1 -y 810 -defaultsOSRD
+preplace portBus fmc_imageon_iic_rst_n -pg 1 -y 190 -defaultsOSRD
+preplace inst control_path -pg 1 -lvl 2 -y 190 -defaultsOSRD
+preplace inst hdmi_in_proc -pg 1 -lvl 1 -y 630 -defaultsOSRD
+preplace inst hdmi_out -pg 1 -lvl 3 -y 510 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 2 2 NJ 50 NJ
+preplace netloc video_path_vid_io_out 1 3 1 NJ
+preplace netloc proc_sys_rst_ctrl_peripheral_aresetn 1 0 3 70 790 NJ 790 850
+preplace netloc hdmi_out_IO_HDMIO 1 3 1 NJ
+preplace netloc control_path_M_AXI_SCALER_NEW 1 0 3 60 390 NJ 390 830
+preplace netloc hdmi_in_audio_spdif 1 1 2 450 510 NJ
+preplace netloc vid_out_clk_1 1 0 3 NJ 810 NJ 590 NJ
+preplace netloc framebuffer_new_M_AXIS_VDMA 1 1 2 440 470 NJ
+preplace netloc S_AXI_HP1_1 1 1 1 430
+preplace netloc proc_sys_rst_vid_peripheral_aresetn 1 0 3 30 400 NJ 400 780
+preplace netloc control_path_M05_AXI 1 0 3 70 420 NJ 420 820
+preplace netloc clk_1 1 0 1 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 2 2 NJ 70 NJ
+preplace netloc proc_sys_rst_vid_interconnect_aresetn 1 0 3 90 820 NJ 820 810
+preplace netloc m_axi_mm2s_aclk_1 1 0 3 50 440 NJ 440 880
+preplace netloc VID_IO_IN_1 1 0 3 NJ 430 NJ 430 NJ
+preplace netloc axi_iic_0_IIC 1 2 2 NJ 90 NJ
+preplace netloc control_path_M06_AXI 1 0 3 40 370 NJ 380 790
+preplace netloc axi_iic_0_gpo 1 2 2 NJ 190 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 80 450 NJ 450 860
+preplace netloc control_path_interconnect_aresetn 1 0 3 80 800 NJ 800 840
+preplace netloc IO_HDMII_1 1 0 1 NJ
+preplace netloc control_path_M_AXI_VTG 1 2 1 890
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 3 90 460 NJ 460 800
+levelinfo -pg 1 0 260 620 1070 1270 -top 0 -bot 830
 ",
 }
 
